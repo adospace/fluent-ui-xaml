@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Brushes.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Icons.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Buttons.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Menu.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

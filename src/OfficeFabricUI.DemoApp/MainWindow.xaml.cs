@@ -24,5 +24,6 @@ namespace OfficeFabricUI.DemoApp
         {
             InitializeComponent();
         }
+
     }
 }

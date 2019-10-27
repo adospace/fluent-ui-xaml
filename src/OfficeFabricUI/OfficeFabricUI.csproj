@@ -5,4 +5,29 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Fonts\fabric-icons-0-467ee27f.ttf" />
+    <None Remove="Fonts\fabric-icons-1-4d521695.ttf" />
+    <None Remove="Fonts\fabric-icons-11-2a8393d6.ttf" />
+    <None Remove="Fonts\fabric-icons-12-7e945a1e.ttf" />
+    <None Remove="Fonts\fabric-icons-13-c3989a02.ttf" />
+    <None Remove="Fonts\fabric-icons-14-5cf58db8.ttf" />
+    <None Remove="Fonts\fabric-icons-15-3807251b.ttf" />
+    <None Remove="Fonts\fabric-icons-16-9cf93f3b.ttf" />
+    <None Remove="Fonts\fabric-icons-17-0c4ed701.ttf" />
+    <None Remove="Fonts\fabric-icons-a13498cf.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\fabric-icons-0-467ee27f.ttf" />
+    <Resource Include="Fonts\fabric-icons-1-4d521695.ttf" />
+    <Resource Include="Fonts\fabric-icons-16-9cf93f3b.ttf" />
+    <Resource Include="Fonts\fabric-icons-17-0c4ed701.ttf" />
+    <Resource Include="Fonts\fabric-icons-a13498cf.ttf" />
+  </ItemGroup>
+
 </Project>

@@ -4,9 +4,56 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
+        xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <ToolBar DockPanel.Dock="Top">
+            <ToggleButton IsChecked="{Binding IsEnabled, ElementName=controlsContainer, Mode=TwoWay}" Content="Enabled" Margin="10" HorizontalAlignment="Left"/>
+        </ToolBar>
+        <ScrollViewer Name="controlsContainer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource FabricButtonStyle}" Content="Standard" HorizontalAlignment="Left" Margin="10"/>
+                    <Button Style="{StaticResource FabricPrimaryButtonStyle}" Content="Primary" HorizontalAlignment="Left" Margin="10"/>
+                </StackPanel>
+                <!--<StackPanel Orientation="Horizontal">
+                    <Button Content="NewItem" Style="{DynamicResource FabricButtonStyle}" Margin="10">
+                        <Button.ContextMenu>
+                            <ContextMenu>
+                                <MenuItem Header="Menu Item1"/>
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                </StackPanel>-->
+                <StackPanel>
+                    <Menu Style="{StaticResource FabricMenuStyle}" Margin="10">
+                        <MenuItem Header="Menu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
+                        <MenuItem Header="Menu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
+                        <MenuItem Header="Menu Item3" Style="{StaticResource FabricMenuItemStyle}">
+                            <MenuItem Header="SubMenu Item1" IsCheckable="True" IsChecked="True" Style="{StaticResource FabricMenuItemStyle}"/>
+                            <MenuItem Header="SubMenu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
+                            <MenuItem Header="SubMenu Item3" Style="{StaticResource FabricMenuItemStyle}">
+                                <MenuItem Header="SubSubMenu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
+                                <MenuItem Header="SubSubMenu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
+                            </MenuItem>
+                        </MenuItem>
+                    </Menu>
+                </StackPanel>
+                <StackPanel>
+                    <Border Margin="10" Height="40" Width="50" Background="{StaticResource Neutral.White}" BorderThickness="1" BorderBrush="{StaticResource Neutral.Gray20}" HorizontalAlignment="Left">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
+                        </Border.Effect>
 
-    </Grid>
+                    </Border>
+                </StackPanel>
+
+                <StackPanel>
+                    <fabric:FabricIcon Icon="ChevronDown" FontFamily="Segoe MDL2 Assets"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+
 </Window>
