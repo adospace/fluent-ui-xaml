@@ -23,6 +23,8 @@ namespace OfficeFabricUI.DemoApp
         public MainWindow()
         {
             InitializeComponent();
+
+            lstIcons.ItemsSource = Enum.GetValues(typeof(FabricIconEnum));
         }
 
     }
