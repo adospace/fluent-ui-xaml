@@ -1855,7 +1855,6 @@ namespace OfficeFabricUI
             set { SetValue(SizeProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Size.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty SizeProperty =
             DependencyProperty.Register("Size", typeof(double), typeof(FabricIcon), new FrameworkPropertyMetadata(14.0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure));
 
@@ -1865,7 +1864,6 @@ namespace OfficeFabricUI
             set { SetValue(ForegroundProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for Foreground.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ForegroundProperty =
             DependencyProperty.Register("Foreground", typeof(Brush), typeof(FabricIcon), new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.AffectsRender));
 
@@ -1885,7 +1883,10 @@ namespace OfficeFabricUI
                     _iconTypeface[Icon],
                     Size,
                     Foreground,
-                    VisualTreeHelper.GetDpi(this).PixelsPerDip);
+                    null,
+                    TextFormattingMode.Ideal,
+                    VisualTreeHelper.GetDpi(this).PixelsPerDip)
+                    ;
 
                 drawingContext.DrawText(ft, new Point());
             }

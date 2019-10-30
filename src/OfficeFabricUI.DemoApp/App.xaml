@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Icons.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Buttons.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Menu.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Separator.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
 

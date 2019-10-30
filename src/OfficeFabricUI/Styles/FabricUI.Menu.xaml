@@ -2,19 +2,19 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:fabric.styles="clr-namespace:OfficeFabricUI.Styles"
                     xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
-                    >
+                    xmlns:officefabricui="clr-namespace:OfficeFabricUI">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="FabricUI.Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
     <Geometry x:Key="Checkmark">M 0,5.1 L 1.7,5.2 L 3.4,7.1 L 8,0.4 L 9.2,0 L 3.3,10.8 Z</Geometry>
-    <ControlTemplate x:Key="FabriSubmenuItemTemplate" TargetType="{x:Type MenuItem}">
+    <ControlTemplate x:Key="FabricSubmenuItemTemplate" TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
             <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" />
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MinWidth="24" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
+                    <ColumnDefinition MinWidth="26" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
                     <ColumnDefinition Width="4"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="37"/>
@@ -22,9 +22,11 @@
                     <ColumnDefinition Width="17"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="1" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <Border x:Name="GlyphPanel" BorderBrush="Red" BorderThickness="2" Background="Green" Height="16" Margin="2" Visibility="Collapsed" Width="16">
+                <!--<Border x:Name="GlyphPanel" BorderBrush="Red" BorderThickness="2" Background="Green" Height="16" Margin="2" Visibility="Collapsed" Width="16">
                     <Path x:Name="Glyph" Data="{StaticResource Checkmark}" Fill="Blue" FlowDirection="LeftToRight" Height="11" Width="9"/>
-                </Border>
+                </Border>-->
+                <officefabricui:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="6" Visibility="Collapsed" />
+
                 <ContentPresenter Grid.Column="2" ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <TextBlock Grid.Column="4" Margin="{TemplateBinding Padding}" Text="{TemplateBinding InputGestureText}"/>
             </Grid>
@@ -41,10 +43,9 @@
                 <Setter Property="Fill" TargetName="bd" Value="{StaticResource Neutral.Gray20}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" TargetName="GlyphPanel" Value="#EEE9E9"/>
-                <Setter Property="BorderBrush" TargetName="GlyphPanel" Value="#DBD6D6"/>
-                <Setter Property="Fill" TargetName="Glyph" Value="#848589"/>
-                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+                <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                <Setter Property="officefabricui:FabricIcon.Foreground" TargetName="Icon" Value="{StaticResource Neutral.Gray90}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -132,8 +133,10 @@
             <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" />
             <DockPanel>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="4,0,6,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="7,0,0,0" Visibility="Collapsed" VerticalAlignment="Center"/>
+                <!--<Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="7,0,0,0" Visibility="Collapsed" VerticalAlignment="Center"/>-->
+                <officefabricui:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Visibility="Collapsed" Margin="6"/>
                 <ContentPresenter ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                <officefabricui:FabricIcon x:Name="DownGlyph" Icon="ChevronDown" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="0,0,6,0"/>
             </DockPanel>
             <Popup x:Name="PART_Popup" AllowsTransparency="true" Focusable="false" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Bottom" HorizontalOffset="-10" >
                 <Grid>
@@ -166,7 +169,7 @@
                 <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
             </Trigger>
             <Trigger Property="IsHighlighted" Value="true">
-                <Setter Property="Fill" TargetName="bd" Value="{StaticResource Neutral.Gray30}"/>
+                <Setter Property="Fill" TargetName="bd" Value="{StaticResource Neutral.Gray20}"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocused" Value="true">
                 <Setter Property="Fill" TargetName="bd" Value="{StaticResource Neutral.Gray20}"/>
@@ -176,7 +179,6 @@
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
-                <Setter Property="Fill" TargetName="GlyphPanel" Value="#848589"/>
                 <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
             </Trigger>
         </ControlTemplate.Triggers>
@@ -187,7 +189,8 @@
             <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" StrokeThickness="0" />
             <DockPanel>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="4,0,6,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="7,0,0,0" Visibility="Collapsed" VerticalAlignment="Center"/>
+                <!--<Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="7,0,0,0" Visibility="Collapsed" VerticalAlignment="Center"/>-->
+                <officefabricui:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="6" Visibility="Collapsed"/>
                 <ContentPresenter ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
             </DockPanel>
         </Grid>
@@ -206,18 +209,18 @@
                 <Setter Property="Fill" TargetName="bd" Value="{StaticResource Neutral.Gray20}"/>
             </Trigger>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Fill" TargetName="GlyphPanel" Value="#848589"/>
+                <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+                <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
     
-    <Geometry x:Key="RightArrow">M 0,0 L 4,3.5 L 0,7 Z</Geometry>
     <ControlTemplate x:Key="FabricMenuItemSubmenuHeaderTemplate" TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
             <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1"/>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition MinWidth="24" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
+                    <ColumnDefinition MinWidth="26" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
                     <ColumnDefinition Width="4"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="37"/>
@@ -225,21 +228,26 @@
                     <ColumnDefinition Width="17"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="1" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <Border x:Name="GlyphPanel" BorderBrush="Green" BorderThickness="2" Background="Yellow" Height="16" Margin="2" Visibility="Hidden" Width="16">
+                <!--<Border x:Name="GlyphPanel" BorderBrush="Green" BorderThickness="2" Background="Yellow" Height="16" Margin="2" Visibility="Hidden" Width="16">
                     <Path x:Name="Glyph" Data="{StaticResource Checkmark}" Fill="Red" FlowDirection="LeftToRight" Height="11" Width="9"/>
-                </Border>
+                </Border>-->
+                <officefabricui:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="6" Visibility="Collapsed" />
+
                 <ContentPresenter Grid.Column="2" ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <TextBlock Grid.Column="4" Margin="{TemplateBinding Padding}" Text="{TemplateBinding InputGestureText}" Visibility="Collapsed"/>
-                <Path x:Name="rightArrow" Grid.Column="5" Data="{StaticResource RightArrow}" Fill="Red" Margin="4,0,0,0" VerticalAlignment="Center"/>
+                <officefabricui:FabricIcon x:Name="rightArrow" Grid.Column="5" Icon="ChevronRight" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="0,4"/>
             </Grid>
-            <Popup x:Name="PART_Popup" AllowsTransparency="true" Focusable="false" HorizontalOffset="-2" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right" VerticalOffset="-3">
-                <Themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent">
+            <Popup x:Name="PART_Popup" AllowsTransparency="true" Focusable="false" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right">
+                <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10">
+                    <Border.Effect>
+                        <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
+                    </Border.Effect>
                     <ContentControl x:Name="SubMenuBorder" IsTabStop="false" Template="{StaticResource FabricMenuItemSubmenuContentTemplate}">
                         <ScrollViewer CanContentScroll="true" Style="{StaticResource FabricMenuItemScrollViewer}">
-                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="true" Margin="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
+                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
                         </ScrollViewer>
                     </ContentControl>
-                </Themes:SystemDropShadowChrome>
+                </Border>
             </Popup>
         </Grid>
         <ControlTemplate.Triggers>
@@ -248,7 +256,6 @@
             </Trigger>
             <Trigger Property="IsHighlighted" Value="true">
                 <Setter Property="Fill" TargetName="bd" Value="{StaticResource Neutral.Gray20}"/>
-                <Setter Property="Fill" TargetName="rightArrow" Value="{StaticResource Neutral.Gray20}"/>
             </Trigger>
             <Trigger Property="Icon" Value="{x:Null}">
                 <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
@@ -257,14 +264,10 @@
                 <Setter Property="Visibility" TargetName="GlyphPanel" Value="Visible"/>
                 <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
             </Trigger>
-            <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
-                <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
-                <Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
-            </Trigger>
+
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Background" TargetName="GlyphPanel" Value="#EEE9E9"/>
-                <Setter Property="BorderBrush" TargetName="GlyphPanel" Value="#DBD6D6"/>
-                <Setter Property="Fill" TargetName="Glyph" Value="#848589"/>
+                <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+                <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
@@ -274,7 +277,7 @@
         <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
-        <Setter Property="Template" Value="{StaticResource FabriSubmenuItemTemplate}"/>
+        <Setter Property="Template" Value="{StaticResource FabricSubmenuItemTemplate}"/>
         <Style.Triggers>
             <Trigger Property="Role" Value="TopLevelHeader">
                 <Setter Property="Padding" Value="8,14"/>
@@ -298,7 +301,6 @@
     <Style x:Key="FabricMenuStyle" TargetType="{x:Type Menu}">
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
-        <Setter Property="Margin" Value="1"/>
         <Setter Property="TextElement.FontSize" Value="14"/>
     </Style>
 

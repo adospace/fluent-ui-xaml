@@ -32,13 +32,30 @@
                             <Menu Style="{StaticResource FabricMenuStyle}" Margin="10">
                                 <MenuItem Header="Menu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
                                 <MenuItem Header="Menu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
-                                <MenuItem Header="Menu Item3" Style="{StaticResource FabricMenuItemStyle}">
+                                <MenuItem Header="Menu Item3" Style="{StaticResource FabricMenuItemStyle}" StaysOpenOnClick="True">
                                     <MenuItem Header="SubMenu Item1" IsCheckable="True" IsChecked="True" Style="{StaticResource FabricMenuItemStyle}"/>
-                                    <MenuItem Header="SubMenu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
-                                    <MenuItem Header="SubMenu Item3" Style="{StaticResource FabricMenuItemStyle}">
-                                        <MenuItem Header="SubSubMenu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
-                                        <MenuItem Header="SubSubMenu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
+                                    <MenuItem Header="SubMenu Item2" Style="{StaticResource FabricMenuItemStyle}" IsEnabled="False">
+                                        <MenuItem.Icon>
+                                            <fabric:FabricIcon Icon="AddBookmark" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="6"/>
+                                        </MenuItem.Icon>
                                     </MenuItem>
+                                    <MenuItem Header="SubMenu Item3" Style="{StaticResource FabricMenuItemStyle}">
+                                        <MenuItem.Icon>
+                                            <fabric:FabricIcon Icon="AddPhone" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="6"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <Separator Style="{StaticResource FabricSeparatorStyle}"/>
+                                    <MenuItem Header="SubMenu Item4" Style="{StaticResource FabricMenuItemStyle}">
+                                        <MenuItem Header="SubSubMenu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
+                                        <MenuItem Header="SubSubMenu Item2" Style="{StaticResource FabricMenuItemStyle}" IsEnabled="False"/>
+                                    </MenuItem>
+                                    <Separator Style="{StaticResource FabricSeparatorStyle}"/>
+                                    <MenuItem Header="SubMenu Item5" IsCheckable="True" IsChecked="True" Style="{StaticResource FabricMenuItemStyle}"/>
+                                    <MenuItem Header="SubMenu Item6" Style="{StaticResource FabricMenuItemStyle}"/>
+                                    <MenuItem Header="SubMenu Item7" Style="{StaticResource FabricMenuItemStyle}"/>
+                                    <Separator Style="{StaticResource FabricSeparatorStyle}"/>
+                                    <MenuItem Header="SubMenu Item8" Style="{StaticResource FabricMenuItemStyle}"/>
+
                                 </MenuItem>
                             </Menu>
                         </StackPanel>
