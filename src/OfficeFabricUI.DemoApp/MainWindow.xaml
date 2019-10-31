@@ -16,45 +16,56 @@
                 <ScrollViewer Name="controlsContainer" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
                     <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
-                            <Button Style="{StaticResource FabricButtonStyle}" Content="Standard" HorizontalAlignment="Left" Margin="10"/>
-                            <Button Style="{StaticResource FabricPrimaryButtonStyle}" Content="Primary" HorizontalAlignment="Left" Margin="10"/>
-                        </StackPanel>
-                        <!--<StackPanel Orientation="Horizontal">
-                            <Button Content="NewItem" Style="{DynamicResource FabricButtonStyle}" Margin="10">
-                                <Button.ContextMenu>
+                            <Button Content="Standard" HorizontalAlignment="Left" Margin="10"/>
+                            <Button Content="Primary" HorizontalAlignment="Left" Margin="10" Style="{StaticResource FabricPrimaryButtonStyle}"/>
+                            <fabric:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10">
+                                <fabric:FabricSplitButton.Menu>
                                     <ContextMenu>
-                                        <MenuItem Header="Menu Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
                                     </ContextMenu>
-                                </Button.ContextMenu>
-                            </Button>
-                        </StackPanel>-->
+                                </fabric:FabricSplitButton.Menu>
+                            </fabric:FabricSplitButton>
+                            <fabric:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10" ShowSplit="False">
+                                <fabric:FabricSplitButton.Menu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                    </ContextMenu>
+                                </fabric:FabricSplitButton.Menu>
+                            </fabric:FabricSplitButton>
+                        </StackPanel>
                         <StackPanel>
-                            <Menu Style="{StaticResource FabricMenuStyle}" Margin="10">
-                                <MenuItem Header="Menu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
-                                <MenuItem Header="Menu Item2" Style="{StaticResource FabricMenuItemStyle}"/>
-                                <MenuItem Header="Menu Item3" Style="{StaticResource FabricMenuItemStyle}" StaysOpenOnClick="True">
-                                    <MenuItem Header="SubMenu Item1" IsCheckable="True" IsChecked="True" Style="{StaticResource FabricMenuItemStyle}"/>
-                                    <MenuItem Header="SubMenu Item2" Style="{StaticResource FabricMenuItemStyle}" IsEnabled="False">
+                            <Menu Margin="10">
+                                <MenuItem Header="Menu Item1" />
+                                <MenuItem Header="Menu Item2" />
+                                <MenuItem Header="Menu Item3"  StaysOpenOnClick="True">
+                                    <MenuItem Header="SubMenu Item1" IsCheckable="True" IsChecked="True" />
+                                    <MenuItem Header="SubMenu Item2" IsEnabled="False">
                                         <MenuItem.Icon>
                                             <fabric:FabricIcon Icon="AddBookmark" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="6"/>
                                         </MenuItem.Icon>
                                     </MenuItem>
-                                    <MenuItem Header="SubMenu Item3" Style="{StaticResource FabricMenuItemStyle}">
+                                    <MenuItem Header="SubMenu Item3" >
                                         <MenuItem.Icon>
                                             <fabric:FabricIcon Icon="AddPhone" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="6"/>
                                         </MenuItem.Icon>
                                     </MenuItem>
-                                    <Separator Style="{StaticResource FabricSeparatorStyle}"/>
-                                    <MenuItem Header="SubMenu Item4" Style="{StaticResource FabricMenuItemStyle}">
-                                        <MenuItem Header="SubSubMenu Item1" Style="{StaticResource FabricMenuItemStyle}"/>
-                                        <MenuItem Header="SubSubMenu Item2" Style="{StaticResource FabricMenuItemStyle}" IsEnabled="False"/>
+                                    <Separator />
+                                    <MenuItem Header="SubMenu Item4" >
+                                        <MenuItem Header="SubSubMenu Item1" />
+                                        <MenuItem Header="SubSubMenu Item2"  IsEnabled="False"/>
                                     </MenuItem>
-                                    <Separator Style="{StaticResource FabricSeparatorStyle}"/>
-                                    <MenuItem Header="SubMenu Item5" IsCheckable="True" IsChecked="True" Style="{StaticResource FabricMenuItemStyle}"/>
-                                    <MenuItem Header="SubMenu Item6" Style="{StaticResource FabricMenuItemStyle}"/>
-                                    <MenuItem Header="SubMenu Item7" Style="{StaticResource FabricMenuItemStyle}"/>
-                                    <Separator Style="{StaticResource FabricSeparatorStyle}"/>
-                                    <MenuItem Header="SubMenu Item8" Style="{StaticResource FabricMenuItemStyle}"/>
+                                    <Separator />
+                                    <MenuItem Header="SubMenu Item5" IsCheckable="True" IsChecked="True"/>
+                                    <MenuItem Header="SubMenu Item6" />
+                                    <MenuItem Header="SubMenu Item7" />
+                                    <Separator />
+                                    <MenuItem Header="SubMenu Item8"/>
 
                                 </MenuItem>
                             </Menu>

@@ -9,9 +9,9 @@ namespace OfficeFabricUI.Styles
     {
         static FabricBrushes()
         {
-            MyColor.Freeze();
+            NeutralGray160.Freeze();
         }
 
-        public static SolidColorBrush MyColor { get; } = new SolidColorBrush(Colors.Red);
+        public static SolidColorBrush NeutralGray160 { get; } = new SolidColorBrush(Color.FromRgb(50, 49, 48));
     }
 }

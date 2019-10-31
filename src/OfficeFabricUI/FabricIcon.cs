@@ -1,15 +1,21 @@
-﻿using System;
+﻿using OfficeFabricUI.Styles;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace OfficeFabricUI
 {
     public class FabricIcon : FrameworkElement
     {
+        static FabricIcon()
+        {
+            TextElement.ForegroundProperty.OverrideMetadata(typeof(FabricIcon), new FrameworkPropertyMetadata(FabricBrushes.NeutralGray160, FrameworkPropertyMetadataOptions.AffectsRender));
+        }
         //private static readonly Typeface _typeface = new Typeface(new FontFamily("Segoe MDL2 Assets"), FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
 
         private static readonly Typeface _fabricTypeface = new Typeface(new FontFamily(new Uri("pack://application:,,,/OfficeFabricUI;component/Fonts/fabric-icons-a13498cf.ttf"), "./#Fabric MDL2 Assets"), FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
@@ -1851,21 +1857,21 @@ namespace OfficeFabricUI
 
         public double Size
         {
-            get { return (double)GetValue(SizeProperty); }
-            set { SetValue(SizeProperty, value); }
+            get { return TextElement.GetFontSize(this); }
+            set { TextElement.SetFontSize(this, value); }
         }
 
-        public static readonly DependencyProperty SizeProperty =
-            DependencyProperty.Register("Size", typeof(double), typeof(FabricIcon), new FrameworkPropertyMetadata(14.0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure));
+        //public static readonly DependencyProperty SizeProperty =
+        //    DependencyProperty.Register("Size", typeof(double), typeof(FabricIcon), new FrameworkPropertyMetadata(14.0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         public Brush Foreground
         {
-            get { return (Brush)GetValue(ForegroundProperty); }
-            set { SetValue(ForegroundProperty, value); }
+            get { return TextElement.GetForeground(this); }
+            set { TextElement.SetForeground(this, value); }
         }
 
-        public static readonly DependencyProperty ForegroundProperty =
-            DependencyProperty.Register("Foreground", typeof(Brush), typeof(FabricIcon), new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.AffectsRender));
+        //public static readonly DependencyProperty ForegroundProperty =
+        //    DependencyProperty.Register("Foreground", typeof(Brush), typeof(FabricIcon), new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.AffectsRender));
 
         protected override Size MeasureOverride(Size availableSize)
         {
