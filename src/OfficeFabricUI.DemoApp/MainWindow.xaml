@@ -93,7 +93,7 @@
                         <WrapPanel IsItemsHost="True"/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
-                
+
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>

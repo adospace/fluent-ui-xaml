@@ -24,7 +24,7 @@ namespace OfficeFabricUI.DemoApp
         {
             InitializeComponent();
 
-            lstIcons.ItemsSource = Enum.GetValues(typeof(FabricIconEnum));
+            //lstIcons.ItemsSource = Enum.GetValues(typeof(FabricIconEnum));
         }
 
     }
