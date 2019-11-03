@@ -47,12 +47,10 @@ namespace OfficeFabricUI
 
             if (GetTemplateChild("PART_ArrowDown") is FrameworkElement downArrowPart)
             {
-                downArrowPart.PreviewMouseDown += DownArrowPart_PreviewMouseDown; ;        
+                downArrowPart.PreviewMouseDown += DownArrowPart_PreviewMouseDown;       
             }
-            else
-            {
-                PreviewMouseLeftButtonDown += FabricSplitButton_PreviewMouseLeftButtonDown;
-            }
+
+            PreviewMouseLeftButtonDown += FabricSplitButton_PreviewMouseLeftButtonDown;
         }
 
         private void DownArrowPart_PreviewMouseDown(object sender, MouseButtonEventArgs e)

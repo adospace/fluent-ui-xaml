@@ -41,9 +41,19 @@
                         </StackPanel>
                         <StackPanel>
                             <Menu Margin="10">
-                                <MenuItem Header="Menu Item1" />
-                                <MenuItem Header="Menu Item2" />
-                                <MenuItem Header="Menu Item3"  StaysOpenOnClick="True">
+                                <MenuItem Header="Menu Item1" >
+                                    <MenuItem Header="SubMenu 1"/>
+                                    <MenuItem Header="SubMenu 2">
+                                        <MenuItem.Icon>
+                                            <fabric:FabricIcon Icon="AddBookmark" Margin="6"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Header="SubMenu 3">
+                                        <MenuItem Header="SubSubMenu 1"/>
+                                        <MenuItem Header="SubSubMenu 2"/>
+                                    </MenuItem>
+                                </MenuItem>
+                                <MenuItem Header="Menu Item2"  StaysOpenOnClick="True">
                                     <MenuItem Header="SubMenu Item1" IsCheckable="True" IsChecked="True" />
                                     <MenuItem Header="SubMenu Item2" IsEnabled="False">
                                         <MenuItem.Icon>
@@ -70,16 +80,44 @@
                                 </MenuItem>
                             </Menu>
                         </StackPanel>
-                        <StackPanel>
-                            <Border Margin="10" Height="40" Width="50" Background="{StaticResource Neutral.White}" BorderThickness="1" BorderBrush="{StaticResource Neutral.Gray20}" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal">
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
                                 <Border.Effect>
-                                    <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
+                                    <DropShadowEffect Color="#edebe9" BlurRadius="4" Direction="-90" RenderingBias="Performance" ShadowDepth="1"/>
                                 </Border.Effect>
-
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 4" Foreground="{StaticResource Neutral.Gray130}"/>
+                            </Border>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#edebe9" BlurRadius="8" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
+                                </Border.Effect>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 8" Foreground="{StaticResource Neutral.Gray130}"/>
+                            </Border>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#edebe9" BlurRadius="16" Direction="-90" RenderingBias="Performance" ShadowDepth="4"/>
+                                </Border.Effect>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 16" Foreground="{StaticResource Neutral.Gray130}"/>
+                            </Border>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="#edebe9" BlurRadius="64" Direction="-90" RenderingBias="Performance" ShadowDepth="20"/>
+                                </Border.Effect>
+                                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 64" Foreground="{StaticResource Neutral.Gray130}"/>
                             </Border>
                         </StackPanel>
-
                         <StackPanel>
+                            <TabControl>
+                                <TabItem Header="Tab1">
+                                    <TextBlock Text="Tab1 Content" Margin="10"/>
+                                </TabItem>
+                                <TabItem Header="Tab2">
+                                    <TextBlock Text="Tab2 Content" Margin="10"/>
+                                </TabItem>
+                                <TabItem Header="Tab3">
+                                    <TextBlock Text="Tab3 Content" Margin="10"/>
+                                </TabItem>
+                            </TabControl>
                         </StackPanel>
                     </StackPanel>
                 </ScrollViewer>

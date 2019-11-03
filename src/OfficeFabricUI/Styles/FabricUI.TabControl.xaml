@@ -96,6 +96,26 @@
                         <Rectangle x:Name="BdSelected" VerticalAlignment="Bottom" Height="2" Fill="{StaticResource Communication.CommunicationPrimary}" Visibility="Hidden" Margin="14,0"/>
                     </Grid>
                     <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="True"/>
+                                <Condition Binding="{Binding IsMouseOver, ElementName=Bd}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <MultiDataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard TargetName="BdSelected" TargetProperty="Margin">
+                                        <ThicknessAnimation To="4,0" Duration="0:0:0.400" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiDataTrigger.EnterActions>
+                            <MultiDataTrigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard TargetName="BdSelected" TargetProperty="Margin">
+                                        <ThicknessAnimation To="14,0" Duration="0:0:0.400" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </MultiDataTrigger.ExitActions>
+                        </MultiDataTrigger>
                         <!--<Trigger Property="IsSelected" Value="true">
                             <Setter Property="Panel.ZIndex" Value="1"/>
                             <Setter Property="Background" Value="{DynamicResource Palette12}"/>
@@ -117,26 +137,26 @@
                             <Setter Property="Foreground" Value="{DynamicResource Palette5}"/>
                             <Setter Property="Background" Value="{DynamicResource Palette6}"/>
                         </MultiDataTrigger>-->
-                        <!--<MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Self}}" Value="true"/>
-                                <Condition Binding="{Binding IsMouseOver, ElementName=BdSelected}" Value="true"/>
-                            </MultiDataTrigger.Conditions>
-                            <MultiDataTrigger.EnterActions>
+                        <!--<MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="true"/>
+                                <Condition Property="IsMouseOver" SourceName="Bd" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.EnterActions>
                                 <BeginStoryboard>
                                     <Storyboard TargetName="BdSelected" TargetProperty="Margin">
                                         <ThicknessAnimation To="4,0" Duration="0:0:0.400" />
                                     </Storyboard>
                                 </BeginStoryboard>
-                            </MultiDataTrigger.EnterActions>
-                            <MultiDataTrigger.ExitActions>
+                            </MultiTrigger.EnterActions>
+                            <MultiTrigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard TargetName="BdSelected" TargetProperty="Margin">
                                         <ThicknessAnimation To="14,0" Duration="0:0:0.400" />
                                     </Storyboard>
                                 </BeginStoryboard>
-                            </MultiDataTrigger.ExitActions>
-                        </MultiDataTrigger>-->
+                            </MultiTrigger.ExitActions>
+                        </MultiTrigger>-->
                         <Trigger Property="IsMouseOver" SourceName="Bd" Value="true">
                             <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
                         </Trigger>
