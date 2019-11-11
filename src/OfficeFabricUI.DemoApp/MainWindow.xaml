@@ -39,6 +39,11 @@
                                 </fabric:FabricSplitButton.Menu>
                             </fabric:FabricSplitButton>
                         </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton Margin="10">
+                                Toggle
+                            </ToggleButton>
+                        </StackPanel>
                         <StackPanel>
                             <Menu Margin="10">
                                 <MenuItem Header="Menu Item1" >
@@ -81,28 +86,16 @@
                             </Menu>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#edebe9" BlurRadius="4" Direction="-90" RenderingBias="Performance" ShadowDepth="1"/>
-                                </Border.Effect>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth4}">
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 4" Foreground="{StaticResource Neutral.Gray130}"/>
                             </Border>
-                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#edebe9" BlurRadius="8" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                                </Border.Effect>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth8}">
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 8" Foreground="{StaticResource Neutral.Gray130}"/>
                             </Border>
-                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#edebe9" BlurRadius="16" Direction="-90" RenderingBias="Performance" ShadowDepth="4"/>
-                                </Border.Effect>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth16}">
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 16" Foreground="{StaticResource Neutral.Gray130}"/>
                             </Border>
-                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20">
-                                <Border.Effect>
-                                    <DropShadowEffect Color="#edebe9" BlurRadius="64" Direction="-90" RenderingBias="Performance" ShadowDepth="20"/>
-                                </Border.Effect>
+                            <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth64}">
                                 <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 64" Foreground="{StaticResource Neutral.Gray130}"/>
                             </Border>
                         </StackPanel>

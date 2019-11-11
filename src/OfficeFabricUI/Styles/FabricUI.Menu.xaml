@@ -143,10 +143,10 @@
                         <ColumnDefinition MaxWidth="{Binding ActualWidth, ElementName=bd}"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10">
-                        <Border.Effect>
+                    <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10" Effect="{StaticResource Depth4}">
+                        <!--<Border.Effect>
                             <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                        </Border.Effect>
+                        </Border.Effect>-->
                         <ContentControl x:Name="SubMenuBorder" IsTabStop="false" Template="{StaticResource FabricMenuItemSubmenuContentTemplate}">
                             <ScrollViewer CanContentScroll="true" Style="{StaticResource FabricMenuItemScrollViewer}">
                                 <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
@@ -237,10 +237,10 @@
                 <fabric:FabricIcon x:Name="rightArrow" Grid.Column="5" Icon="ChevronRight" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="0,4"/>
             </Grid>
             <Popup x:Name="PART_Popup" AllowsTransparency="true" Focusable="false" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right">
-                <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10">
-                    <Border.Effect>
+                <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10" Effect="{StaticResource Depth8}">
+                    <!--<Border.Effect>
                         <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                    </Border.Effect>
+                    </Border.Effect>-->                    
                     <ContentControl x:Name="SubMenuBorder" IsTabStop="false" Template="{StaticResource FabricMenuItemSubmenuContentTemplate}">
                         <ScrollViewer CanContentScroll="true" Style="{StaticResource FabricMenuItemScrollViewer}">
                             <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
@@ -316,10 +316,11 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
-                    <Border Background="{StaticResource Neutral.White}" Margin="10,0,10,10">
-                        <Border.Effect>
+                    <Border Background="{StaticResource Neutral.White}" Margin="10,0,10,10"  Effect="{StaticResource Depth4}">
+                        <!--<Border.Effect>
                             <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                        </Border.Effect>
+                        </Border.Effect>-->
+                        
                         <ScrollViewer CanContentScroll="True" Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}" Uid="ScrollViewer_9">
                             <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Uid="ItemsPresenter_5"/>
                         </ScrollViewer>
