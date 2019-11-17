@@ -10,5 +10,7 @@
     <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource FabricSeparatorStyle}"/>
     <Style TargetType="{x:Type TabControl}" BasedOn="{StaticResource FabricTabControlStyle}"/>
     <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource FabricTabItemStyle}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource FabricTextBoxStyle}"/>
+    <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource FabricPasswordBoxStyle}"/>
 
 </ResourceDictionary>

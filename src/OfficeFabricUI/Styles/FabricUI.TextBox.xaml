@@ -1,0 +1,227 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fabric.styles="clr-namespace:OfficeFabricUI.Styles"
+                    xmlns:fabric.converters="clr-namespace:OfficeFabricUI.Converters"
+                    xmlns:fabric="clr-namespace:OfficeFabricUI"
+                    >
+
+    <fabric.converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+    <fabric.converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <fabric.converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+    <fabric.converters:InverseNullToBoolConverter x:Key="InverseNullToBoolConverter"/>
+    <fabric.converters:StringEmptyToBoolConverter x:Key="StringEmptyToBoolConverter"/>
+    <fabric.converters:InverseNullToVisibilityConverter x:Key="InverseNullToVisibilityConverter"/>
+
+    <Style x:Key="FabricTextBoxStyle" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8,0"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <StackPanel>
+                        <StackPanel 
+                            Orientation="Horizontal" 
+                            Visibility="{TemplateBinding fabric:FabricExtra.Label, Converter={StaticResource NullToVisibilityConverter}}">
+                            <TextBlock 
+                                Text="{TemplateBinding fabric:FabricExtra.Label}"
+                                Padding="1,5,0,5" 
+                                FontWeight="SemiBold" />
+                            <TextBlock 
+                                Text="*"
+                                Padding="4,5" 
+                                Foreground="{StaticResource Shared.SharedRed20}"
+                                Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </StackPanel>
+                        <DockPanel>
+                            <Border 
+                                DockPanel.Dock="Right"
+                                Visibility="{TemplateBinding fabric:FabricExtra.Label, Converter={StaticResource InverseNullToVisibilityConverter}}">
+                                <TextBlock 
+                                    x:Name="RequiredMark"
+                                    Text="*"
+                                    VerticalAlignment="Top"
+                                    Margin="4,0"
+                                    Foreground="{StaticResource Shared.SharedRed20}"
+                                    Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                            </Border>
+                            <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="1" MinHeight="32">
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Padding="0"/>
+                                    <TextBlock x:Name="Wm" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" VerticalAlignment="Center" Margin="9,0" IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </DockPanel>
+                        <TextBlock 
+                            Text="{TemplateBinding fabric:FabricExtra.ErrorMessage}"
+                            Padding="1,5,0,0" 
+                            FontSize="12"
+                            Foreground="{StaticResource Shared.SharedRed20}"
+                            Visibility="{TemplateBinding fabric:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                            <Setter Property="BorderThickness" TargetName="Bd" Value="2"/>
+                            <Setter Property="CornerRadius" TargetName="Bd" Value="0.5"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsFocused" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray160}"/>
+                        </MultiTrigger>
+                        <DataTrigger Value="true">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fabric:FabricExtra.ErrorMessage)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource InverseNullToBoolConverter}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Shared.SharedRed20}"/>
+                        </DataTrigger>
+                        <DataTrigger Value="false">
+                            <DataTrigger.Binding>
+                                <Binding Path="Text" RelativeSource="{RelativeSource Self}" Converter="{StaticResource StringEmptyToBoolConverter}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="Visibility" TargetName="Wm" Value="Hidden"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FabricPasswordBoxStyle" TargetType="{x:Type PasswordBox}">
+        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
+        <Setter Property="PasswordChar" Value="●"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="8,0"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="fabric:PasswordHelper.CheckPasswordIsEmpty" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <StackPanel>
+                        <StackPanel 
+                            Orientation="Horizontal" 
+                            Visibility="{TemplateBinding fabric:FabricExtra.Label, Converter={StaticResource NullToVisibilityConverter}}">
+                            <TextBlock 
+                                Text="{TemplateBinding fabric:FabricExtra.Label}"
+                                Padding="1,5,0,5" 
+                                FontWeight="SemiBold" />
+                            <TextBlock 
+                                Text="*"
+                                Padding="4,5" 
+                                Foreground="{StaticResource Shared.SharedRed20}"
+                                Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                        </StackPanel>
+                        <DockPanel>
+                            <Border 
+                                DockPanel.Dock="Right"
+                                Visibility="{TemplateBinding fabric:FabricExtra.Label, Converter={StaticResource InverseNullToVisibilityConverter}}">
+                                <TextBlock 
+                                    x:Name="RequiredMark"
+                                    Text="*"
+                                    VerticalAlignment="Top"
+                                    Margin="4,0"
+                                    Foreground="{StaticResource Shared.SharedRed20}"
+                                    Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                            </Border>
+                            <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="1" MinHeight="32">
+                                <Grid>
+                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Padding="0"/>
+                                    <TextBlock x:Name="Wm" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" VerticalAlignment="Center" Margin="9,0" IsHitTestVisible="False"/>
+                                </Grid>
+                            </Border>
+                        </DockPanel>
+                        <TextBlock 
+                            Text="{TemplateBinding fabric:FabricExtra.ErrorMessage}"
+                            Padding="1,5,0,0" 
+                            FontSize="12"
+                            Foreground="{StaticResource Shared.SharedRed20}"
+                            Visibility="{TemplateBinding fabric:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                            <Setter Property="BorderThickness" TargetName="Bd" Value="2"/>
+                            <Setter Property="CornerRadius" TargetName="Bd" Value="0.5"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsFocused" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray160}"/>
+                        </MultiTrigger>
+                        <DataTrigger Value="true">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fabric:FabricExtra.ErrorMessage)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource InverseNullToBoolConverter}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Shared.SharedRed20}"/>
+                        </DataTrigger>
+                        <DataTrigger Value="false">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fabric:PasswordHelper.HasPasswordEmpty)" RelativeSource="{RelativeSource Self}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="Visibility" TargetName="Wm" Value="Hidden"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style x:Key="FabricPasswordBoxStyle" TargetType="{x:Type PasswordBox}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Background" Value="{DynamicResource Palette5}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Palette9}"/>
+        <Setter Property="PasswordChar" Value="●"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{DynamicResource Palette15}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+</ResourceDictionary>

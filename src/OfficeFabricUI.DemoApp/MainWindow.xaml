@@ -112,6 +112,24 @@
                                 </TabItem>
                             </TabControl>
                         </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="10">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Width="200" fabric:FabricExtra.Label="Standard"/>
+                                <TextBox Width="200" Margin="10,0,0,0" fabric:FabricExtra.Label="Standard" fabric:FabricExtra.IsRequired="True" />
+                                <TextBox Width="200" Margin="10,28,0,0" fabric:FabricExtra.IsRequired="True" />
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Width="200" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Label="Standard" Text="I'm with errors"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox Width="200" fabric:FabricExtra.Label="With placeholder" fabric:FabricExtra.Placeholder="I'm a placeholder"/>
+                                <TextBox Width="200" fabric:FabricExtra.Label="With placeholder" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Placeholder="I'm a placeholder" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <PasswordBox Width="200" fabric:FabricExtra.Label="PasswordBox With placeholder" fabric:FabricExtra.Placeholder="I'm a placeholder"/>
+                                <PasswordBox Width="200" fabric:FabricExtra.Label="PasswordBox With placeholder" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Placeholder="I'm a placeholder" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
                 </ScrollViewer>
             </DockPanel>
