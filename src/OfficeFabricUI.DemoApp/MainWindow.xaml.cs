@@ -24,8 +24,14 @@ namespace OfficeFabricUI.DemoApp
         {
             InitializeComponent();
 
-            //lstIcons.ItemsSource = Enum.GetValues(typeof(FabricIconEnum));
+            lstIcons.ItemsSource = Enum.GetValues(typeof(FabricIconEnum));
         }
 
+        private void lstIcons_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count != 1) return;
+            var icon = e.AddedItems.Cast<FabricIconEnum>().First();
+            Clipboard.SetText($"<fabric:FabricIcon Icon=\"{icon}\" />");
+        }
     }
 }

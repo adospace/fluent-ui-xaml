@@ -12,5 +12,7 @@
     <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource FabricTabItemStyle}"/>
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource FabricTextBoxStyle}"/>
     <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource FabricPasswordBoxStyle}"/>
+    <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource FabricToolBarStyle}"/>
+    <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource FabricToolBarTrayStyle}"/>
 
 </ResourceDictionary>
