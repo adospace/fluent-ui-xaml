@@ -8,12 +8,12 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="FabricUI.Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
-    <Style x:Key="FocusVisual">
+
+    <Style x:Key="FabricFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{StaticResource Communication.CommunicationPrimary}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -30,9 +30,9 @@
     <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
     <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
     <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-    
-    <Style TargetType="{x:Type ToggleButton}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+
+    <Style x:Key="FabricToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray130}"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
@@ -112,7 +112,7 @@
     </Style>
     
     <Style x:Key="FabricButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
@@ -149,7 +149,7 @@
 
     <!-- Fabric UI Primary Button Style -->
     <Style x:Key="FabricPrimaryButtonStyle" TargetType="{x:Type Button}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Communication.CommunicationPrimary}"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.White}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>

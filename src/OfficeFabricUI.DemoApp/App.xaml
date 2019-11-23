@@ -14,6 +14,7 @@
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.TabControl.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.TextBox.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.ToolBar.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.TreeView.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

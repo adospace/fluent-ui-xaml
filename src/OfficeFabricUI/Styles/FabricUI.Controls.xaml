@@ -3,16 +3,19 @@
                     xmlns:fabric.styles="clr-namespace:OfficeFabricUI.Styles"
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
-    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource FabricButtonStyle}"/>
-    <Style TargetType="{x:Type Menu}" BasedOn="{StaticResource FabricMenuStyle}"/>
-    <Style TargetType="{x:Type ContextMenu}" BasedOn="{StaticResource FabricContextMenuStyle}"/>
-    <Style TargetType="{x:Type MenuItem}" BasedOn="{StaticResource FabricMenuItemStyle}"/>
-    <Style TargetType="{x:Type Separator}" BasedOn="{StaticResource FabricSeparatorStyle}"/>
-    <Style TargetType="{x:Type TabControl}" BasedOn="{StaticResource FabricTabControlStyle}"/>
-    <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource FabricTabItemStyle}"/>
-    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource FabricTextBoxStyle}"/>
-    <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource FabricPasswordBoxStyle}"/>
-    <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource FabricToolBarStyle}"/>
-    <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource FabricToolBarTrayStyle}"/>
+    <Style TargetType="Button" BasedOn="{StaticResource FabricButtonStyle}"/>
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource FabricToggleButtonStyle}"/>
+    <Style TargetType="Menu" BasedOn="{StaticResource FabricMenuStyle}"/>
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource FabricContextMenuStyle}"/>
+    <Style TargetType="MenuItem" BasedOn="{StaticResource FabricMenuItemStyle}"/>
+    <Style TargetType="Separator" BasedOn="{StaticResource FabricSeparatorStyle}"/>
+    <Style TargetType="TabControl" BasedOn="{StaticResource FabricTabControlStyle}"/>
+    <Style TargetType="TabItem" BasedOn="{StaticResource FabricTabItemStyle}"/>
+    <Style TargetType="TextBox" BasedOn="{StaticResource FabricTextBoxStyle}"/>
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource FabricPasswordBoxStyle}"/>
+    <Style TargetType="ToolBar" BasedOn="{StaticResource FabricToolBarStyle}"/>
+    <Style TargetType="ToolBarTray" BasedOn="{StaticResource FabricToolBarTrayStyle}"/>
+    <Style TargetType="TreeView" BasedOn="{StaticResource FabricTreeViewStyle}"/>
+    <Style TargetType="TreeViewItem" BasedOn="{StaticResource FabricTreeViewItemStyle}"/>
 
 </ResourceDictionary>
