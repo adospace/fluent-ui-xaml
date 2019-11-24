@@ -216,6 +216,26 @@
             </ScrollViewer>
         </TabItem>
 
+        <TabItem Header="ListView">
+            <DockPanel >
+                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=listViewContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" DockPanel.Dock="Top" />
+                <Border x:Name="listViewContainer" Margin="10">
+                    <ListView x:Name="listView" >
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="True" ColumnHeaderToolTip="My column header tooltip">
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}"/>
+                                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                                <GridViewColumn Header="Street" DisplayMemberBinding="{Binding Address.Street}"/>
+                                <GridViewColumn Header="Suite" DisplayMemberBinding="{Binding Address.Suite}"/>
+                                <GridViewColumn Header="City" DisplayMemberBinding="{Binding Address.City}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+            </DockPanel>
+        </TabItem>
+
         <TabItem Header="Icons">
             <ListBox x:Name="lstIcons" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="lstIcons_SelectionChanged">
                 <ListBox.ItemsPanel>

@@ -25,15 +25,43 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                    <Border Background="Transparent" Height="16" Padding="5,5,5,5" Width="16">
+                    <!--<Border Background="Transparent" Height="16" Padding="5,5,5,5" Width="16">
                         <Path x:Name="ExpandPath" Data="{StaticResource FabricTreeArrow}" Fill="Transparent" Stroke="#FF989898">
                             <Path.RenderTransform>
                                 <RotateTransform Angle="135" CenterY="3" CenterX="3"/>
                             </Path.RenderTransform>
                         </Path>
-                    </Border>
+                    </Border>-->
+                    <fabric:FabricIcon Icon="ChevronRight" RenderTransformOrigin="0.5,0.5">
+                        <fabric:FabricIcon.RenderTransform>
+                            <RotateTransform x:Name="IconRotate"/>
+                        </fabric:FabricIcon.RenderTransform>
+                    </fabric:FabricIcon>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="IconRotate"
+                                            Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                            From="0.0" To="90" Duration="0:0:0.100" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="IconRotate"
+                                            Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                            From="90.0" To="0" Duration="0:0:0.100" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                       
+                        <!--<Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Stroke" TargetName="ExpandPath" Value="#FF1BBBFA"/>
                             <Setter Property="Fill" TargetName="ExpandPath" Value="Transparent"/>
                         </Trigger>
@@ -45,7 +73,7 @@
                             </Setter>
                             <Setter Property="Fill" TargetName="ExpandPath" Value="#FF595959"/>
                             <Setter Property="Stroke" TargetName="ExpandPath" Value="#FF262626"/>
-                        </Trigger>
+                        </Trigger>-->
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -56,7 +84,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="0,2,0,1"/>
+        <Setter Property="Padding" Value="8"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
         <Setter Property="FocusVisualStyle" Value="{StaticResource FabricTreeViewItemFocusVisual}"/>
         <Setter Property="Template">
@@ -73,7 +101,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <Border x:Name="selectionBd" Grid.ColumnSpan="4" Margin="{Binding FullRowMargin, RelativeSource={RelativeSource TemplatedParent}}" Background="Transparent"/>
+                        <Border x:Name="selectionBd" Grid.ColumnSpan="4"  Background="Transparent"/>
                         <ToggleButton x:Name="Expander" ClickMode="Press" IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" Style="{StaticResource FabricExpandCollapseToggleStyle}"/>
                         <Image x:Name="icon" Margin="2,0,3,0" Grid.Column="1" Stretch="None" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="2" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true">
@@ -90,19 +118,28 @@
                             <Setter Property="Visibility" TargetName="Expander" Value="Hidden"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="true">
-                            <Setter Property="Background" TargetName="selectionBd" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                            <Setter Property="Background" TargetName="selectionBd" Value="{StaticResource Neutral.Gray20}"/>
                         </Trigger>
                         <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsMouseOver" SourceName="ItemsHost" Value="False"/>
+                                <Condition Property="IsSelected" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="selectionBd" Value="{StaticResource Neutral.Gray10}"/>
+                        </MultiTrigger>
+
+
+                        <!--<MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="true"/>
                                 <Condition Property="IsSelectionActive" Value="false"/>
                             </MultiTrigger.Conditions>
                             <Setter Property="Background" TargetName="selectionBd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                        </MultiTrigger>
+                        </MultiTrigger>-->
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

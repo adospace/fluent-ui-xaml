@@ -17,5 +17,7 @@
     <Style TargetType="ToolBarTray" BasedOn="{StaticResource FabricToolBarTrayStyle}"/>
     <Style TargetType="TreeView" BasedOn="{StaticResource FabricTreeViewStyle}"/>
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource FabricTreeViewItemStyle}"/>
+    <Style TargetType="ListView" BasedOn="{StaticResource FabricListViewStyle}"/>
+    <Style TargetType="ListViewItem" BasedOn="{StaticResource FabricListViewItemStyle}"/>
 
 </ResourceDictionary>
