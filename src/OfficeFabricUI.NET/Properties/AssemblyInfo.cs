@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("OfficeFabricUI.NET")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Office Fabric UI design language (https://developer.microsoft.com/en-us/fabric)")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("adospace")]
 [assembly: AssemblyProduct("OfficeFabricUI.NET")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

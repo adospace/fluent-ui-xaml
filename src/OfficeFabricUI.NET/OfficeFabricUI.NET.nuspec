@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Package</id>
+    <version Condition=" '$(APPVEYOR_BUILD_VERSION)' == '' ">0.0.1-local</version>
+    <version Condition=" '$(APPVEYOR_BUILD_VERSION)' != '' ">$(APPVEYOR_BUILD_VERSION)-beta</version>
+    <authors>adospace</authors>
+    <owners>adospace</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Office Fabric UI design language (https://developer.microsoft.com/en-us/fabric)</description>
+    <tags>office officeui fabric wpf design UI library</tags>
+  </metadata>
+</package>

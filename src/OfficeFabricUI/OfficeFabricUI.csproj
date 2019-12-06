@@ -1,8 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
+    <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' == '' ">0.0.1-local</Version>
+    <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' != '' ">$(APPVEYOR_BUILD_VERSION)-beta</Version>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>adospace</Authors>
+    <Company></Company>
+    <Description>WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Office Fabric UI design language (https://developer.microsoft.com/en-us/fabric)</Description>
+    <PackageTags>office officeui fabric wpf design UI library</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
