@@ -1,0 +1,258 @@
+﻿<Window x:Class="OfficeFabricUI.DemoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
+        xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI.NET"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <TabControl TabStripPlacement="Top">
+        <TabItem Header="Buttons">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=buttonsContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="buttonsContainer" Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Content="Standard" HorizontalAlignment="Left" Margin="10"/>
+                            <Button Content="Primary" HorizontalAlignment="Left" Margin="10" Style="{StaticResource FabricPrimaryButtonStyle}"/>
+                            <fabric:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10">
+                                <fabric:FabricSplitButton.Menu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                    </ContextMenu>
+                                </fabric:FabricSplitButton.Menu>
+                            </fabric:FabricSplitButton>
+                            <fabric:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10" ShowSplit="False">
+                                <fabric:FabricSplitButton.Menu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                        <MenuItem Header="Item1"/>
+                                    </ContextMenu>
+                                </fabric:FabricSplitButton.Menu>
+                            </fabric:FabricSplitButton>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleButton Margin="10">
+                                Toggle
+                            </ToggleButton>
+                        </StackPanel>                        
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Menu">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=menuContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="menuContainer">
+                        <Menu Margin="10">
+                            <MenuItem Header="Menu Item1" >
+                                <MenuItem Header="SubMenu 1"/>
+                                <MenuItem Header="SubMenu 2">
+                                    <MenuItem.Icon>
+                                        <fabric:FabricIcon Icon="AddBookmark" Margin="6"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="SubMenu 3">
+                                    <MenuItem Header="SubSubMenu 1"/>
+                                    <MenuItem Header="SubSubMenu 2"/>
+                                </MenuItem>
+                            </MenuItem>
+                            <MenuItem Header="Menu Item2"  StaysOpenOnClick="True">
+                                <MenuItem Header="SubMenu Item1" IsCheckable="True" IsChecked="True" />
+                                <MenuItem Header="SubMenu Item2" IsEnabled="False">
+                                    <MenuItem.Icon>
+                                        <fabric:FabricIcon Icon="AddBookmark" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="6"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Header="SubMenu Item3" >
+                                    <MenuItem.Icon>
+                                        <fabric:FabricIcon Icon="AddPhone" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="6"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="SubMenu Item4" >
+                                    <MenuItem Header="SubSubMenu Item1" />
+                                    <MenuItem Header="SubSubMenu Item2"  IsEnabled="False"/>
+                                </MenuItem>
+                                <Separator />
+                                <MenuItem Header="SubMenu Item5" IsCheckable="True" IsChecked="True"/>
+                                <MenuItem Header="SubMenu Item6" />
+                                <MenuItem Header="SubMenu Item7" />
+                                <Separator />
+                                <MenuItem Header="SubMenu Item8"/>
+
+                            </MenuItem>
+                        </Menu>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Toolbar">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=toolBarContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="toolBarContainer">
+                        <ToolBarTray DockPanel.Dock="Top" Margin="10">
+                            <ToolBar>
+                                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=controlsContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left"/>
+                                <Button Content="btn1"/>
+                                <Button Content="btn2" ToolBar.OverflowMode="Always"/>
+                            </ToolBar>
+                        </ToolBarTray>                    
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Depths">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=depthsContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="depthsContainer" Orientation="Horizontal">
+                        <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth4}">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 4" Foreground="{StaticResource Neutral.Gray130}"/>
+                        </Border>
+                        <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth8}">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 8" Foreground="{StaticResource Neutral.Gray130}"/>
+                        </Border>
+                        <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth16}">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 16" Foreground="{StaticResource Neutral.Gray130}"/>
+                        </Border>
+                        <Border Margin="10" Background="{StaticResource Neutral.White}" BorderThickness="1" HorizontalAlignment="Left" Padding="20" Effect="{StaticResource Depth64}">
+                            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Depth 64" Foreground="{StaticResource Neutral.Gray130}"/>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="TextBox">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=textboxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="textboxContainer" Margin="10">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="200" fabric:FabricExtra.Label="Standard"/>
+                            <TextBox Width="200" Margin="10,0,0,0" fabric:FabricExtra.Label="Standard" fabric:FabricExtra.IsRequired="True" />
+                            <TextBox Width="200" Margin="10,28,0,0" fabric:FabricExtra.IsRequired="True" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="200" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Label="Standard" Text="I'm with errors"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox Width="200" fabric:FabricExtra.Label="With placeholder" fabric:FabricExtra.Placeholder="I'm a placeholder"/>
+                            <TextBox Width="200" fabric:FabricExtra.Label="With placeholder" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Placeholder="I'm a placeholder" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <PasswordBox Width="200" fabric:FabricExtra.Label="PasswordBox With placeholder" fabric:FabricExtra.Placeholder="I'm a placeholder"/>
+                            <PasswordBox Width="200" fabric:FabricExtra.Label="PasswordBox With placeholder" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Placeholder="I'm a placeholder" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Pivot">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=pivotContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="pivotContainer">
+                        <TabControl>
+                            <TabItem Header="Tab1">
+                                <TextBlock Text="Tab1 Content" Margin="10"/>
+                            </TabItem>
+                            <TabItem Header="Tab2">
+                                <TextBlock Text="Tab2 Content" Margin="10"/>
+                            </TabItem>
+                            <TabItem Header="Tab3">
+                                <TextBlock Text="Tab3 Content" Margin="10"/>
+                            </TabItem>
+                        </TabControl>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="TreeView">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=treeViewContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="treeViewContainer" Margin="10">
+                        <TreeView>
+                            <TreeViewItem Header="Item1">
+                                <TreeViewItem Header="Item2"/>
+                                <TreeViewItem Header="Item3"/>
+                                <TreeViewItem Header="Item4"/>
+                                <TreeViewItem Header="Item5">
+                                    <TreeViewItem Header="Item6"/>
+                                    <TreeViewItem Header="Item7"/>
+                                    <TreeViewItem Header="Item8"/>
+                                </TreeViewItem>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Item9">
+                                <TreeViewItem Header="Item10"/>
+                                <TreeViewItem Header="Item11"/>
+                            </TreeViewItem>
+                            <TreeViewItem Header="Item12">
+                                <TreeViewItem Header="Item13">
+                                    <TreeViewItem Header="Item14">
+                                        <TreeViewItem Header="Item15">
+                                            <TreeViewItem Header="Item16"/>
+                                        </TreeViewItem>
+                                    </TreeViewItem>
+                                </TreeViewItem>
+                            </TreeViewItem>
+                        </TreeView>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="ListView">
+            <DockPanel >
+                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=listViewContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" DockPanel.Dock="Top" />
+                <Border x:Name="listViewContainer" Margin="10">
+                    <ListView x:Name="listView" >
+                        <ListView.View>
+                            <GridView AllowsColumnReorder="True" ColumnHeaderToolTip="My column header tooltip">
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Username" DisplayMemberBinding="{Binding Username}"/>
+                                <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                                <GridViewColumn Header="Street" DisplayMemberBinding="{Binding Address.Street}"/>
+                                <GridViewColumn Header="Suite" DisplayMemberBinding="{Binding Address.Suite}"/>
+                                <GridViewColumn Header="City" DisplayMemberBinding="{Binding Address.City}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Border>
+            </DockPanel>
+        </TabItem>
+
+        <TabItem Header="Icons">
+            <ListBox x:Name="lstIcons" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="lstIcons_SelectionChanged">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Background="Transparent" ToolTipService.ToolTip="{Binding}">
+                            <fabric:FabricIcon Icon="{Binding}" Size="24" ToolTip="{Binding}" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="5,10"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </TabItem>
+    </TabControl>
+
+</Window>

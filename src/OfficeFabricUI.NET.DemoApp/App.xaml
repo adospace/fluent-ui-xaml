@@ -1,0 +1,23 @@
+﻿<Application x:Class="OfficeFabricUI.DemoApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Brushes.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Icons.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Buttons.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Menu.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Separator.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.TabControl.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.TextBox.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.ToolBar.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.TreeView.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.ListView.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Controls.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

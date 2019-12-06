@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Blend for Visual Studio Version 16
+# Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeFabricUI", "OfficeFabricUI\OfficeFabricUI.csproj", "{F8CF2A5E-CB6F-4031-8F23-B9000FDA2DBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeFabricUI", "OfficeFabricUI\OfficeFabricUI.csproj", "{F8CF2A5E-CB6F-4031-8F23-B9000FDA2DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeFabricUI.DemoApp", "OfficeFabricUI.DemoApp\OfficeFabricUI.DemoApp.csproj", "{FF155561-9E95-472F-83B4-200971908EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OfficeFabricUI.DemoApp", "OfficeFabricUI.DemoApp\OfficeFabricUI.DemoApp.csproj", "{FF155561-9E95-472F-83B4-200971908EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeFabricUI.NET", "OfficeFabricUI.NET\OfficeFabricUI.NET.csproj", "{AB2800C1-4A11-479E-A20C-7DF57FAEBBA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeFabricUI.NET.DemoApp", "OfficeFabricUI.NET.DemoApp\OfficeFabricUI.NET.DemoApp.csproj", "{69485CC1-6663-4D90-B8F6-429DB570CF25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{FF155561-9E95-472F-83B4-200971908EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF155561-9E95-472F-83B4-200971908EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF155561-9E95-472F-83B4-200971908EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2800C1-4A11-479E-A20C-7DF57FAEBBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2800C1-4A11-479E-A20C-7DF57FAEBBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2800C1-4A11-479E-A20C-7DF57FAEBBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2800C1-4A11-479E-A20C-7DF57FAEBBA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69485CC1-6663-4D90-B8F6-429DB570CF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69485CC1-6663-4D90-B8F6-429DB570CF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69485CC1-6663-4D90-B8F6-429DB570CF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69485CC1-6663-4D90-B8F6-429DB570CF25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
