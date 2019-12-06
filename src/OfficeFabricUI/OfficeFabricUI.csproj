@@ -11,6 +11,8 @@
     <Company></Company>
     <Description>WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Office Fabric UI design language (https://developer.microsoft.com/en-us/fabric)</Description>
     <PackageTags>office officeui fabric wpf design UI library</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/adospace/fabric-ui-xaml</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
