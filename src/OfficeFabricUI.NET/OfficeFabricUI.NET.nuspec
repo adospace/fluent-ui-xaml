@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Package</id>
-    <version>$(APPVEYOR_BUILD_VERSION)-beta</version>
+    <id>OfficeFabricUI.NET</id>
+    <version>$version$-beta</version>
     <authors>adospace</authors>
     <owners>adospace</owners>
     <license type="expression">MIT</license>
