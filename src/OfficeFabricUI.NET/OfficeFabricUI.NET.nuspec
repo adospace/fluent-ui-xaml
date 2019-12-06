@@ -2,8 +2,7 @@
 <package >
   <metadata>
     <id>Package</id>
-    <version Condition=" '$(APPVEYOR_BUILD_VERSION)' == '' ">0.0.1-local</version>
-    <version Condition=" '$(APPVEYOR_BUILD_VERSION)' != '' ">$(APPVEYOR_BUILD_VERSION)-beta</version>
+    <version>$(APPVEYOR_BUILD_VERSION)-beta</version>
     <authors>adospace</authors>
     <owners>adospace</owners>
     <license type="expression">MIT</license>
