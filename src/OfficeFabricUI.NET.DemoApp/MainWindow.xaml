@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
         xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI.NET"
+        Style="{StaticResource FabricWindowStyle}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <TabControl TabStripPlacement="Top">

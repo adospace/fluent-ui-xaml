@@ -67,6 +67,12 @@
     <Compile Include="..\OfficeFabricUI\Converters\StringEmptyToBoolConverter.cs">
       <Link>Converters\StringEmptyToBoolConverter.cs</Link>
     </Compile>
+    <Compile Include="..\OfficeFabricUI\FabricChromeButton.cs">
+      <Link>FabricChromeButton.cs</Link>
+    </Compile>
+    <Compile Include="..\OfficeFabricUI\FabricChromeButtonMode.cs">
+      <Link>FabricChromeButtonMode.cs</Link>
+    </Compile>
     <Compile Include="..\OfficeFabricUI\FabricExtra.cs">
       <Link>FabricExtra.cs</Link>
     </Compile>
@@ -216,6 +222,11 @@
     </Page>
     <Page Include="..\OfficeFabricUI\Styles\FabricUI.TreeView.xaml">
       <Link>Styles\FabricUI.TreeView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\OfficeFabricUI\Styles\FabricUI.Window.xaml">
+      <Link>Styles\FabricUI.Window.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
