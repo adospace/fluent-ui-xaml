@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.TreeView.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.ListView.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Window.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.ComboBox.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

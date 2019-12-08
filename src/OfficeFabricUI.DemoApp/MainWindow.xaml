@@ -8,7 +8,13 @@
         Style="{StaticResource FabricWindowStyle}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <TabControl TabStripPlacement="Top">
+    <Window.Resources>
+        <Style TargetType="ScrollViewer">
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+        </Style>
+    </Window.Resources>
+    <TabControl TabStripPlacement="Left">
         <TabItem Header="Buttons">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
@@ -159,6 +165,24 @@
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
+        </TabItem>
+
+        <TabItem Header="ComboBox">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=comboboxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="comboboxContainer" Margin="10" Width="200" HorizontalAlignment="Left">
+                        <ComboBox>
+                            <ComboBoxItem Content="Item1"/>
+                            <ComboBoxItem Content="Item2"/>
+                            <ComboBoxItem Content="Item3"/>
+                            <Separator/>
+                            <ComboBoxItem Content="Item4"/>
+                        </ComboBox>
+                    </StackPanel>
+               </StackPanel>
+            </ScrollViewer>
+
         </TabItem>
 
         <TabItem Header="Pivot">

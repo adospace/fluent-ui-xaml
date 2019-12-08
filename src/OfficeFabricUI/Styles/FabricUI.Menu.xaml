@@ -8,10 +8,10 @@
         <ResourceDictionary Source="FabricUI.Brushes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Geometry x:Key="Checkmark">M 0,5.1 L 1.7,5.2 L 3.4,7.1 L 8,0.4 L 9.2,0 L 3.3,10.8 Z</Geometry>
+    <!--<Geometry x:Key="Checkmark">M 0,5.1 L 1.7,5.2 L 3.4,7.1 L 8,0.4 L 9.2,0 L 3.3,10.8 Z</Geometry>-->
     <ControlTemplate x:Key="FabricSubmenuItemTemplate" TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
-            <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" />
+            <Rectangle x:Name="bd" Fill="{TemplateBinding Background}"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="26" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
@@ -22,11 +22,7 @@
                     <ColumnDefinition Width="17"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="1" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <!--<Border x:Name="GlyphPanel" BorderBrush="Red" BorderThickness="2" Background="Green" Height="16" Margin="2" Visibility="Collapsed" Width="16">
-                    <Path x:Name="Glyph" Data="{StaticResource Checkmark}" Fill="Blue" FlowDirection="LeftToRight" Height="11" Width="9"/>
-                </Border>-->
                 <fabric:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="6" Visibility="Collapsed" />
-
                 <ContentPresenter Grid.Column="2" ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <TextBlock Grid.Column="4" Margin="{TemplateBinding Padding}" Text="{TemplateBinding InputGestureText}"/>
             </Grid>
@@ -51,8 +47,8 @@
     </ControlTemplate>
     
     <!-- Menu items ScrollViewer template -->
-    <Geometry x:Key="UpArrow">M 0,4 L 3.5,0 L 7,4 Z</Geometry>
-    <Style x:Key="hMenuScrollButton" BasedOn="{x:Null}" TargetType="{x:Type RepeatButton}">
+    <!--<Geometry x:Key="UpArrow">M 0,4 L 3.5,0 L 7,4 Z</Geometry>-->
+    <Style x:Key="FabricMenuScrollButton" BasedOn="{x:Null}" TargetType="{x:Type RepeatButton}">
         <Setter Property="ClickMode" Value="Hover"/>
         <Setter Property="MinWidth" Value="0"/>
         <Setter Property="MinHeight" Value="0"/>
@@ -72,7 +68,7 @@
         </Setter>
     </Style>
     <MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter"/>
-    <Geometry x:Key="DownArrow">M 0,0 L 3.5,4 L 7,0 Z</Geometry>
+    <!--<Geometry x:Key="DownArrow">M 0,0 L 3.5,4 L 7,0 Z</Geometry>-->
     <Style x:Key="FabricMenuItemScrollViewer" BasedOn="{x:Null}" TargetType="{x:Type ScrollViewer}">
         <Setter Property="HorizontalScrollBarVisibility" Value="Hidden"/>
         <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -91,7 +87,12 @@
                         <Border Grid.Column="0" Grid.Row="1">
                             <ScrollContentPresenter Margin="{TemplateBinding Padding}"/>
                         </Border>
-                        <RepeatButton Grid.Column="0" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Command="{x:Static ScrollBar.LineUpCommand}" Focusable="false" Grid.Row="0" Style="{StaticResource hMenuScrollButton}">
+                        <RepeatButton Grid.Column="0" 
+                                      CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" 
+                                      Command="{x:Static ScrollBar.LineUpCommand}" 
+                                      Focusable="false" 
+                                      Grid.Row="0" 
+                                      Style="{StaticResource FabricMenuScrollButton}">
                             <RepeatButton.Visibility>
                                 <MultiBinding ConverterParameter="0" Converter="{StaticResource MenuScrollingVisibilityConverter}" FallbackValue="Visibility.Collapsed">
                                     <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -100,9 +101,14 @@
                                     <Binding Path="ViewportHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
                                 </MultiBinding>
                             </RepeatButton.Visibility>
-                            <Path Data="{StaticResource UpArrow}" Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
+                            <Path Data="M 0,4 L 3.5,0 L 7,4 Z" Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
                         </RepeatButton>
-                        <RepeatButton Grid.Column="0" CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Command="{x:Static ScrollBar.LineDownCommand}" Focusable="false" Grid.Row="2" Style="{StaticResource hMenuScrollButton}">
+                        <RepeatButton Grid.Column="0" 
+                                      CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" 
+                                      Command="{x:Static ScrollBar.LineDownCommand}" 
+                                      Focusable="false" 
+                                      Grid.Row="2" 
+                                      Style="{StaticResource FabricMenuScrollButton}">
                             <RepeatButton.Visibility>
                                 <MultiBinding ConverterParameter="100" Converter="{StaticResource MenuScrollingVisibilityConverter}" FallbackValue="Visibility.Collapsed">
                                     <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}"/>
@@ -111,7 +117,7 @@
                                     <Binding Path="ViewportHeight" RelativeSource="{RelativeSource TemplatedParent}"/>
                                 </MultiBinding>
                             </RepeatButton.Visibility>
-                            <Path Data="{StaticResource DownArrow}" Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
+                            <Path Data="M 0,0 L 3.5,4 L 7,0 Z" Fill="{DynamicResource {x:Static SystemColors.MenuTextBrushKey}}"/>
                         </RepeatButton>
                     </Grid>
                 </ControlTemplate>
@@ -133,7 +139,6 @@
             <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" />
             <DockPanel>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="4,0,6,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <!--<Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="7,0,0,0" Visibility="Collapsed" VerticalAlignment="Center"/>-->
                 <fabric:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Visibility="Collapsed" Margin="6"/>
                 <ContentPresenter ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
             </DockPanel>
@@ -143,13 +148,21 @@
                         <ColumnDefinition MaxWidth="{Binding ActualWidth, ElementName=bd}"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10" Effect="{StaticResource Depth4}">
-                        <!--<Border.Effect>
-                            <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                        </Border.Effect>-->
-                        <ContentControl x:Name="SubMenuBorder" IsTabStop="false" Template="{StaticResource FabricMenuItemSubmenuContentTemplate}">
-                            <ScrollViewer CanContentScroll="true" Style="{StaticResource FabricMenuItemScrollViewer}">
-                                <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
+                    <Border Grid.Row="1" 
+                            Grid.ColumnSpan="2" 
+                            Background="{StaticResource Neutral.White}" 
+                            Margin="10,0,10,10" 
+                            Effect="{StaticResource Depth4}">
+                        <ContentControl x:Name="SubMenuBorder" 
+                                        IsTabStop="false" 
+                                        Template="{StaticResource FabricMenuItemSubmenuContentTemplate}">
+                            <ScrollViewer CanContentScroll="true" 
+                                          Style="{StaticResource FabricMenuItemScrollViewer}">
+                                <ItemsPresenter 
+                                    KeyboardNavigation.DirectionalNavigation="Cycle" 
+                                    Grid.IsSharedSizeScope="true" 
+                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                    KeyboardNavigation.TabNavigation="Cycle"/>
                             </ScrollViewer>
                         </ContentControl>
                     </Border>
@@ -185,10 +198,9 @@
     
     <ControlTemplate x:Key="FabricMenuItemTopLevelItemTemplate" TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
-            <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" StrokeThickness="0" />
+            <Rectangle x:Name="bd" Fill="{TemplateBinding Background}"/>
             <DockPanel>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="4,0,6,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <!--<Path x:Name="GlyphPanel" Data="{StaticResource Checkmark}" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="7,0,0,0" Visibility="Collapsed" VerticalAlignment="Center"/>-->
                 <fabric:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="6" Visibility="Collapsed"/>
                 <ContentPresenter ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
             </DockPanel>
@@ -216,7 +228,11 @@
     
     <ControlTemplate x:Key="FabricMenuItemSubmenuHeaderTemplate" TargetType="{x:Type MenuItem}">
         <Grid SnapsToDevicePixels="true">
-            <Rectangle x:Name="bd" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1"/>
+            <Rectangle x:Name="bd" 
+                       Fill="{TemplateBinding Background}" 
+                       Stroke="{TemplateBinding BorderBrush}"
+                       StrokeThickness="0"
+                       />
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition MinWidth="26" SharedSizeGroup="MenuItemIconColumnGroup" Width="Auto"/>
@@ -227,20 +243,13 @@
                     <ColumnDefinition Width="17"/>
                 </Grid.ColumnDefinitions>
                 <ContentPresenter x:Name="Icon" ContentSource="Icon" Margin="1" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
-                <!--<Border x:Name="GlyphPanel" BorderBrush="Green" BorderThickness="2" Background="Yellow" Height="16" Margin="2" Visibility="Hidden" Width="16">
-                    <Path x:Name="Glyph" Data="{StaticResource Checkmark}" Fill="Red" FlowDirection="LeftToRight" Height="11" Width="9"/>
-                </Border>-->
                 <fabric:FabricIcon x:Name="GlyphPanel" Icon="CheckMark" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="6" Visibility="Collapsed" />
-
                 <ContentPresenter Grid.Column="2" ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                 <TextBlock Grid.Column="4" Margin="{TemplateBinding Padding}" Text="{TemplateBinding InputGestureText}" Visibility="Collapsed"/>
                 <fabric:FabricIcon x:Name="rightArrow" Grid.Column="5" Icon="ChevronRight" Size="12" VerticalAlignment="Center" Foreground="{StaticResource Neutral.Gray130}" Margin="0,4"/>
             </Grid>
             <Popup x:Name="PART_Popup" AllowsTransparency="true" Focusable="false" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right">
                 <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource Neutral.White}" Margin="10,0,10,10" Effect="{StaticResource Depth8}">
-                    <!--<Border.Effect>
-                        <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                    </Border.Effect>-->                    
                     <ContentControl x:Name="SubMenuBorder" IsTabStop="false" Template="{StaticResource FabricMenuItemSubmenuContentTemplate}">
                         <ScrollViewer CanContentScroll="true" Style="{StaticResource FabricMenuItemScrollViewer}">
                             <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Grid.IsSharedSizeScope="true" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle"/>
@@ -263,7 +272,6 @@
                 <Setter Property="Visibility" TargetName="GlyphPanel" Value="Visible"/>
                 <Setter Property="Visibility" TargetName="Icon" Value="Collapsed"/>
             </Trigger>
-
             <Trigger Property="IsEnabled" Value="false">
                 <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
                 <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
@@ -316,13 +324,18 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ContextMenu}">
-                    <Border Background="{StaticResource Neutral.White}" Margin="10,0,10,10"  Effect="{StaticResource Depth4}">
-                        <!--<Border.Effect>
-                            <DropShadowEffect Color="#edebe9" BlurRadius="15" Direction="-90" RenderingBias="Performance" ShadowDepth="2"/>
-                        </Border.Effect>-->
-                        
-                        <ScrollViewer CanContentScroll="True" Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}" Uid="ScrollViewer_9">
-                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Cycle" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Uid="ItemsPresenter_5"/>
+                    <Border Background="{StaticResource Neutral.White}" 
+                            Margin="10,0,10,10" 
+                            Effect="{StaticResource Depth4}">
+                        <ScrollViewer 
+                            CanContentScroll="True" 
+                            Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}" 
+                            Uid="ScrollViewer_9">
+                            <ItemsPresenter 
+                                KeyboardNavigation.DirectionalNavigation="Cycle" 
+                                Margin="{TemplateBinding Padding}" 
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                Uid="ItemsPresenter_5"/>
                         </ScrollViewer>
                     </Border>
                 </ControlTemplate>

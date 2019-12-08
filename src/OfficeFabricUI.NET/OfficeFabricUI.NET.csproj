@@ -180,6 +180,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\OfficeFabricUI\Styles\FabricUI.ComboBox.xaml">
+      <Link>Styles\FabricUI.ComboBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\OfficeFabricUI\Styles\FabricUI.Controls.xaml">
       <Link>Styles\FabricUI.Controls.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
