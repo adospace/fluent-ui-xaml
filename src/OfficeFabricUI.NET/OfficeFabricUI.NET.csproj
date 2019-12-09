@@ -82,6 +82,9 @@
     <Compile Include="..\OfficeFabricUI\FabricSplitButton.cs">
       <Link>FabricSplitButton.cs</Link>
     </Compile>
+    <Compile Include="..\OfficeFabricUI\FabricWindow.cs">
+      <Link>FabricWindow.cs</Link>
+    </Compile>
     <Compile Include="..\OfficeFabricUI\PasswordHelper.cs">
       <Link>PasswordHelper.cs</Link>
     </Compile>
@@ -230,13 +233,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="..\OfficeFabricUI\Styles\FabricUI.Window.xaml">
-      <Link>Styles\FabricUI.Window.xaml</Link>
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="..\OfficeFabricUI\Themes\Generic.xaml">
-      <Link>Themes\Generic.xaml</Link>
+    <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

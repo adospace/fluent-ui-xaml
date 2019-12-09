@@ -182,53 +182,5 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type fabric:FabricSplitButton}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
-        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="18,5"/>
-        <Setter Property="TextElement.FontWeight" Value="SemiBold"/>
-        <Setter Property="TextElement.FontSize" Value="14"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type fabric:FabricSplitButton}">
-                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true" CornerRadius="2">
-                        <DockPanel>
-                            <Border x:Name="contentPresenter" Background="Transparent">
-                                <ContentPresenter Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            </Border>
-                            <StackPanel x:Name="PART_ArrowDown" Orientation="Horizontal" DockPanel.Dock="Right" Visibility="Collapsed" Background="Transparent">
-                                <Rectangle Fill="{StaticResource Neutral.Gray80}" Width="1" Margin="0,6,0,6"/>
-                                <fabric:FabricIcon x:Name="arrowDownIcon" Icon="ChevronDown" Size="12" TextElement.FontWeight="Normal" Foreground="{StaticResource Neutral.Gray160}" Margin="8,4" VerticalAlignment="Center"/>
-                            </StackPanel>
-                        </DockPanel>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="ShowSplit" Value="True">
-                            <Setter Property="Visibility" TargetName="PART_ArrowDown" Value="Visible"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" SourceName="PART_ArrowDown" Value="true">
-                            <Setter Property="Background" TargetName="PART_ArrowDown" Value="{StaticResource Neutral.Gray20}"/>
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" SourceName="contentPresenter" Value="true">
-                            <Setter Property="Background" TargetName="contentPresenter" Value="{StaticResource Neutral.Gray20}"/>
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="contentPresenter" Value="{StaticResource Neutral.Gray30}"/>
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="border" Value="{StaticResource Neutral.Gray90}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
 
 </ResourceDictionary>
