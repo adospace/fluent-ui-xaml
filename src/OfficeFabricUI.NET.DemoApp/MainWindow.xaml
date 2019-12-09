@@ -162,6 +162,9 @@
                             <PasswordBox Width="200" fabric:FabricExtra.Label="PasswordBox With placeholder" fabric:FabricExtra.Placeholder="I'm a placeholder"/>
                             <PasswordBox Width="200" fabric:FabricExtra.Label="PasswordBox With placeholder" fabric:FabricExtra.ErrorMessage="This is an error" fabric:FabricExtra.Placeholder="I'm a placeholder" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
                         </StackPanel>
+                        <StackPanel>
+                            <TextBox Height="200" fabric:FabricExtra.Label="Multiline" fabric:FabricExtra.Placeholder="I'm a placeholder" fabric:FabricExtra.ErrorMessage="This is an error" VerticalAlignment="Bottom" AcceptsReturn="True"/>
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>

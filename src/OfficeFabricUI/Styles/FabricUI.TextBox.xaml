@@ -25,8 +25,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <StackPanel>
+                    <DockPanel>
                         <StackPanel 
+                            DockPanel.Dock="Top"
                             Orientation="Horizontal" 
                             Visibility="{TemplateBinding fabric:FabricExtra.Label, Converter={StaticResource NullToVisibilityConverter}}">
                             <TextBlock 
@@ -39,6 +40,13 @@
                                 Foreground="{StaticResource Shared.SharedRed20}"
                                 Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
                         </StackPanel>
+                        <TextBlock 
+                            DockPanel.Dock="Bottom"
+                            Text="{TemplateBinding fabric:FabricExtra.ErrorMessage}"
+                            Padding="1,5,0,0" 
+                            FontSize="12"
+                            Foreground="{StaticResource Shared.SharedRed20}"
+                            Visibility="{TemplateBinding fabric:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
                         <DockPanel>
                             <Border 
                                 DockPanel.Dock="Right"
@@ -51,20 +59,20 @@
                                     Foreground="{StaticResource Shared.SharedRed20}"
                                     Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
                             </Border>
-                            <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="1" MinHeight="32">
+                            <Border x:Name="Bd" 
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" 
+                                    SnapsToDevicePixels="true" 
+                                    CornerRadius="1" 
+                                    MinHeight="32">
                                 <Grid>
                                     <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Padding="0"/>
                                     <TextBlock x:Name="Wm" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" VerticalAlignment="Center" Margin="9,0" IsHitTestVisible="False"/>
                                 </Grid>
                             </Border>
-                        </DockPanel>
-                        <TextBlock 
-                            Text="{TemplateBinding fabric:FabricExtra.ErrorMessage}"
-                            Padding="1,5,0,0" 
-                            FontSize="12"
-                            Foreground="{StaticResource Shared.SharedRed20}"
-                            Visibility="{TemplateBinding fabric:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
-                    </StackPanel>
+                        </DockPanel>                    
+                    </DockPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsKeyboardFocusWithin" Value="true">
                             <Setter Property="BorderThickness" TargetName="Bd" Value="2"/>
@@ -75,6 +83,12 @@
                             <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
                             <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
                             <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                        </Trigger>
+                        <Trigger Property="AcceptsReturn" Value="True">
+                            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                            <Setter Property="Padding" Value="9"/>
+                            <Setter Property="Margin" TargetName="Wm" Value="10,9"/>
+                            <Setter Property="VerticalAlignment" TargetName="Wm" Value="Stretch"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
