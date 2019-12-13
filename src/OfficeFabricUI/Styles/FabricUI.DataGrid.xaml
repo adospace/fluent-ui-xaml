@@ -1,12 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                     xmlns:fabric.styles="clr-namespace:OfficeFabricUI.Styles"
+                    xmlns:fabric.styles="clr-namespace:OfficeFabricUI.Styles"
                     xmlns:fabric="clr-namespace:OfficeFabricUI"
                     >
     
     <Style x:Key="FabricDataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray20}"/>
         <Setter Property="Padding" Value="11"/>
         <Setter Property="TextElement.FontWeight" Value="SemiBold"/>
         <Setter Property="Background" Value="{x:Null}"/>
@@ -282,6 +283,8 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray20}"/>
         <Setter Property="ValidationErrorTemplate">
             <Setter.Value>
                 <ControlTemplate>
@@ -356,14 +359,9 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <!--
-			<Trigger>
-				<Trigger.Value>
-					<System:Boolean>True</System:Boolean>
-				</Trigger.Value>
-				<Setter Property="Margin" Value="{Binding NewItemMargin, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type DataGrid}}}"/>
-			</Trigger>
-			-->
+            <DataTrigger Binding="{Binding (fabric:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
+                <Setter Property="BorderThickness" Value="0"/>
+            </DataTrigger>
         </Style.Triggers>
     </Style>
     
@@ -410,6 +408,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding (fabric:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
+                <Setter Property="Padding" Value="11,4"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
     
     <Style x:Key="FabricDataGridColumnTextBlockStyle" TargetType="{x:Type TextBlock}">

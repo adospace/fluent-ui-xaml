@@ -265,9 +265,14 @@
 
         <TabItem Header="DataGrid">
             <DockPanel >
-                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=dataGridContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" DockPanel.Dock="Top" />
-                <Border x:Name="dataGridContainer" Margin="10">
-                    <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=dataGridContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <ToggleButton IsChecked="{Binding (fabric:FabricExtra.CompactMode), ElementName=dataGrid, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
+                </StackPanel>
+                <Border x:Name="dataGridContainer"
+                        Margin="10">
+                    <DataGrid x:Name="dataGrid" 
+                              AutoGenerateColumns="False" >
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Text Column" Binding="{Binding Name}"/>
                             <DataGridComboBoxColumn Header="ComboBox Column" SelectedItemBinding="{Binding City}" ItemsSource="{Binding Source={x:Static local:DummyData.Cities}}"/>

@@ -7,7 +7,7 @@
         xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI.NET"
         
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Window.Resources>
         <Style TargetType="ScrollViewer">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -109,7 +109,7 @@
                     <StackPanel x:Name="toolBarContainer">
                         <ToolBarTray DockPanel.Dock="Top" Margin="10">
                             <ToolBar>
-                                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=controlsContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left"/>
+                                <ToggleButton Content="Enabled" HorizontalAlignment="Left"/>
                                 <Button Content="btn1"/>
                                 <Button Content="btn2" ToolBar.OverflowMode="Always"/>
                             </ToolBar>
@@ -265,7 +265,10 @@
 
         <TabItem Header="DataGrid">
             <DockPanel >
-                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=dataGridContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" DockPanel.Dock="Top" />
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=dataGridContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <ToggleButton IsChecked="{Binding (fabric:FabricExtra.CompactMode), ElementName=dataGrid, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
+                </StackPanel>
                 <Border x:Name="dataGridContainer" Margin="10">
                     <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
                         <DataGrid.Columns>

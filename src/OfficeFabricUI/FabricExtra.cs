@@ -17,7 +17,6 @@ namespace OfficeFabricUI
             obj.SetValue(LabelProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for Label.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty LabelProperty =
             DependencyProperty.RegisterAttached("Label", typeof(string), typeof(FabricExtra), new PropertyMetadata(null));
 
@@ -31,7 +30,6 @@ namespace OfficeFabricUI
             obj.SetValue(IsRequiredProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for IsRequired.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsRequiredProperty =
             DependencyProperty.RegisterAttached("IsRequired", typeof(bool), typeof(FabricExtra), new PropertyMetadata(false));
 
@@ -46,7 +44,6 @@ namespace OfficeFabricUI
             obj.SetValue(ErrorMessageProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for ErrorMessage.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ErrorMessageProperty =
             DependencyProperty.RegisterAttached("ErrorMessage", typeof(string), typeof(FabricExtra), new PropertyMetadata(null));
 
@@ -62,11 +59,22 @@ namespace OfficeFabricUI
             obj.SetValue(PlaceholderProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for Placeholder.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PlaceholderProperty =
             DependencyProperty.RegisterAttached("Placeholder", typeof(string), typeof(FabricExtra), new PropertyMetadata(null));
 
 
+        public static string GetCompactMode(DependencyObject obj)
+        {
+            return (string)obj.GetValue(LabelProperty);
+        }
+
+        public static void SetCompactMode(DependencyObject obj, bool value)
+        {
+            obj.SetValue(LabelProperty, value);
+        }
+
+        public static readonly DependencyProperty CompactModeProperty =
+            DependencyProperty.RegisterAttached("CompactMode", typeof(bool), typeof(FabricExtra), new PropertyMetadata(false));
 
     }
 }
