@@ -193,6 +193,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\OfficeFabricUI\Styles\FabricUI.DataGrid.xaml">
+      <Link>Styles\FabricUI.DataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\OfficeFabricUI\Styles\FabricUI.Icons.xaml">
       <Link>Styles\FabricUI.Icons.xaml</Link>
       <Generator>MSBuild:Compile</Generator>

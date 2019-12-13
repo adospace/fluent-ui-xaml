@@ -58,6 +58,9 @@
     <Compile Include="..\OfficeFabricUI.DemoApp\Address.cs">
       <Link>Address.cs</Link>
     </Compile>
+    <Compile Include="..\OfficeFabricUI.DemoApp\DummyData.cs">
+      <Link>DummyData.cs</Link>
+    </Compile>
     <Compile Include="..\OfficeFabricUI.DemoApp\User.cs">
       <Link>User.cs</Link>
     </Compile>

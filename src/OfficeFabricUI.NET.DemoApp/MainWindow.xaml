@@ -263,6 +263,22 @@
             </DockPanel>
         </TabItem>
 
+        <TabItem Header="DataGrid">
+            <DockPanel >
+                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=dataGridContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" DockPanel.Dock="Top" />
+                <Border x:Name="dataGridContainer" Margin="10">
+                    <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Text Column" Binding="{Binding Name}"/>
+                            <DataGridComboBoxColumn Header="ComboBox Column" SelectedItemBinding="{Binding City}" ItemsSource="{Binding Source={x:Static local:DummyData.Cities}}"/>
+                            <DataGridHyperlinkColumn Header="Link Columm" Binding="{Binding Email}"/>
+                            <DataGridCheckBoxColumn Header="Check Column" Binding="{Binding Active}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+            </DockPanel>
+        </TabItem>
+
         <TabItem Header="Icons">
             <ListBox x:Name="lstIcons" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="lstIcons_SelectionChanged">
                 <ListBox.ItemsPanel>
