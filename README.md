@@ -6,7 +6,7 @@ Office Fabric UI (https://developer.microsoft.com/en-us/fabric#/) WPF theme libr
 # Install
 - .NET Core 3.0+
 
-  `Install-Package OfficeFabricUI.NET`
+  `Install-Package OfficeFabricUI`
 - .NET 4.7.2+  
 
-  `Install-Package OfficeFabricUI`
+  `Install-Package OfficeFabricUI.NET`
