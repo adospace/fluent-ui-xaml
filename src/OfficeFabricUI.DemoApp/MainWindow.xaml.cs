@@ -30,13 +30,12 @@ namespace OfficeFabricUI.DemoApp
             lstIcons.ItemsSource = Enum.GetValues(typeof(FabricIconEnum));
 
             this.Loaded += MainWindow_Loaded;
-
-
         }
 
         private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
             listView.ItemsSource = await GetUserList();
+            dataGrid.ItemsSource = DummyData.Get();
         }
 
         private async Task<IEnumerable> GetUserList()

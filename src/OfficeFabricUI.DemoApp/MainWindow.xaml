@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
         xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI"
-        
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="1000">
     <Window.Resources>
         <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -52,6 +51,7 @@
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
+
         <TabItem Header="Menu">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
@@ -262,6 +262,23 @@
                 </Border>
             </DockPanel>
         </TabItem>
+
+        <TabItem Header="DataGrid">
+            <DockPanel >
+                <ToggleButton IsChecked="{Binding IsEnabled, ElementName=dataGridContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" DockPanel.Dock="Top" />
+                <Border x:Name="dataGridContainer" Margin="10">
+                    <DataGrid x:Name="dataGrid" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Text Column" Binding="{Binding Name}"/>
+                            <DataGridComboBoxColumn Header="ComboBox Column" SelectedItemBinding="{Binding City}" ItemsSource="{Binding Source={x:Static local:DummyData.Cities}}"/>
+                            <DataGridHyperlinkColumn Header="Link Columm" Binding="{Binding Email}"/>
+                            <DataGridCheckBoxColumn Header="Check Column" Binding="{Binding Active}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Border>
+            </DockPanel>
+        </TabItem>
+
 
         <TabItem Header="Icons">
             <ListBox x:Name="lstIcons" 
