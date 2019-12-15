@@ -92,8 +92,14 @@
                         </Thumb>
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="CanUserSort" Value="True"/>
+                            </MultiTrigger.Conditions>
                             <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsMouseOver" Value="true">
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" Value="{StaticResource Neutral.Gray30}"/>
@@ -220,6 +226,26 @@
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
+    <Style x:Key="FabricDataGridColumnTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource FabricTextBoxStyle}">
+        <Setter Property="Margin" Value="0"/>
+    </Style>
+
+    <Style x:Key="FabricDataGridColumnComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource FabricComboBoxStyle}">
+    </Style>
+
+    <Style x:Key="FabricDataGridColumnCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FabricCheckBoxStyle}">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="FabricDataGridColumnCheckBoxEditingStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FabricCheckBoxStyle}">
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
 
     <Style x:Key="FabricDataGridStyle" TargetType="{x:Type DataGrid}">
         <Setter Property="ColumnHeaderStyle" Value="{DynamicResource FabricDataGridColumnHeaderStyle}"/>
@@ -237,6 +263,10 @@
         <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         <Setter Property="RowHeaderWidth" Value="10"/>
+        <Setter Property="fabric:FabricHelper.TextColumnStyle" Value="{StaticResource FabricDataGridColumnTextBoxStyle}"/>
+        <Setter Property="fabric:FabricHelper.ComboBoxColumnStyle" Value="{StaticResource FabricDataGridColumnComboBoxStyle}"/>
+        <Setter Property="fabric:FabricHelper.CheckBoxColumnStyle" Value="{StaticResource FabricDataGridColumnCheckBoxStyle}"/>
+        <Setter Property="fabric:FabricHelper.CheckBoxColumnEditingStyle" Value="{StaticResource FabricDataGridColumnCheckBoxEditingStyle}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGrid}">
@@ -436,7 +466,6 @@
                         </MultiTrigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="TextElement.Foreground" Value="{StaticResource Neutral.Gray90}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -496,36 +525,11 @@
             <DataTrigger Binding="{Binding (fabric:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
                 <Setter Property="Padding" Value="11,4"/>
             </DataTrigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="TextElement.Foreground" Value="{StaticResource Neutral.Gray90}"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="FabricDataGridColumnTextBlockStyle" TargetType="{x:Type TextBlock}">
-        <Setter Property="Margin" Value="2,0"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="FabricDataGridColumnTextBoxStyle" TargetType="{x:Type TextBox}">
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Padding" Value="0"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="FabricDataGridColumnCheckBoxStyle" TargetType="{x:Type CheckBox}">
-        <Setter Property="IsHitTestVisible" Value="False"/>
-        <Setter Property="Focusable" Value="False"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="FabricDataGridColumnEditingCheckBoxStyle" TargetType="{x:Type CheckBox}">
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
-    <Style x:Key="FabricDataGridColumnComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource FabricComboBoxStyle}">
-        <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
-        <Setter Property="BorderBrush" Value="{x:Null}"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="{x:Null}"/>
-    </Style>
-    <Style x:Key="FabricDataGridColumnEditingComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource FabricComboBoxStyle}">
-        <Setter Property="IsSynchronizedWithCurrentItem" Value="False"/>
-    </Style>
 
 </ResourceDictionary>

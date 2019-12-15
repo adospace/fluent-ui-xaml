@@ -15,6 +15,7 @@ namespace OfficeFabricUI
         static FabricIcon()
         {
             TextElement.ForegroundProperty.OverrideMetadata(typeof(FabricIcon), new FrameworkPropertyMetadata(FabricBrushes.NeutralGray160, FrameworkPropertyMetadataOptions.AffectsRender));
+            TextElement.FontSizeProperty.OverrideMetadata(typeof(FabricIcon), new FrameworkPropertyMetadata(12.0, FrameworkPropertyMetadataOptions.AffectsRender));
         }
         //private static readonly Typeface _typeface = new Typeface(new FontFamily("Segoe MDL2 Assets"), FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
 

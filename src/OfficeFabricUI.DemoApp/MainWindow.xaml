@@ -187,6 +187,22 @@
 
         </TabItem>
 
+        <TabItem Header="CheckBox">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=checkBoxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel x:Name="checkBoxContainer" Margin="10" Width="200" HorizontalAlignment="Left">
+                        <CheckBox 
+                            Content="CheckBox">
+                        </CheckBox>
+                        <CheckBox
+                            Margin="0,10"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+
+        </TabItem>
+
         <TabItem Header="Pivot">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">

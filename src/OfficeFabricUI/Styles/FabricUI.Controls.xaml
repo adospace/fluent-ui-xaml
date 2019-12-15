@@ -21,6 +21,7 @@
     <Style TargetType="ListView" BasedOn="{StaticResource FabricListViewStyle}"/>
     <Style TargetType="ListViewItem" BasedOn="{StaticResource FabricListViewItemStyle}"/>
     <Style TargetType="ComboBox" BasedOn="{StaticResource FabricComboBoxStyle}"/>
+    <Style TargetType="CheckBox" BasedOn="{StaticResource FabricCheckBoxStyle}"/>    
     <Style TargetType="DataGrid" BasedOn="{StaticResource FabricDataGridStyle}"/>
 
 </ResourceDictionary>
