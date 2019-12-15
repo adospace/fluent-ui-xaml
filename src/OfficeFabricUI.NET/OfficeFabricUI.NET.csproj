@@ -76,6 +76,9 @@
     <Compile Include="..\OfficeFabricUI\FabricExtra.cs">
       <Link>FabricExtra.cs</Link>
     </Compile>
+    <Compile Include="..\OfficeFabricUI\FabricHelper.cs">
+      <Link>FabricHelper.cs</Link>
+    </Compile>
     <Compile Include="..\OfficeFabricUI\FabricIconEnum.cs">
       <Link>FabricIconEnum.cs</Link>
     </Compile>
@@ -180,6 +183,11 @@
     </Page>
     <Page Include="..\OfficeFabricUI\Styles\FabricUI.Buttons.xaml">
       <Link>Styles\FabricUI.Buttons.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\OfficeFabricUI\Styles\FabricUI.CheckBox.xaml">
+      <Link>Styles\FabricUI.CheckBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

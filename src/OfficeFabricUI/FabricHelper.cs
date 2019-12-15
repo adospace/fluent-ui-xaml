@@ -57,11 +57,11 @@ namespace OfficeFabricUI
                     textColumn.EditingElementStyle = GetTextColumnStyle(grid);
                 }
 
-                grid.Columns.CollectionChanged += (s, e) =>
+                grid.Columns.CollectionChanged += (s, eventArgs) =>
                 {
-                    if (e.NewItems != null)
+                    if (eventArgs.NewItems != null)
                     {
-                        foreach (var textColumn in e.NewItems
+                        foreach (var textColumn in eventArgs.NewItems
                             .OfType<DataGridTextColumn>()
                             //.Where(_ => _.EditingElementStyle == null)
                             )
@@ -123,11 +123,11 @@ namespace OfficeFabricUI
                     textColumn.EditingElementStyle = GetComboBoxColumnStyle(grid);
                 }
 
-                grid.Columns.CollectionChanged += (s, e) =>
+                grid.Columns.CollectionChanged += (s, eventArgs) =>
                 {
-                    if (e.NewItems != null)
+                    if (eventArgs.NewItems != null)
                     {
-                        foreach (var comboBoxColumn in e.NewItems
+                        foreach (var comboBoxColumn in eventArgs.NewItems
                             .OfType<DataGridComboBoxColumn>()
                             //.Where(_ => _.EditingElementStyle == null)
                             )
@@ -220,11 +220,11 @@ namespace OfficeFabricUI
                             GetCheckBoxColumnEditingStyle(grid);
                 }
 
-                grid.Columns.CollectionChanged += (s, e) =>
+                grid.Columns.CollectionChanged += (s, eventArgs) =>
                 {
-                    if (e.NewItems != null)
+                    if (eventArgs.NewItems != null)
                     {
-                        foreach (var CheckBoxColumn in e.NewItems
+                        foreach (var CheckBoxColumn in eventArgs.NewItems
                             .OfType<DataGridCheckBoxColumn>()
                             //.Where(_ => _.EditingElementStyle == null)
                             )
