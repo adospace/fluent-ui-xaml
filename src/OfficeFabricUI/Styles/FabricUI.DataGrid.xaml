@@ -138,6 +138,8 @@
                 Background="Transparent"
                 BorderThickness="0,0,0,1"
                 BorderBrush="{StaticResource Neutral.Gray20}"
+                Style="{StaticResource FabricFlatButtonStyle}"
+                Height="NaN"
                 Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type DataGrid}}}">
                 <Button.Visibility>
                     <Binding Path="HeadersVisibility" RelativeSource="{RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type DataGrid}}" Converter="{x:Static DataGrid.HeadersVisibilityConverter}">
@@ -162,44 +164,30 @@
                     </Binding>
                 </DataGridColumnHeadersPresenter.Visibility>
             </DataGridColumnHeadersPresenter>
-            <Border
-                x:Name="ScrollContentPresenterContainer"
+            <ScrollContentPresenter 
+                x:Name="PART_ScrollContentPresenter" 
                 Grid.ColumnSpan="2" 
                 Grid.Row="1"
-                >
-                <ScrollContentPresenter 
-                    x:Name="PART_ScrollContentPresenter" 
-                    Grid.ColumnSpan="2" 
-                    Grid.Row="1"
-                    CanContentScroll="{TemplateBinding CanContentScroll}" 
-                    CanHorizontallyScroll="False"
-                    CanVerticallyScroll="False" 
-                    ContentTemplate="{TemplateBinding ContentTemplate}" 
-                    Content="{TemplateBinding Content}" 
-                    ContentStringFormat="{TemplateBinding ContentStringFormat}" 
-                    />
-            </Border>            
-            <Border
-                x:Name="VerticalScrollBarContainer" 
+                CanContentScroll="{TemplateBinding CanContentScroll}" 
+                CanHorizontallyScroll="False"
+                CanVerticallyScroll="False" 
+                ContentTemplate="{TemplateBinding ContentTemplate}" 
+                Content="{TemplateBinding Content}" 
+                ContentStringFormat="{TemplateBinding ContentStringFormat}" 
+                />
+            <ScrollBar
+                x:Name="PART_VerticalScrollBar" 
                 Grid.Column="2" 
                 Grid.Row="1" 
-                Visibility="Collapsed">
-                <ScrollBar
-                    x:Name="PART_VerticalScrollBar" 
-                    Grid.Column="2" 
-                    Grid.Row="1" 
-                    Maximum="{TemplateBinding ScrollableHeight}" 
-                    Orientation="Vertical" 
-                    Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" 
-                    Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" 
-                    ViewportSize="{TemplateBinding ViewportHeight}" 
-                    Margin="0"
-                    />
-
-            </Border>
+                Maximum="{TemplateBinding ScrollableHeight}" 
+                Orientation="Vertical" 
+                Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" 
+                Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                ViewportSize="{TemplateBinding ViewportHeight}" 
+                Margin="0"
+                />
             <Grid 
                 x:Name="HorizontalScrollBarContainer"
-                Visibility="Collapsed"
                 Grid.Column="1" 
                 Grid.Row="2" 
                 Margin="1">
@@ -218,12 +206,6 @@
             </Grid>
 
         </Grid>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Visibility" TargetName="VerticalScrollBarContainer" Value="Visible"/>
-                <Setter Property="Visibility" TargetName="HorizontalScrollBarContainer" Value="Visible"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
     </ControlTemplate>
 
     <Style x:Key="FabricDataGridColumnTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource FabricTextBoxStyle}">
@@ -231,6 +213,7 @@
     </Style>
 
     <Style x:Key="FabricDataGridColumnComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource FabricComboBoxStyle}">
+        <Setter Property="Margin" Value="0,4.5,0,4.5"/>
     </Style>
 
     <Style x:Key="FabricDataGridColumnCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FabricCheckBoxStyle}">
@@ -238,6 +221,29 @@
         <Setter Property="Margin" Value="0"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="TextElement.Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FabricCheckRadioFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <fabric:FabricIcon
+                        x:Name="checkMark"
+                        Icon="CheckMark"
+                        Foreground="{StaticResource Neutral.Gray120}"
+                        Visibility="Hidden"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"/>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Visibility" TargetName="checkMark" Value="Visible"/>
+                        </Trigger>                        
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style x:Key="FabricDataGridColumnCheckBoxEditingStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource FabricCheckBoxStyle}">
@@ -497,6 +503,11 @@
                         <ContentPresenter ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                     </Border>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="IsEditing" Value="True">
+                            <Setter Property="Padding" Value="1"/>
+                            <Setter Property="TextElement.Foreground" Value="{x:Null}"/>
+                            <Setter Property="TextElement.FontWeight" Value="Normal"/>
+                        </Trigger>
                         <!--<MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsSelected" Value="True"/>
