@@ -18,6 +18,7 @@
                 <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.ListView.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.ComboBox.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.CheckBox.xaml"/>
+                <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.GridSplitter.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.DataGrid.xaml"/>
                 <ResourceDictionary Source="/OfficeFabricUI.NET;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>

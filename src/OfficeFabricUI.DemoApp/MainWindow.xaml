@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
         xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
+        Title="MainWindow" Height="450" Width="1200">
     <Window.Resources>
         <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -296,6 +296,63 @@
                             <DataGridCheckBoxColumn Header="Check Column" Binding="{Binding Active}"/>
                         </DataGrid.Columns>
                     </DataGrid>
+                </Border>
+            </DockPanel>
+        </TabItem>
+
+        <TabItem Header="GridSplitter">
+            <DockPanel >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=gridSplitterContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                </StackPanel>
+                <Border x:Name="gridSplitterContainer"
+                        Margin="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border
+                                Background="{StaticResource Shared.SharedRed20}"
+                                Margin="0,0,0,7"
+                            />
+                            <GridSplitter
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Stretch"
+                            />
+                            <Border
+                                Background="{StaticResource Shared.SharedRed10}"
+                                Grid.Row="1"
+                            />
+                        </Grid>
+
+                        <Grid 
+                            Grid.Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border
+                                Background="{StaticResource Shared.SharedGreen20}"
+                                Margin="0,0,7,0"
+                                />
+                            <GridSplitter
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Right"
+                                />
+                            <Border
+                                Background="{StaticResource Shared.SharedGreen10}"
+                                Grid.Column="1"
+                                />
+                            
+                        </Grid>
+
+                    </Grid>
                 </Border>
             </DockPanel>
         </TabItem>
