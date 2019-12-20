@@ -13,6 +13,7 @@
                         Background="{TemplateBinding Background}">
                         <Rectangle
                             x:Name="bd"                   
+                            Fill="{StaticResource Neutral.Gray20}"
                         />
                     </Border>
                     <ControlTemplate.Triggers>

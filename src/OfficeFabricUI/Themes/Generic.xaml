@@ -10,8 +10,11 @@
         <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Brushes.xaml" />
         <ResourceDictionary Source="/OfficeFabricUI;component/Styles/FabricUI.Buttons.xaml" />
     </ResourceDictionary.MergedDictionaries>
-
+    
     <Style TargetType="{x:Type fabric:FabricWindow}">
+        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="FontSize" Value="12"/>
+
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
                 <shell:WindowChrome 
