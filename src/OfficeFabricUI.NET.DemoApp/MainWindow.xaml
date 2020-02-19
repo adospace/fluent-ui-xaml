@@ -4,10 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OfficeFabricUI.DemoApp"
-        xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI.NET"
-        
+        xmlns:fabric="clr-namespace:OfficeFabricUI;assembly=OfficeFabricUI.NET"        
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000">
+        Title="MainWindow" Height="450" Width="1200">
     <Window.Resources>
         <Style TargetType="ScrollViewer">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -351,6 +350,24 @@
                         </Grid>
 
                     </Grid>
+                </Border>
+            </DockPanel>
+        </TabItem>
+
+        <TabItem Header="ListBox">
+            <DockPanel >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=listBoxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <ToggleButton IsChecked="{Binding (fabric:FabricExtra.CompactMode), ElementName=listBox, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
+                </StackPanel>
+                <Border x:Name="listBoxContainer" Margin="10">
+                    <ListBox x:Name="listBox" >
+                        <ListBoxItem>Item1</ListBoxItem>
+                        <ListBoxItem>Item2</ListBoxItem>
+                        <ListBoxItem>Item3</ListBoxItem>
+                        <ListBoxItem>Item4</ListBoxItem>
+                        <ListBoxItem>Item5</ListBoxItem>
+                    </ListBox>
                 </Border>
             </DockPanel>
         </TabItem>

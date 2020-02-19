@@ -216,6 +216,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\OfficeFabricUI\Styles\FabricUI.ListBox.xaml">
+      <Link>Styles\FabricUI.ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\OfficeFabricUI\Styles\FabricUI.ListView.xaml">
       <Link>Styles\FabricUI.ListView.xaml</Link>
       <Generator>MSBuild:Compile</Generator>

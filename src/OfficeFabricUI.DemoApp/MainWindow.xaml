@@ -357,6 +357,23 @@
             </DockPanel>
         </TabItem>
 
+        <TabItem Header="ListBox">
+            <DockPanel >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=listBoxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <ToggleButton IsChecked="{Binding (fabric:FabricExtra.CompactMode), ElementName=listBox, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
+                </StackPanel>
+                <Border x:Name="listBoxContainer" Margin="10">
+                    <ListBox x:Name="listBox" >
+                        <ListBoxItem>Item1</ListBoxItem>
+                        <ListBoxItem>Item2</ListBoxItem>
+                        <ListBoxItem>Item3</ListBoxItem>
+                        <ListBoxItem>Item4</ListBoxItem>
+                        <ListBoxItem>Item5</ListBoxItem>
+                    </ListBox>
+                </Border>
+            </DockPanel>
+        </TabItem>
 
         <TabItem Header="Icons">
             <ListBox x:Name="lstIcons" 

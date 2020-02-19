@@ -380,6 +380,23 @@
                                 </Style>
                             </Thumb.Style>
                         </Thumb>
+
+                        <fabric:FabricIcon
+                            x:Name="selectionCircleFill"
+                            Icon="CircleFill"
+                            VerticalAlignment="Center"
+                            Margin="4,0"
+                            Foreground="{StaticResource Communication.CommunicationPrimary}"
+                            Visibility="Hidden"
+                            />
+                        <fabric:FabricIcon
+                            x:Name="selectionCircleCompleted"
+                            Icon="Completed"
+                            VerticalAlignment="Center"
+                            Margin="4,0"
+                            Foreground="{StaticResource Neutral.White}"
+                            Visibility="Hidden"
+                            />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
@@ -391,6 +408,10 @@
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
                             <Setter Property="TextElement.Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                        </Trigger>
+                        <Trigger Property="IsRowSelected" Value="true">
+                            <Setter Property="Visibility" Value="Visible" TargetName="selectionCircleFill"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="selectionCircleCompleted"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
