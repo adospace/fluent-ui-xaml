@@ -10,3 +10,6 @@ Office Fabric UI (https://developer.microsoft.com/en-us/fabric#/) WPF theme libr
 - .NET 4.7.2+  
 
   `Install-Package OfficeFabricUI.NET`
+
+# Showcase
+![Showcase](gallery.gif)
