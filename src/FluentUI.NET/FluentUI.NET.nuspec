@@ -10,5 +10,8 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Office Fabric UI design language (https://developer.microsoft.com/en-us/fabric)</description>
     <tags>fluent ui fabric wpf design UI library</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
+    </dependencies>
   </metadata>
 </package>
