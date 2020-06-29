@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FluentUI.NET</id>
+    <version>$version$-beta</version>
+    <authors>adospace</authors>
+    <owners>adospace</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/adospace/fabric-ui-xaml</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Office Fabric UI design language (https://developer.microsoft.com/en-us/fabric)</description>
+    <tags>fluent ui fabric wpf design UI library</tags>
+  </metadata>
+</package>

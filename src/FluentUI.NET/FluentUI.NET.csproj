@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB2800C1-4A11-479E-A20C-7DF57FAEBBA5}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>FluentUI.NET</RootNamespace>
+    <AssemblyName>FluentUI.NET</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\FluentUI\Converters\BoolToVisibilityConverter.cs">
+      <Link>Converters\BoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\Converters\InverseNullToBoolConverter.cs">
+      <Link>Converters\InverseNullToBoolConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\Converters\InverseNullToVisibilityConverter.cs">
+      <Link>Converters\InverseNullToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\Converters\NullToBoolConverter.cs">
+      <Link>Converters\NullToBoolConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\Converters\NullToVisibilityConverter.cs">
+      <Link>Converters\NullToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\Converters\StringEmptyToBoolConverter.cs">
+      <Link>Converters\StringEmptyToBoolConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricChromeButton.cs">
+      <Link>FabricChromeButton.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricChromeButtonMode.cs">
+      <Link>FabricChromeButtonMode.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricExtra.cs">
+      <Link>FabricExtra.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricHelper.cs">
+      <Link>FabricHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricIconEnum.cs">
+      <Link>FabricIconEnum.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricSplitButton.cs">
+      <Link>FabricSplitButton.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\FabricWindow.cs">
+      <Link>FabricWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\PasswordHelper.cs">
+      <Link>PasswordHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\FluentUI\Styles\FabricBrushes.cs">
+      <Link>Styles\FabricBrushes.cs</Link>
+    </Compile>
+    <Compile Include="FabricIcon.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="..\FluentUI\Fonts\0\fabric-icons-0-467ee27f.TTF">
+      <Link>Fonts\0\fabric-icons-0-467ee27f.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\1\fabric-icons-1-4d521695.ttf">
+      <Link>Fonts\1\fabric-icons-1-4d521695.ttf</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\10\fabric-icons-10-c4ded8e4.TTF">
+      <Link>Fonts\10\fabric-icons-10-c4ded8e4.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\11\fabric-icons-11-2a8393d6.TTF">
+      <Link>Fonts\11\fabric-icons-11-2a8393d6.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\12\fabric-icons-12-7e945a1e.TTF">
+      <Link>Fonts\12\fabric-icons-12-7e945a1e.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\13\fabric-icons-13-c3989a02.TTF">
+      <Link>Fonts\13\fabric-icons-13-c3989a02.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\14\fabric-icons-14-5cf58db8.TTF">
+      <Link>Fonts\14\fabric-icons-14-5cf58db8.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\15\fabric-icons-15-3807251b.TTF">
+      <Link>Fonts\15\fabric-icons-15-3807251b.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\16\fabric-icons-16-9cf93f3b.TTF">
+      <Link>Fonts\16\fabric-icons-16-9cf93f3b.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\17\fabric-icons-17-0c4ed701.TTF">
+      <Link>Fonts\17\fabric-icons-17-0c4ed701.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\2\fabric-icons-2-63c99abf.TTF">
+      <Link>Fonts\2\fabric-icons-2-63c99abf.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\3\fabric-icons-3-089e217a.TTF">
+      <Link>Fonts\3\fabric-icons-3-089e217a.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\4\fabric-icons-4-a656cc0a.TTF">
+      <Link>Fonts\4\fabric-icons-4-a656cc0a.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\5\fabric-icons-5-f95ba260.TTF">
+      <Link>Fonts\5\fabric-icons-5-f95ba260.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\6\fabric-icons-6-ef6fd590.TTF">
+      <Link>Fonts\6\fabric-icons-6-ef6fd590.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\7\fabric-icons-7-2b97bb99.TTF">
+      <Link>Fonts\7\fabric-icons-7-2b97bb99.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\8\fabric-icons-8-6fdf1528.TTF">
+      <Link>Fonts\8\fabric-icons-8-6fdf1528.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\9\fabric-icons-9-c6162b42.TTF">
+      <Link>Fonts\9\fabric-icons-9-c6162b42.TTF</Link>
+    </Resource>
+    <Resource Include="..\FluentUI\Fonts\fabric-icons-a13498cf.ttf">
+      <Link>Fonts\fabric-icons-a13498cf.ttf</Link>
+    </Resource>
+    <None Include="FluentUI.NET.nuspec" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\FluentUI\Styles\FabricUI.Brushes.xaml">
+      <Link>Styles\FabricUI.Brushes.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Buttons.xaml">
+      <Link>Styles\FabricUI.Buttons.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.CheckBox.xaml">
+      <Link>Styles\FabricUI.CheckBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.ComboBox.xaml">
+      <Link>Styles\FabricUI.ComboBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Controls.xaml">
+      <Link>Styles\FabricUI.Controls.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.DataGrid.xaml">
+      <Link>Styles\FabricUI.DataGrid.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.GridSplitter.xaml">
+      <Link>Styles\FabricUI.GridSplitter.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Icons.xaml">
+      <Link>Styles\FabricUI.Icons.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.ListBox.xaml">
+      <Link>Styles\FabricUI.ListBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.ListView.xaml">
+      <Link>Styles\FabricUI.ListView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Menu.xaml">
+      <Link>Styles\FabricUI.Menu.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Separator.xaml">
+      <Link>Styles\FabricUI.Separator.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.TabControl.xaml">
+      <Link>Styles\FabricUI.TabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.TextBox.xaml">
+      <Link>Styles\FabricUI.TextBox.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Toolbar.xaml">
+      <Link>Styles\FabricUI.Toolbar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.TreeView.xaml">
+      <Link>Styles\FabricUI.TreeView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
