@@ -1,0 +1,53 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+variables:
+  Version.MajorMinor: 1.0
+  Version.Revision: $[counter(variables['Version.MajorMinor'], 0)]
+  MyRunNumber: '1.$(Version.Revision)'
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: '5.5.1'
+      checkLatest: true
+
+  - task: NuGetCommand@2
+    displayName: 'Nuget restore'
+    inputs:
+      command: 'restore'
+      restoreSolution: '**/*.sln'
+      feedsToUse: 'select'
+
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet restore'
+    inputs:
+      command: restore
+      projects: '**\*.sln'
+      noCache: true
+
+  - task: VSBuild@1
+    inputs:
+      solution: '**\*.sln'
+
+  - task: NuGetCommand@2
+    inputs:
+      command: 'pack'
+      packagesToPack: '**/FluentUI.csproj;**/FluentUI.NET.csproj'
+      versioningScheme: 'byEnvVar'
+      versionEnvVar: 'MyRunNumber'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+      publishLocation: 'Container'
+
