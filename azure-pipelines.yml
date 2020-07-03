@@ -14,7 +14,7 @@ steps:
     displayName: 'dotnet restore'
     inputs:
       command: restore
-      projects: '$(solution)'
+      projects: '**\*.sln'
       noCache: true
 
   - task: VSBuild@1
