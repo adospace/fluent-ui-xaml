@@ -45,8 +45,8 @@ steps:
       versioningScheme: 'byEnvVar'
       versionEnvVar: 'MyRunNumber'
 
-  - task: NuGetCommand@2
-    inputs:
-      command: 'push'
-      feedsToUse: 'config'
-      includeNugetOrg: true
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
