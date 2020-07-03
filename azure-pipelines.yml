@@ -34,5 +34,8 @@ steps:
     inputs:
       solution: '**\*.sln'
 
-
-
+  - task: NuGetCommand@2
+    inputs:
+      command: 'pack'
+      packagesToPack: '**/*.csproj'
+      versioningScheme: 'byBuildNumber'
