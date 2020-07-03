@@ -45,9 +45,8 @@ steps:
       versioningScheme: 'byEnvVar'
       versionEnvVar: 'MyRunNumber'
 
-  - task: NuGetAuthenticate@0
-    displayName: 'NuGet Authenticate'
   - task: NuGetCommand@2
-    displayName: 'NuGet push'
     inputs:
-      command: push
+      command: 'push'
+      feedsToUse: 'config'
+      includeNugetOrg: true
