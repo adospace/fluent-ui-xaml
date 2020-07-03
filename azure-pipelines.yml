@@ -9,7 +9,8 @@ trigger:
 pool:
   vmImage: 'windows-2019'
 
-- task: VSBuild@1
-  inputs:
-    solution: '**\*.sln'
+steps:
+  - task: VSBuild@1
+    inputs:
+      solution: '**\*.sln'
 
