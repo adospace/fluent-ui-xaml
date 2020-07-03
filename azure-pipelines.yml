@@ -45,6 +45,11 @@ steps:
       versioningScheme: 'byEnvVar'
       versionEnvVar: 'MyRunNumber'
 
+  - task: NuGetCommand@2
+    inputs:
+      command: 'custom'
+      arguments: 'push -ApiKey $(NuGetApiKey) -Source https://api.nuget.org/v3/index.json'
+
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
