@@ -5,6 +5,7 @@
 variables:
   Version.MajorMinor: 1.0
   Version.Revision: $[counter(variables['Version.MajorMinor'], 0)]
+  MyRunNumber: '1.$(Version.Revision)'
 
 trigger:
 - master
@@ -42,4 +43,4 @@ steps:
       command: 'pack'
       packagesToPack: '**/*.csproj'
       versioningScheme: 'byEnvVar'
-      versionEnvVar: $(Version.MajorMinor)
+      versionEnvVar: 'MyRunNumber'
