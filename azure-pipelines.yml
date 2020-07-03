@@ -10,6 +10,19 @@ pool:
   vmImage: 'windows-2019'
 
 steps:
+
+  - task: NuGetToolInstaller@1
+    inputs:
+      versionSpec: '5.5.1'
+      checkLatest: true
+
+  - task: NuGetCommand@2
+    displayName: 'Nuget restore'
+    inputs:
+      command: 'restore'
+      restoreSolution: '**/*.sln'
+      feedsToUse: 'select'
+
   - task: DotNetCoreCLI@2
     displayName: 'dotnet restore'
     inputs:
@@ -20,4 +33,6 @@ steps:
   - task: VSBuild@1
     inputs:
       solution: '**\*.sln'
+
+
 
