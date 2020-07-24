@@ -6,13 +6,13 @@ Fluent UI (https://developer.microsoft.com/en-us/fluentui#/) WPF theme library
 # Install
 - .NET Core 3.0+
 
-  ![Nuget](https://img.shields.io/nuget/v/FluentUI.Core)
+  [![Nuget](https://img.shields.io/nuget/v/FluentUI.Core)](https://www.nuget.org/packages/FluentUI.Core) 
   
   `Install-Package FluentUI.Core`
   
 - .NET 4.7.2+  
 
-  ![Nuget](https://img.shields.io/nuget/v/FluentUI.NET)
+  [![Nuget](https://img.shields.io/nuget/v/FluentUI.NET)](https://www.nuget.org/packages/FluentUI.NET) 
   
   `Install-Package FluentUI.NET`
 
