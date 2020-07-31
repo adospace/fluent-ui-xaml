@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FluentUI.DemoApp"
         xmlns:fluentui="clr-namespace:FluentUI;assembly=FluentUI.NET"        
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1200">
+        Title="MainWindow" Height="450" Width="1400">
     <Window.Resources>
         <Style TargetType="ScrollViewer">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -368,6 +368,21 @@
                         <ListBoxItem>Item4</ListBoxItem>
                         <ListBoxItem>Item5</ListBoxItem>
                     </ListBox>
+                </Border>
+            </DockPanel>
+        </TabItem>
+        
+        <TabItem Header="ScrollBar">
+            <DockPanel >
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=scrollBarContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                </StackPanel>
+                <Border x:Name="scrollBarContainer" Margin="10">
+                    <StackPanel Orientation="Horizontal">
+                        <ScrollBar Orientation="Horizontal" Minimum="0" Maximum="100" Value="10" ViewportSize="50" Width="300"/>
+
+                        <ScrollBar Orientation="Vertical" Minimum="0" Maximum="100" Value="10" ViewportSize="50"/>
+                    </StackPanel>
                 </Border>
             </DockPanel>
         </TabItem>

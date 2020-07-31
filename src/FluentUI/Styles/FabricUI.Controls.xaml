@@ -25,6 +25,7 @@
     <Style TargetType="GridSplitter" BasedOn="{StaticResource FabricGridSplitter}"/>
     <Style TargetType="DataGrid" BasedOn="{StaticResource FabricDataGridStyle}"/>
     <Style TargetType="ListBox" BasedOn="{StaticResource FabricListBoxStyle}"/>
+    <Style TargetType="ScrollBar" BasedOn="{StaticResource FabricScrollBarStyle}"/>
     <!--<Style TargetType="ListBoxItem" BasedOn="{StaticResource FabricListBoxItemStyle}"/>-->
 
 </ResourceDictionary>

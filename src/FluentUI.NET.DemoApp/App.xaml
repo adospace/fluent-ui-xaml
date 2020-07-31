@@ -21,6 +21,7 @@
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.GridSplitter.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.DataGrid.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ListBox.xaml"/>
+                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ScrollBar.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
