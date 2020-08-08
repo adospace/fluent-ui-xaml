@@ -1,7 +1,6 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shell="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
     xmlns:fabric.styles="clr-namespace:FluentUI.Styles"
     xmlns:fabric="clr-namespace:FluentUI"
     >
@@ -12,9 +11,9 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="{x:Type fabric:FabricWindow}">
-        <Setter Property="shell:WindowChrome.WindowChrome">
+        <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <shell:WindowChrome 
+                <WindowChrome 
                     CaptionHeight="63" 
                     UseAeroCaptionButtons="False"
                     />
@@ -36,9 +35,9 @@
                             Margin="24,16,20,46"/>
                         <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"  
                            VerticalAlignment="Top" HorizontalAlignment="Left"  
-                           Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(shell:WindowChrome.WindowChrome).ResizeBorderThickness}"   
+                           Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(WindowChrome.WindowChrome).ResizeBorderThickness}"   
                            Width="16"  
-                           shell:WindowChrome.IsHitTestVisibleInChrome="True"/>
+                           WindowChrome.IsHitTestVisibleInChrome="True"/>
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Top" 
                                     HorizontalAlignment="Right"
@@ -46,7 +45,7 @@
                             <fabric:FabricChromeButton 
                                 x:Name="minimizeButton"
                                 Style="{StaticResource FabricButtonStyle}" 
-                                shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
                                 Mode="Minimize"
                                 Height="32"
                                 Width="32"
@@ -57,7 +56,7 @@
                             <fabric:FabricChromeButton 
                                 x:Name="maximixedButton"
                                 Style="{StaticResource FabricButtonStyle}" 
-                                shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
                                 Mode="Maximize"
                                 Height="32"
                                 Width="32"
@@ -68,7 +67,7 @@
                             <fabric:FabricChromeButton 
                                 x:Name="restoreButton"
                                 Style="{StaticResource FabricButtonStyle}" 
-                                shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
                                 Mode="Restore"
                                 Height="32"
                                 Width="32"
@@ -79,7 +78,7 @@
                             <fabric:FabricChromeButton 
                                 x:Name="closeButton"
                                 Style="{StaticResource FabricButtonStyle}" 
-                                shell:WindowChrome.IsHitTestVisibleInChrome="True"
+                                WindowChrome.IsHitTestVisibleInChrome="True"
                                 Mode="Close"
                                 Height="32"
                                 Width="32"
