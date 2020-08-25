@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1400">
     <Window.Resources>
-        <Style TargetType="ScrollViewer">
+        <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
         </Style>
     </Window.Resources>
@@ -382,6 +382,11 @@
                         <ScrollBar Orientation="Horizontal" Minimum="0" Maximum="100" Value="10" ViewportSize="50" Width="300"/>
 
                         <ScrollBar Orientation="Vertical" Minimum="0" Maximum="100" Value="10" ViewportSize="50"/>
+                    
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Width="300" Margin="100,0,0,0">
+                            <Image Source="https://picsum.photos/300"/>
+                        </ScrollViewer>
+                    
                     </StackPanel>
                 </Border>
             </DockPanel>

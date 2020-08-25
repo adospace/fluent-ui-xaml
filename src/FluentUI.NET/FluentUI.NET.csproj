@@ -236,6 +236,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.ScrollViewer.xaml">
+      <Link>Styles\FabricUI.ScrollViewer.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\FluentUI\Styles\FabricUI.Separator.xaml">
       <Link>Styles\FabricUI.Separator.xaml</Link>
       <Generator>MSBuild:Compile</Generator>
@@ -266,8 +271,6 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

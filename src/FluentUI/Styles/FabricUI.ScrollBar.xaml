@@ -38,7 +38,6 @@
         </Setter>
     </Style>
 
-
     <Style x:Key="FabricHorizontalScrollBarThumb" TargetType="{x:Type Thumb}">
         <Setter Property="Background" Value="{StaticResource Neutral.Gray60}"/>
         <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -58,7 +57,6 @@
         </Setter>
     </Style>
 
-
     <Style x:Key="FabricHorizontalScrollBarPageButton" TargetType="{x:Type RepeatButton}">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="Background" Value="Transparent"/>
@@ -72,8 +70,6 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-
 
     <Style x:Key="FabricScrollBarStyle" TargetType="{x:Type ScrollBar}">
         <Setter Property="Background" Value="Transparent"/>
@@ -142,7 +138,5 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-
 
 </ResourceDictionary>
