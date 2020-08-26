@@ -27,6 +27,7 @@
                                         <MenuItem Header="Item1"/>
                                         <MenuItem Header="Item1"/>
                                         <MenuItem Header="Item1"/>
+                                        <Separator/>
                                         <MenuItem Header="Item1"/>
                                     </ContextMenu>
                                 </fluentui:FabricSplitButton.Menu>
@@ -172,9 +173,12 @@
         <TabItem Header="ComboBox">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
-                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=comboboxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton IsChecked="{Binding IsEnabled, ElementName=comboboxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                        <ToggleButton IsChecked="{Binding IsEditable, ElementName=combobox, Mode=TwoWay}" Content="Is Editable" HorizontalAlignment="Left" Margin="10" />
+                    </StackPanel>
                     <StackPanel x:Name="comboboxContainer" Margin="10" Width="200" HorizontalAlignment="Left">
-                        <ComboBox>
+                        <ComboBox Name="combobox">
                             <ComboBoxItem Content="Item1"/>
                             <ComboBoxItem Content="Item2"/>
                             <ComboBoxItem Content="Item3"/>
