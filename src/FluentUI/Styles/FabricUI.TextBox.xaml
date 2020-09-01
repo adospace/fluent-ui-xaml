@@ -12,7 +12,7 @@
     <fabric.converters:StringEmptyToBoolConverter x:Key="StringEmptyToBoolConverter"/>
     <fabric.converters:InverseNullToVisibilityConverter x:Key="InverseNullToVisibilityConverter"/>
 
-    <Style x:Key="FabricTextBoxStyle" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+    <Style x:Key="FabricTextBoxStyle" TargetType="{x:Type TextBox}">
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
@@ -205,5 +205,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+
+    <Style TargetType="TextBox" BasedOn="{StaticResource FabricTextBoxStyle}"/>
 
 </ResourceDictionary>

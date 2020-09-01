@@ -1,16 +1,17 @@
-<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:fabric.styles="clr-namespace:FluentUI.Styles"
-    xmlns:fabric="clr-namespace:FluentUI"
-    >
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fabric.styles="clr-namespace:FluentUI.Styles"
+                    xmlns:fluentui="clr-namespace:FluentUI">
 
     <ResourceDictionary.MergedDictionaries>
-        <!--<ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Brushes.xaml" />-->
-        <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Buttons.xaml" />
+        <ResourceDictionary Source="FabricUI.Buttons.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type fabric:FabricWindow}">
+
+    <Style TargetType="{x:Type fluentui:FabricWindow}">
+        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="FontSize" Value="12"/>
+
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome 
@@ -21,7 +22,7 @@
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type fabric:FabricWindow}">
+                <ControlTemplate TargetType="{x:Type fluentui:FabricWindow}">
                     <Grid>
                         <Border Background="{StaticResource Neutral.White}" Padding="24, 63, 24, 24">
                             <ContentPresenter Content="{TemplateBinding Content}" />
@@ -42,7 +43,7 @@
                                     VerticalAlignment="Top" 
                                     HorizontalAlignment="Right"
                                     Margin="15">
-                            <fabric:FabricChromeButton 
+                            <fluentui:FabricChromeButton 
                                 x:Name="minimizeButton"
                                 Style="{StaticResource FabricButtonStyle}" 
                                 WindowChrome.IsHitTestVisibleInChrome="True"
@@ -51,9 +52,9 @@
                                 Width="32"
                                 Padding="4"
                                 BorderThickness="0">
-                                <fabric:FabricIcon Icon="ChromeMinimize"/>
-                            </fabric:FabricChromeButton>
-                            <fabric:FabricChromeButton 
+                                <fluentui:FabricIcon Icon="ChromeMinimize"/>
+                            </fluentui:FabricChromeButton>
+                            <fluentui:FabricChromeButton 
                                 x:Name="maximixedButton"
                                 Style="{StaticResource FabricButtonStyle}" 
                                 WindowChrome.IsHitTestVisibleInChrome="True"
@@ -62,9 +63,9 @@
                                 Width="32"
                                 Padding="4"
                                 BorderThickness="0">
-                                <fabric:FabricIcon Icon="ChromeFullScreen"/>
-                            </fabric:FabricChromeButton>
-                            <fabric:FabricChromeButton 
+                                <fluentui:FabricIcon Icon="ChromeFullScreen"/>
+                            </fluentui:FabricChromeButton>
+                            <fluentui:FabricChromeButton 
                                 x:Name="restoreButton"
                                 Style="{StaticResource FabricButtonStyle}" 
                                 WindowChrome.IsHitTestVisibleInChrome="True"
@@ -73,9 +74,9 @@
                                 Width="32"
                                 Padding="4"
                                 BorderThickness="0">
-                                <fabric:FabricIcon Icon="ChromeRestore"/>
-                            </fabric:FabricChromeButton>
-                            <fabric:FabricChromeButton 
+                                <fluentui:FabricIcon Icon="ChromeRestore"/>
+                            </fluentui:FabricChromeButton>
+                            <fluentui:FabricChromeButton 
                                 x:Name="closeButton"
                                 Style="{StaticResource FabricButtonStyle}" 
                                 WindowChrome.IsHitTestVisibleInChrome="True"
@@ -84,8 +85,8 @@
                                 Width="32"
                                 Padding="4"
                                 BorderThickness="0">
-                                <fabric:FabricIcon Icon="ChromeClose"/>
-                            </fabric:FabricChromeButton>
+                                <fluentui:FabricIcon Icon="ChromeClose"/>
+                            </fluentui:FabricChromeButton>
                         </StackPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -111,7 +112,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type fabric:FabricSplitButton}">
+    <Style TargetType="{x:Type fluentui:FabricSplitButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
@@ -124,7 +125,7 @@
         <Setter Property="TextElement.FontSize" Value="14"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type fabric:FabricSplitButton}">
+                <ControlTemplate TargetType="{x:Type fluentui:FabricSplitButton}">
                     <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true" CornerRadius="2">
                         <DockPanel>
                             <Border x:Name="contentPresenter" Background="Transparent">
@@ -132,7 +133,7 @@
                             </Border>
                             <StackPanel x:Name="PART_ArrowDown" Orientation="Horizontal" DockPanel.Dock="Right" Visibility="Collapsed" Background="Transparent">
                                 <Rectangle Fill="{StaticResource Neutral.Gray80}" Width="1" Margin="0,6,0,6"/>
-                                <fabric:FabricIcon x:Name="arrowDownIcon" Icon="ChevronDown" Size="12" TextElement.FontWeight="Normal" Foreground="{StaticResource Neutral.Gray160}" Margin="8,4" VerticalAlignment="Center"/>
+                                <fluentui:FabricIcon x:Name="arrowDownIcon" Icon="ChevronDown" Size="12" TextElement.FontWeight="Normal" Foreground="{StaticResource Neutral.Gray160}" Margin="8,4" VerticalAlignment="Center"/>
                             </StackPanel>
                         </DockPanel>
                     </Border>

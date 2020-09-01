@@ -1,0 +1,64 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:FluentUI.Styles"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <SolidColorBrush x:Key="BaseLow" Color="#000000" Opacity="0.2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BaseMediumLow" Color="#000000" Opacity="0.4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BaseMedium" Color="#000000" Opacity="0.6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BaseMediumHigh" Color="#000000" Opacity="0.8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BaseHigh" Color="#000000" Opacity="1.0" po:Freeze="True"/>
+
+    <SolidColorBrush x:Key="AltLow" Color="#FFFFFF" Opacity="0.2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="AltMediumLow" Color="#FFFFFF" Opacity="0.4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="AltMedium" Color="#FFFFFF" Opacity="0.6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="AltMediumHigh" Color="#FFFFFF" Opacity="0.8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="AltBaseHigh" Color="#FFFFFF" Opacity="1.0" po:Freeze="True"/>
+
+    <SolidColorBrush x:Key="ChromeWhiteHigh" Color="#FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeMediumLow" Color="#F2F2F2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeLow" Color="#F2F2F2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeDisabledHigh" Color="#CCCCCC" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeMedium" Color="#E6E6E6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeHigh" Color="#CCCCCC" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeBlackLow" Color="#000000" Opacity="0.2" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeBlackMediumLow" Color="#000000" Opacity="0.4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeDisabledLow" Color="#7A7A7A" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeBlackMedium" Color="#000000" Opacity="0.8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeAltLow" Color="#171717" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ChromeBlackHigh" Color="#000000" po:Freeze="True"/>
+
+    <SolidColorBrush x:Key="ListAccentHigh" Color="#0078D4" Opacity="0.7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ListAccentMedium" Color="#0078D4" Opacity="0.6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ListAccentLow" Color="#0078D4" Opacity="0.4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ListLow" Color="#000000" Opacity="0.1" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ListMedium" Color="#000000" Opacity="0.2" po:Freeze="True"/>
+
+    <SolidColorBrush x:Key="ListBorderEdgeHighlight" Color="#FFFFFF" Opacity="0.6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="ListBorderTransient" Color="#000000" Opacity="0.14" po:Freeze="True"/>
+
+    <SolidColorBrush x:Key="Accent" Color="#0078D4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="AccentLight1" Color="#429CE3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="AccentDark1" Color="#005A9E" po:Freeze="True"/>
+
+
+    <sys:Double x:Key="FontSize.SubHeader">40</sys:Double>
+    <sys:Double x:Key="FontSize.Header">56</sys:Double>
+
+    <sys:Double x:Key="FontSize.Title">24</sys:Double>
+
+    <sys:Double x:Key="FontSize.Caption">12</sys:Double>
+    <sys:Double x:Key="FontSize.CaptionAlt">13</sys:Double>
+    <sys:Double x:Key="FontSize.Body">14</sys:Double>
+    <sys:Double x:Key="FontSize.SubTitleAlt">18</sys:Double>
+    <sys:Double x:Key="FontSize.SubTitle">20</sys:Double>
+
+    <DropShadowEffect x:Key="ShadowDepth4" Color="#edebe9" BlurRadius="4" Direction="-90" RenderingBias="Performance" ShadowDepth="1" po:Freeze="True"/>
+    <DropShadowEffect x:Key="ShadowDepth8" Color="#edebe9" BlurRadius="8" Direction="-90" RenderingBias="Performance" ShadowDepth="2" po:Freeze="True"/>
+    <DropShadowEffect x:Key="ShadowDepth16" Color="#edebe9" BlurRadius="16" Direction="-90" RenderingBias="Performance" ShadowDepth="4"/>
+    <DropShadowEffect x:Key="ShadowDepth64" Color="#edebe9" BlurRadius="64" Direction="-90" RenderingBias="Performance" ShadowDepth="20"/>
+
+
+
+</ResourceDictionary>

@@ -3,30 +3,50 @@
                     xmlns:fabric.styles="clr-namespace:FluentUI.Styles"
                     xmlns:fabric="clr-namespace:FluentUI"                    
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
-
+    
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="FluentUI.Light.xaml"/>-->
+        <ResourceDictionary Source="FabricUI.Brushes.xaml"/>
+        <!--<ResourceDictionary Source="FabricUI.Icons.xaml"/>-->
+        <ResourceDictionary Source="FabricUI.Buttons.xaml"/>
+        <!--<ResourceDictionary Source="FabricUI.Menu.xaml"/>
+        <ResourceDictionary Source="FabricUI.Separator.xaml"/>
+        <ResourceDictionary Source="FabricUI.TabControl.xaml"/>
+        <ResourceDictionary Source="FabricUI.TextBox.xaml"/>
+        <ResourceDictionary Source="FabricUI.ToolBar.xaml"/>
+        <ResourceDictionary Source="FabricUI.TreeView.xaml"/>
+        <ResourceDictionary Source="FabricUI.ListView.xaml"/>
+        <ResourceDictionary Source="FabricUI.ComboBox.xaml"/>
+        <ResourceDictionary Source="FabricUI.CheckBox.xaml"/>
+        <ResourceDictionary Source="FabricUI.GridSplitter.xaml"/>
+        <ResourceDictionary Source="FabricUI.DataGrid.xaml"/>
+        <ResourceDictionary Source="FabricUI.ListBox.xaml"/>
+        <ResourceDictionary Source="FabricUI.ScrollBar.xaml"/>
+        <ResourceDictionary Source="FabricUI.ScrollViewer.xaml"/>
+        <ResourceDictionary Source="FabricUI.Window.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+    
+    
     <Style TargetType="Button" BasedOn="{StaticResource FabricButtonStyle}"/>
     <Style TargetType="ToggleButton" BasedOn="{StaticResource FabricToggleButtonStyle}"/>
-    <Style TargetType="Menu" BasedOn="{StaticResource FabricMenuStyle}"/>
+    <!--<Style TargetType="Menu" BasedOn="{StaticResource FabricMenuStyle}"/>
     <Style TargetType="ContextMenu" BasedOn="{StaticResource FabricContextMenuStyle}"/>
     <Style TargetType="MenuItem" BasedOn="{StaticResource FabricMenuItemStyle}"/>
     <Style TargetType="Separator" BasedOn="{StaticResource FabricSeparatorStyle}"/>
     <Style TargetType="TabControl" BasedOn="{StaticResource FabricTabControlStyle}"/>
     <Style TargetType="TabItem" BasedOn="{StaticResource FabricTabItemStyle}"/>
-    <Style TargetType="TextBox" BasedOn="{StaticResource FabricTextBoxStyle}"/>
     <Style TargetType="PasswordBox" BasedOn="{StaticResource FabricPasswordBoxStyle}"/>
     <Style TargetType="ToolBar" BasedOn="{StaticResource FabricToolBarStyle}"/>
     <Style TargetType="ToolBarTray" BasedOn="{StaticResource FabricToolBarTrayStyle}"/>
     <Style TargetType="TreeView" BasedOn="{StaticResource FabricTreeViewStyle}"/>
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource FabricTreeViewItemStyle}"/>
     <Style TargetType="ListView" BasedOn="{StaticResource FabricListViewStyle}"/>
-    <!--<Style TargetType="ListViewItem" BasedOn="{StaticResource FabricListViewItemStyle}"/>-->
     <Style TargetType="ComboBox" BasedOn="{StaticResource FabricComboBoxStyle}"/>
     <Style TargetType="CheckBox" BasedOn="{StaticResource FabricCheckBoxStyle}"/>
     <Style TargetType="GridSplitter" BasedOn="{StaticResource FabricGridSplitter}"/>
     <Style TargetType="DataGrid" BasedOn="{StaticResource FabricDataGridStyle}"/>
     <Style TargetType="ListBox" BasedOn="{StaticResource FabricListBoxStyle}"/>
     <Style TargetType="ScrollBar" BasedOn="{StaticResource FabricScrollBarStyle}"/>
-    <Style TargetType="ScrollViewer" BasedOn="{StaticResource FabricScrollViewerStyle}"/>
-    <!--<Style TargetType="ListBoxItem" BasedOn="{StaticResource FabricListBoxItemStyle}"/>-->
+    <Style TargetType="ScrollViewer" BasedOn="{StaticResource FabricScrollViewerStyle}"/>-->
 
 </ResourceDictionary>

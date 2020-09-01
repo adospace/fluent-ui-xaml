@@ -3,7 +3,12 @@
                     xmlns:fluentui.styles="clr-namespace:FluentUI.Styles"
                     xmlns:fluentui="clr-namespace:FluentUI"
                     >
-
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="FabricUI.TextBox.xaml"/>
+        <ResourceDictionary Source="FabricUI.ComboBox.xaml"/>
+        <ResourceDictionary Source="FabricUI.CheckBox.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
     <Style x:Key="FabricDataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="BorderThickness" Value="0,0,0,1"/>

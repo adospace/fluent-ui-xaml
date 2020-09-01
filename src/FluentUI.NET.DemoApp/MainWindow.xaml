@@ -20,7 +20,7 @@
                     <StackPanel x:Name="buttonsContainer" Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
                             <Button Content="Standard" HorizontalAlignment="Left" Margin="10"/>
-                            <Button Content="Primary" HorizontalAlignment="Left" Margin="10" Style="{StaticResource FabricPrimaryButtonStyle}"/>
+                            <!--<Button Content="Primary" HorizontalAlignment="Left" Margin="10" Style="{StaticResource FabricPrimaryButtonStyle}"/>
                             <fluentui:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10">
                                 <fluentui:FabricSplitButton.Menu>
                                     <ContextMenu>
@@ -41,19 +41,19 @@
                                         <MenuItem Header="Item1"/>
                                     </ContextMenu>
                                 </fluentui:FabricSplitButton.Menu>
-                            </fluentui:FabricSplitButton>
+                            </fluentui:FabricSplitButton>-->
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <ToggleButton Margin="10">
+                            <!--<ToggleButton Margin="10">
                                 Toggle
-                            </ToggleButton>
+                            </ToggleButton>-->
                         </StackPanel>                        
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
         </TabItem>
         
-        <TabItem Header="Menu">
+        <!--<TabItem Header="Menu">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <ToggleButton IsChecked="{Binding IsEnabled, ElementName=menuContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
@@ -412,7 +412,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </TabItem>
+        </TabItem>-->
     </TabControl>
 
 </fluentui:FabricWindow>

@@ -45,4 +45,10 @@
     <Resource Include="Fonts\17\fabric-icons-17-0c4ed701.TTF" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Styles\FluentUI.Dark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

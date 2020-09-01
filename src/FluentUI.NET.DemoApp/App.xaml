@@ -6,23 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Brushes.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Icons.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Buttons.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Menu.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Separator.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.TabControl.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.TextBox.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ToolBar.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.TreeView.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ListView.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ComboBox.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.CheckBox.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.GridSplitter.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.DataGrid.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ListBox.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ScrollBar.xaml"/>
-                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ScrollViewer.xaml"/>
+                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FluentUI.Light.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

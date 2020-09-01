@@ -47,6 +47,8 @@ namespace FluentUI
             if (!(d is DataGrid grid))
                 throw new InvalidOperationException("TextColumnStyle property works only on DataGrid");
 
+            //System.Windows.Application.Current.Resources.MergedDictionaries[0].
+
             if (e.OldValue == null && e.NewValue != DependencyProperty.UnsetValue)
             {
                 foreach (var textColumn in grid.Columns

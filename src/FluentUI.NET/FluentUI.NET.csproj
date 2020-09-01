@@ -266,6 +266,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Window.xaml">
+      <Link>Styles\FabricUI.Window.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FluentUI.Dark.xaml">
+      <Link>Styles\FluentUI.Dark.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\FluentUI\Styles\FluentUI.Light.xaml">
+      <Link>Styles\FluentUI.Light.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -7,11 +7,11 @@ namespace FluentUI
 {
     public class FabricWindow : Window
     {
-        static FabricWindow()
-        {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(FabricWindow), 
-                new FrameworkPropertyMetadata(typeof(FabricWindow)));
-        }
+        //static FabricWindow()
+        //{
+        //    DefaultStyleKeyProperty.OverrideMetadata(typeof(FabricWindow), 
+        //        new FrameworkPropertyMetadata(typeof(FabricWindow)));
+        //}
 
 
     }

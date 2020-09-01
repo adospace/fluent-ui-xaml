@@ -4,16 +4,20 @@
                     xmlns:fabric="clr-namespace:FluentUI"
                     
                     >
-    
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="FabricUI.Brushes.xaml"/>
-    </ResourceDictionary.MergedDictionaries>
 
     <Style x:Key="FabricFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{StaticResource Communication.CommunicationPrimary}"/>
+                    <Grid>
+                        <Rectangle SnapsToDevicePixels="true" 
+                               StrokeThickness="1"
+                               Stroke="{StaticResource BaseHigh}"/>
+                        <Rectangle SnapsToDevicePixels="true" 
+                               StrokeThickness="1"
+                               Margin="1"
+                               Stroke="{StaticResource AltMedium}"/>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -23,78 +27,124 @@
 
     <Style x:Key="FabricToggleButtonStyle" TargetType="{x:Type ToggleButton}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray130}"/>
-        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BaseMedium}"/>
+        <Setter Property="Foreground" Value="{StaticResource BaseHigh}"/>
         <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="2"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Height" Value="32"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" 
+                                VerticalAlignment="Center"
+                                Margin="{TemplateBinding Padding}">
                         <Canvas Width="40">
-                            <Border x:Name="border" Background="{StaticResource Neutral.White}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true" CornerRadius="10" Width="40" Height="20"/>
-                            <Ellipse x:Name="circle" Height="12" Width="12" Margin="4" Fill="{StaticResource Neutral.Gray130}" />
+                            <Border x:Name="border" 
+                                    Background="{TemplateBinding Background}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    SnapsToDevicePixels="true" 
+                                    CornerRadius="10" 
+                                    Width="40" 
+                                    Height="20"/>
+                            <Ellipse x:Name="circle" 
+                                     Height="12" 
+                                     Width="12" 
+                                     Margin="4" 
+                                     Fill="{StaticResource BaseHigh}" />
                         </Canvas>
-                        <TextBlock x:Name="contentPresenter" Text="{TemplateBinding Content}" FontWeight="SemiBold" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Margin="8,0"/>
+                        <TextBlock x:Name="contentPresenter" 
+                                   Text="{TemplateBinding Content}" 
+                                   FontWeight="SemiBold"
+                                   Focusable="False" 
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                   Margin="8,0"/>
                     </StackPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Communication.CommunicationPrimary}"/>
-                            <Setter Property="BorderThickness" TargetName="border" Value="0"/>
-                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource Neutral.White}"/>
-                            <Setter Property="Margin" TargetName="circle" Value="24,4,4,4"/>
-                            <!--<Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard TargetName="circle" TargetProperty="Margin">
-                                        <ThicknessAnimation To="24,4,4,4" Duration="0:0:0.050" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard TargetName="circle" TargetProperty="Margin">
-                                        <ThicknessAnimation To="4" Duration="0:0:0.050" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>-->                            
+                            <Setter Property="Background" 
+                                    TargetName="border" 
+                                    Value="{StaticResource Accent}"/>
+                            <Setter Property="BorderThickness" 
+                                    TargetName="border" 
+                                    Value="0"/>
+                            <Setter Property="Fill" 
+                                    TargetName="circle" 
+                                    Value="{StaticResource ChromeWhiteHigh}"/>
+                            <Setter Property="Margin" 
+                                    TargetName="circle" 
+                                    Value="24,4,4,4"/>
                         </Trigger>
                         <Trigger Property="Button.IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            <Setter Property="BorderBrush" 
+                                    TargetName="border" 
+                                    Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                         </Trigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="true"/>
                                 <Condition Property="IsChecked" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray190}"/>
-                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource Neutral.Gray190}"/>
+                            <Setter Property="BorderBrush" 
+                                    TargetName="border" 
+                                    Value="{StaticResource BaseMediumHigh}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="true"/>
                                 <Condition Property="IsChecked" Value="true"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Communication.CommunicationShade20}"/>
+                            <Setter Property="Background" 
+                                    TargetName="border" 
+                                    Value="{StaticResource AccentLight1}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" 
+                                    TargetName="border" 
+                                    Value="{StaticResource AccentDark1}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" 
+                                    TargetName="border" 
+                                    Value="{StaticResource BaseMediumLow}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="false"/>
                                 <Condition Property="IsChecked" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray60}"/>
-                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource Neutral.Gray60}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray60}"/>
+                            <Setter Property="BorderBrush" 
+                                    TargetName="border" 
+                                    Value="{StaticResource BaseMediumLow}"/>
+                            <Setter Property="Fill" 
+                                    TargetName="circle" 
+                                    Value="{StaticResource BaseMediumLow}"/>
+                            <Setter Property="Foreground" 
+                                    Value="{StaticResource BaseMediumLow}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="false"/>
                                 <Condition Property="IsChecked" Value="true"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray60}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray60}"/>
+                            <Setter Property="Background" 
+                                    TargetName="border" 
+                                    Value="{StaticResource BaseLow}"/>
+                            <Setter Property="Foreground" 
+                                    Value="{StaticResource BaseLow}"/>
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -104,14 +154,13 @@
     
     <Style x:Key="FabricButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FabricFocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
-        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{StaticResource BaseLow}"/>
+        <Setter Property="Foreground" Value="{StaticResource BaseHigh}"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="16,5"/>
-        <Setter Property="TextElement.FontWeight" Value="Medium"/>
+        <Setter Property="TextElement.FontWeight" Value="SemiBold"/>
         <Setter Property="TextElement.FontSize" Value="14"/>
         <Setter Property="Border.CornerRadius" Value="2"/>
         <Setter Property="Height" Value="32"/>
@@ -123,15 +172,18 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource ListLow}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray30}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource BaseMediumLow}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Neutral.Gray90}"/>
+                            <Setter Property="Background" 
+                                    TargetName="border" 
+                                    Value="{StaticResource BaseLow}"/>
+                            <Setter Property="TextElement.Foreground" 
+                                    TargetName="contentPresenter" 
+                                    Value="{StaticResource BaseMediumLow}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
