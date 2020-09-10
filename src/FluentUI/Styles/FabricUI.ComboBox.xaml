@@ -9,6 +9,7 @@
         <Setter Property="IsTabStop" Value="false"/>
         <Setter Property="Focusable" Value="false"/>
         <Setter Property="ClickMode" Value="Press"/>
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -26,11 +27,6 @@
                     </Border>
                     
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                            <Setter Property="BorderThickness" TargetName="Bd" Value="2"/>
-                            <Setter Property="CornerRadius" TargetName="Bd" Value="0.5"/>
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
-                        </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
                             <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
@@ -47,7 +43,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="BorderThickness" Value="1"/>
     </Style>
     
     <Style x:Key="FabricComboBoxToggleButton" TargetType="ToggleButton">
@@ -58,61 +53,35 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
-                    <Border x:Name="bd" 
+                    <Border x:Name="Bd" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             Background="{TemplateBinding Background}" 
+                            CornerRadius="1"
                             SnapsToDevicePixels="true">
-                        <Grid x:Name="grid" HorizontalAlignment="Right" Width="13">
-                            <Border x:Name="bdArrow" Visibility="Hidden" Background="{TemplateBinding BorderBrush}" BorderThickness="1,0,0,0" 
-                                    BorderBrush="{DynamicResource Palette6}"/>
-                            <Path x:Name="Arrow" Data="{StaticResource DownArrowGeometry}" Fill="{StaticResource Palette11}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
+                        <Border x:Name="Arrow" HorizontalAlignment="Right" Width="32">
+                            <fabric:FabricIcon Icon="ChevronDown" 
+                                               VerticalAlignment="Center" 
+                                               HorizontalAlignment="Center" />
+                        </Border>
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                            <Setter Property="BorderThickness" TargetName="bd" Value="2"/>
-                            <Setter Property="CornerRadius" TargetName="bd" Value="0.5"/>
-                            <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
-                        </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" Value="true"/>
-                                <Condition Property="IsPressed" Value="false"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="Visibility" TargetName="bdArrow" Value="Visible"/>
-                            <Setter Property="Fill" TargetName="Arrow" Value="{DynamicResource Palette6}"/>
-                        </MultiTrigger>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsKeyboardFocusWithin, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
-                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false"/>
-                            </MultiDataTrigger.Conditions>
-                            <Setter Property="Visibility" TargetName="bdArrow" Value="Visible"/>
-                            <Setter Property="Fill" TargetName="Arrow" Value="{StaticResource Palette10}"/>
-                            <Setter Property="Background" TargetName="bdArrow" Value="{StaticResource Palette6}"/>
-                            <Setter Property="BorderThickness" TargetName="bdArrow" Value="0"/>
-                        </MultiDataTrigger>
-                        <MultiDataTrigger>
-                            <MultiDataTrigger.Conditions>
-                                <Condition Binding="{Binding IsMouseOver, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}}}" Value="true"/>
-                                <Condition Binding="{Binding IsPressed, RelativeSource={RelativeSource Self}}" Value="false"/>
-                            </MultiDataTrigger.Conditions>
-                            <Setter Property="Visibility" TargetName="bdArrow" Value="Visible"/>
-                        </MultiDataTrigger>
-                        <Trigger Property="IsChecked" Value="true">
-                            <Setter Property="Visibility" TargetName="bdArrow" Value="Visible"/>
-                            <Setter Property="Fill" TargetName="Arrow" Value="{StaticResource Palette10}"/>
-                            <Setter Property="Background" TargetName="bdArrow" Value="{StaticResource Palette6}"/>
-                            <Setter Property="BorderThickness" TargetName="bdArrow" Value="0"/>
-                        </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Fill" TargetName="Arrow" Value="#AFAFAF"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style x:Key="FabricComboBoxEditableTextBox" TargetType="{x:Type TextBox}" BasedOn="{x:Null}">
+        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
     <ControlTemplate x:Key="FabricComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
@@ -141,78 +110,45 @@
                     </ScrollViewer>
                 </Border>
             </Popup>
-            <ToggleButton 
-                BorderBrush="{TemplateBinding BorderBrush}" 
+            <ToggleButton x:Name="bd" 
+                BorderThickness="{TemplateBinding BorderThickness}"
+                BorderBrush="{TemplateBinding BorderBrush}"
                 Background="{TemplateBinding Background}" 
                 Grid.ColumnSpan="2" 
                 IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
-                Style="{StaticResource FabricComboBoxReadonlyToggleButton}"/>
+                Style="{StaticResource FabricComboBoxToggleButton}"/>
             <TextBox x:Name="PART_EditableTextBox" 
-                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                IsHitTestVisible="false" 
+                Grid.ColumnSpan="1" 
+                BorderThickness="0"
+                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+               
                 Margin="{TemplateBinding Padding}" 
                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                 Style="{StaticResource FabricComboBoxEditableTextBox}"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                <Setter Property="Background" Value="#FFF4F4F4"/>
+                <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray20}"/>
+                <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+                <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
             </Trigger>
             <Trigger Property="IsGrouping" Value="true">
                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
             </Trigger>
+            <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                <Setter Property="BorderThickness" TargetName="bd" Value="2"/>
+                <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="true"/>
+                    <Condition Property="IsKeyboardFocusWithin" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Neutral.Gray160}"/>
+            </MultiTrigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-
-    <!--<ControlTemplate x:Key="FabricComboBoxEditableTemplate" TargetType="ComboBox">
-        <Grid x:Name="Placement" SnapsToDevicePixels="true">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Popup x:Name="PART_Popup" AllowsTransparency="true" Grid.ColumnSpan="2" IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom" VerticalOffset="-1">
-                <Themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent" MaxHeight="{TemplateBinding MaxDropDownHeight}" MinWidth="{Binding ActualWidth, ElementName=Placement}">
-                    <Border x:Name="DropDownBorder" BorderBrush="{DynamicResource Palette12}" BorderThickness="1" Margin="1,0,1,0" Background="{DynamicResource Palette13}">
-                        <ScrollViewer>
-                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                        </ScrollViewer>
-                    </Border>
-                </Themes:SystemDropShadowChrome>
-            </Popup>
-            <Border Grid.ColumnSpan="2" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" />
-            <TextBox x:Name="PART_EditableTextBox" 
-                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                     IsReadOnly="{Binding IsReadOnly, RelativeSource={RelativeSource TemplatedParent}}" Margin="{TemplateBinding Padding}" 
-                     Style="{StaticResource FabricComboBoxEditableTextBox}"/>
-            <ToggleButton 
-                Grid.Column="1" 
-                BorderBrush="{TemplateBinding BorderBrush}" 
-                Margin="1" Background="{TemplateBinding Background}" 
-                IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"                           
-                Style="{StaticResource FabricComboBoxToggleButton}"/>
-        </Grid>
-        <ControlTemplate.Triggers>
-            <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                <Setter Property="Foreground" Value="Black"/>
-            </Trigger>
-            <Trigger Property="HasItems" Value="false">
-                <Setter Property="Height" TargetName="DropDownBorder" Value="95"/>
-            </Trigger>
-            <Trigger Property="IsEnabled" Value="false">
-                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                <Setter Property="Background" Value="#FFF4F4F4"/>
-            </Trigger>
-            <Trigger Property="IsGrouping" Value="true">
-                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
-            </Trigger>
-            <Trigger Property="HasDropShadow" SourceName="PART_Popup" Value="true">
-                <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
-                <Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
-            </Trigger>
-        </ControlTemplate.Triggers>
-    </ControlTemplate>-->
 
     <Style x:Key="FabricComboBoxItemStyle" TargetType="ComboBoxItem">
         <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
@@ -305,8 +241,9 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
-                            <Setter Property="Background" Value="#FFF4F4F4"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
                         </Trigger>
                         <Trigger Property="IsGrouping" Value="true">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
