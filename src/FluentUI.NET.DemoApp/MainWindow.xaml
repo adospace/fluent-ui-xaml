@@ -13,7 +13,8 @@
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
         </Style>
     </Window.Resources>
-    <TabControl TabStripPlacement="Top">
+    <TabControl TabStripPlacement="Top"
+                fluentui:FabricExtra.CompactMode="True">
         <TabItem Header="Buttons">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
@@ -57,9 +58,12 @@
         <TabItem Header="Menu">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
-                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=menuContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <ToggleButton IsChecked="{Binding IsEnabled, ElementName=toolBarContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                        <ToggleButton IsChecked="{Binding (fluentui:FabricExtra.CompactMode), ElementName=menu, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
+                    </StackPanel>
                     <StackPanel x:Name="menuContainer">
-                        <Menu Margin="10">
+                        <Menu x:Name="menu" Margin="10">
                             <MenuItem Header="Menu Item1" >
                                 <MenuItem Header="SubMenu 1"/>
                                 <MenuItem Header="SubMenu 2">
@@ -106,10 +110,13 @@
         <TabItem Header="Toolbar">
             <ScrollViewer>
                 <StackPanel Orientation="Vertical">
-                    <ToggleButton IsChecked="{Binding IsEnabled, ElementName=toolBarContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <ToggleButton IsChecked="{Binding IsEnabled, ElementName=toolBarContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
+                        <ToggleButton IsChecked="{Binding (fluentui:FabricExtra.CompactMode), ElementName=toolBar, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
+                    </StackPanel>
                     <StackPanel x:Name="toolBarContainer">
                         <ToolBarTray DockPanel.Dock="Top" Margin="10">
-                            <ToolBar>
+                            <ToolBar x:Name="toolBar">
                                 <ToggleButton Content="Enabled" HorizontalAlignment="Left"/>
                                 <Button Content="btn1"/>
                                 <Button Content="btn2" ToolBar.OverflowMode="Always"/>
