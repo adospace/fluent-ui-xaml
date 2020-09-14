@@ -65,10 +65,11 @@
                                     Background="{TemplateBinding Background}" 
                                     SnapsToDevicePixels="true" 
                                     CornerRadius="1" 
-                                    MinHeight="32">
-                                <Grid>
-                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Padding="0"/>
-                                    <TextBlock x:Name="Wm" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" VerticalAlignment="Center" Margin="9,0" IsHitTestVisible="False"/>
+                                    MinHeight="32"
+                                    >
+                                <Grid x:Name="Wm" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    <TextBlock x:Name="ph" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" Padding="1,0,0,0" IsHitTestVisible="False"/>
                                 </Grid>
                             </Border>
                         </DockPanel>                    
@@ -107,7 +108,7 @@
                             <DataTrigger.Binding>
                                 <Binding Path="Text" RelativeSource="{RelativeSource Self}" Converter="{StaticResource StringEmptyToBoolConverter}"/>
                             </DataTrigger.Binding>
-                            <Setter Property="Visibility" TargetName="Wm" Value="Hidden"/>
+                            <Setter Property="Visibility" TargetName="ph" Value="Hidden"/>
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -156,10 +157,16 @@
                                     Foreground="{StaticResource Shared.SharedRed20}"
                                     Visibility="{TemplateBinding fabric:FabricExtra.IsRequired, Converter={StaticResource BoolToVisibilityConverter}}"/>
                             </Border>
-                            <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" CornerRadius="1" MinHeight="32">
-                                <Grid>
-                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Padding="0"/>
-                                    <TextBlock x:Name="Wm" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" VerticalAlignment="Center" Margin="9,0" IsHitTestVisible="False"/>
+                            <Border x:Name="Bd" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    Background="{TemplateBinding Background}" 
+                                    SnapsToDevicePixels="true" 
+                                    CornerRadius="1" 
+                                    MinHeight="32">
+                                <Grid x:Name="Wm" VerticalAlignment="Center" Margin="{TemplateBinding Padding}">
+                                    <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                    <TextBlock x:Name="ph" Text="{TemplateBinding fabric:FabricExtra.Placeholder}" Padding="1,0,0,0" IsHitTestVisible="False"/>
                                 </Grid>
                             </Border>
                         </DockPanel>
@@ -198,7 +205,7 @@
                             <DataTrigger.Binding>
                                 <Binding Path="(fabric:PasswordHelper.HasPasswordEmpty)" RelativeSource="{RelativeSource Self}"/>
                             </DataTrigger.Binding>
-                            <Setter Property="Visibility" TargetName="Wm" Value="Hidden"/>
+                            <Setter Property="Visibility" TargetName="ph" Value="Hidden"/>
                         </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
