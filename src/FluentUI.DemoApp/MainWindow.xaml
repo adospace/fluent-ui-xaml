@@ -291,7 +291,7 @@
                 <Border x:Name="dataGridContainer"
                         Margin="10">
                     <DataGrid x:Name="dataGrid" 
-                              AutoGenerateColumns="False" >
+                              AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Text Column" Binding="{Binding Name}"/>
                             <DataGridComboBoxColumn Header="ComboBox Column" SelectedItemBinding="{Binding City}" ItemsSource="{Binding Source={x:Static local:DummyData.Cities}}"/>
@@ -367,7 +367,7 @@
                     <ToggleButton IsChecked="{Binding (fluentui:FabricExtra.CompactMode), ElementName=listBox, Mode=TwoWay}" Content="Compact Mode" HorizontalAlignment="Left" Margin="10" />
                 </StackPanel>
                 <Border x:Name="listBoxContainer" Margin="10">
-                    <ListBox x:Name="listBox" >
+                    <ListBox x:Name="listBox">
                         <ListBoxItem>Item1</ListBoxItem>
                         <ListBoxItem>Item2</ListBoxItem>
                         <ListBoxItem>Item3</ListBoxItem>

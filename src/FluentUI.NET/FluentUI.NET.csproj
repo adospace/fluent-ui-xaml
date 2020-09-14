@@ -52,6 +52,9 @@
     <Compile Include="..\FluentUI\Converters\BoolToVisibilityConverter.cs">
       <Link>Converters\BoolToVisibilityConverter.cs</Link>
     </Compile>
+    <Compile Include="..\FluentUI\Converters\CompactModeConverter.cs">
+      <Link>Converters\CompactModeConverter.cs</Link>
+    </Compile>
     <Compile Include="..\FluentUI\Converters\InverseNullToBoolConverter.cs">
       <Link>Converters\InverseNullToBoolConverter.cs</Link>
     </Compile>

@@ -74,7 +74,7 @@ namespace FluentUI
         }
 
         public static readonly DependencyProperty CompactModeProperty =
-            DependencyProperty.RegisterAttached("CompactMode", typeof(bool), typeof(FabricExtra), new PropertyMetadata(false));
+            DependencyProperty.RegisterAttached("CompactMode", typeof(bool), typeof(FabricExtra), new FrameworkPropertyMetadata(false));
 
     }
 }

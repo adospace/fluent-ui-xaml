@@ -6,10 +6,25 @@
                     >
 
     <Style x:Key="FabricListBoxItemStyle" TargetType="ListBoxItem">
-        <Setter Property="Padding" Value="4,10,4,10"/>
         <Setter Property="MinHeight" Value="21"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding">
+            <Setter.Value>
+                <Binding Path="(fluentui:FabricExtra.CompactMode)" RelativeSource="{RelativeSource AncestorType=ListBox}">
+                    <Binding.Converter>
+                        <fluentui.converters:CompactModeConverter>
+                            <fluentui.converters:CompactModeConverter.CompactModeTrue>
+                                <Thickness Left="4" Top="5" Right="4" Bottom="5"/>
+                            </fluentui.converters:CompactModeConverter.CompactModeTrue>
+                            <fluentui.converters:CompactModeConverter.CompactModeFalse>
+                                <Thickness Left="4" Top="10" Right="4" Bottom="10"/>
+                            </fluentui.converters:CompactModeConverter.CompactModeFalse>
+                        </fluentui.converters:CompactModeConverter>
+                    </Binding.Converter>
+                </Binding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListBoxItem">
@@ -36,11 +51,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
+        <!--<Style.Triggers>
             <DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ListBox}}" Value="True">
                 <Setter Property="Padding" Value="4,5,4,5"/>
             </DataTrigger>
-        </Style.Triggers>
+        </Style.Triggers>-->
     </Style>
 
     <Style x:Key="FabricListBoxStyle" TargetType="ListBox">

@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:fluentui.styles="clr-namespace:FluentUI.Styles"
+                    xmlns:fluentui.converters="clr-namespace:FluentUI.Converters"
                     xmlns:fluentui="clr-namespace:FluentUI"
                     >
 
@@ -425,6 +426,22 @@
         <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
         <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="BorderThickness">
+            <Setter.Value>
+                <Binding Path="(fluentui:FabricExtra.CompactMode)" RelativeSource="{RelativeSource AncestorType=DataGrid}">
+                    <Binding.Converter>
+                        <fluentui.converters:CompactModeConverter>
+                            <fluentui.converters:CompactModeConverter.CompactModeTrue>
+                                <Thickness Left="0" Top="0" Right="0" Bottom="0"/>
+                            </fluentui.converters:CompactModeConverter.CompactModeTrue>
+                            <fluentui.converters:CompactModeConverter.CompactModeFalse>
+                                <Thickness Left="0" Top="0" Right="0" Bottom="1"/>
+                            </fluentui.converters:CompactModeConverter.CompactModeFalse>
+                        </fluentui.converters:CompactModeConverter>
+                    </Binding.Converter>
+                </Binding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray20}"/>
         <Setter Property="ValidationErrorTemplate">
             <Setter.Value>
@@ -498,11 +515,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
+        <!--<Style.Triggers>
             <DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
                 <Setter Property="BorderThickness" Value="0"/>
             </DataTrigger>
-        </Style.Triggers>
+        </Style.Triggers>-->
     </Style>
 
     <Style x:Key="FabricDataGridCellStyle" TargetType="{x:Type DataGridCell}">
@@ -510,7 +527,22 @@
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="11"/>
+        <Setter Property="Padding">
+            <Setter.Value>
+                <Binding Path="(fluentui:FabricExtra.CompactMode)" RelativeSource="{RelativeSource AncestorType=DataGrid}">
+                    <Binding.Converter>
+                        <fluentui.converters:CompactModeConverter>
+                            <fluentui.converters:CompactModeConverter.CompactModeTrue>
+                                <Thickness Left="11" Top="4" Right="11" Bottom="4"/>
+                            </fluentui.converters:CompactModeConverter.CompactModeTrue>
+                            <fluentui.converters:CompactModeConverter.CompactModeFalse>
+                                <Thickness Left="11" Top="11" Right="11" Bottom="11"/>
+                            </fluentui.converters:CompactModeConverter.CompactModeFalse>
+                        </fluentui.converters:CompactModeConverter>                        
+                    </Binding.Converter>
+                </Binding>
+            </Setter.Value>
+        </Setter>
         <Setter Property="TextElement.Foreground" Value="{StaticResource Neutral.Gray190}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -554,9 +586,9 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
+            <!--<DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
                 <Setter Property="Padding" Value="11,4"/>
-            </DataTrigger>
+            </DataTrigger>-->
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="TextElement.Foreground" Value="{StaticResource Neutral.Gray90}"/>
             </Trigger>
