@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentUI.DemoApp"
         xmlns:fluentui="clr-namespace:FluentUI;assembly=FluentUI"
+                       fluentui:FabricExtra.CompactMode="True"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1400">
     <Window.Resources>

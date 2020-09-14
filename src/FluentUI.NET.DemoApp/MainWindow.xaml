@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FluentUI.DemoApp"
         xmlns:fluentui="clr-namespace:FluentUI;assembly=FluentUI.NET"        
         mc:Ignorable="d"
+                       fluentui:FabricExtra.CompactMode="True"
         Title="MainWindow" Height="450" Width="1400">
     <Window.Resources>
         <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
