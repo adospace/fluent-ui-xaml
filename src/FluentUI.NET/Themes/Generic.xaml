@@ -43,16 +43,16 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type fluentui:FabricWindow}">
                     <Grid>
-                        <Border Background="{StaticResource Neutral.White}" Padding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='8, 32, 8, 8|24, 63, 24, 24'}">
+                        <Border Background="{StaticResource Neutral.White}" Padding="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='8, 32, 8, 8|24, 63, 24, 24'}">
                             <ContentPresenter Content="{TemplateBinding Content}" />
                         </Border>
                         <TextBlock 
                             Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"   
                             Foreground="{StaticResource Neutral.Gray160}"
                             FontWeight="SemiBold"
-                            FontSize="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeDoubleConverter}, ConverterParameter='16|20'}"
+                            FontSize="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeDoubleConverter}, ConverterParameter='16|20'}"
                             VerticalAlignment="Top" HorizontalAlignment="Left"   
-                            Margin="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='8|24,16,20,46'}"/>
+                            Margin="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='8|24,16,20,46'}"/>
                         <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"  
                            VerticalAlignment="Top" HorizontalAlignment="Left"  
                            Margin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(WindowChrome.WindowChrome).ResizeBorderThickness}"   
@@ -61,7 +61,7 @@
                         <StackPanel Orientation="Horizontal"
                                     VerticalAlignment="Top" 
                                     HorizontalAlignment="Right"
-                                    Margin="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='4|15'}">
+                                    Margin="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType={x:Type fluentui:FabricWindow}}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='4|15'}">
                             <fluentui:FabricChromeButton 
                                 x:Name="minimizeButton"
                                 Style="{StaticResource FabricButtonStyle}" 

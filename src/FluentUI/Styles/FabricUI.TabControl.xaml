@@ -78,7 +78,7 @@
     </Style>
     <Style x:Key="FabricTabItemStyle" TargetType="{x:Type TabItem}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FabricTabItemFocusVisual}"/>
-        <Setter Property="Padding" Value="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=TabControl}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='6,8|10,12'}"/>
+        <Setter Property="Padding" Value="10,12"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -310,6 +310,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=TabControl}}" Value="True">
+                <DataTrigger.Setters>
+                    <Setter Property="Padding" Value="6,8"/>
+                </DataTrigger.Setters>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 
 </ResourceDictionary>

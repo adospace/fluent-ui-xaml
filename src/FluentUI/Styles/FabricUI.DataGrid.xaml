@@ -516,7 +516,7 @@
             </Setter.Value>
         </Setter>
         <!--<Style.Triggers>
-            <DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
+            <DataTrigger Binding="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
                 <Setter Property="BorderThickness" Value="0"/>
             </DataTrigger>
         </Style.Triggers>-->
@@ -586,7 +586,7 @@
             </Setter.Value>
         </Setter>
         <Style.Triggers>
-            <!--<DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
+            <!--<DataTrigger Binding="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=DataGrid}}" Value="True">
                 <Setter Property="Padding" Value="11,4"/>
             </DataTrigger>-->
             <Trigger Property="IsEnabled" Value="False">

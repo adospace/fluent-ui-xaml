@@ -163,8 +163,8 @@
         <Setter Property="Border.CornerRadius" Value="0"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="TextElement.FontWeight" Value="Normal"/>
-        <Setter Property="Padding" Value="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='4,10|6,12'}"/>
-        <Setter Property="TextElement.FontSize" Value="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeDoubleConverter}, ConverterParameter='12|14'}"/>
+        <Setter Property="Padding" Value="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='4,10|6,12'}"/>
+        <Setter Property="TextElement.FontSize" Value="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeDoubleConverter}, ConverterParameter='12|14'}"/>
         <Setter Property="Height" Value="NaN"/>
     </Style>
 
@@ -175,8 +175,8 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='4,10|6,12'}"/>
-        <Setter Property="TextElement.FontSize" Value="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeDoubleConverter}, ConverterParameter='12|14'}"/>
+        <Setter Property="Padding" Value="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeThicknessConverter}, ConverterParameter='4,10|6,12'}"/>
+        <Setter Property="TextElement.FontSize" Value="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ToolBar}, Converter={StaticResource CompactModeDoubleConverter}, ConverterParameter='12|14'}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">

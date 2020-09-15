@@ -171,7 +171,7 @@
                             <PasswordBox Width="200" fluentui:FabricExtra.Label="PasswordBox With placeholder" fluentui:FabricExtra.ErrorMessage="This is an error" fluentui:FabricExtra.Placeholder="I'm a placeholder" Margin="10,0,0,0" VerticalAlignment="Bottom"/>
                         </StackPanel>
                         <StackPanel>
-                            <TextBox Height="200" fluentui:FabricExtra.Label="Multiline" fluentui:FabricExtra.Placeholder="I'm a placeholder" fluentui:FabricExtra.ErrorMessage="This is an error" VerticalAlignment="Bottom" AcceptsReturn="True"/>
+                            <TextBox Height="200" fluentui:FabricExtra.Label="Multiline" fluentui:FabricExtra.Placeholder="I'm a placeholder" fluentui:FabricExtra.ErrorMessage="This is an error" VerticalAlignment="Bottom" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

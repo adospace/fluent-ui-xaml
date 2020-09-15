@@ -52,7 +52,7 @@
             </Setter.Value>
         </Setter>
         <!--<Style.Triggers>
-            <DataTrigger Binding="{Binding (fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ListBox}}" Value="True">
+            <DataTrigger Binding="{Binding Path=(fluentui:FabricExtra.CompactMode), RelativeSource={RelativeSource AncestorType=ListBox}}" Value="True">
                 <Setter Property="Padding" Value="4,5,4,5"/>
             </DataTrigger>
         </Style.Triggers>-->
