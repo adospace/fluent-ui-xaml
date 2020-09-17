@@ -155,6 +155,9 @@
                     <ToggleButton IsChecked="{Binding IsEnabled, ElementName=textboxContainer, Mode=TwoWay}" Content="Enabled" HorizontalAlignment="Left" Margin="10" />
                     <StackPanel x:Name="textboxContainer" Margin="10">
                         <StackPanel Orientation="Horizontal">
+                            <TextBox fluentui:FabricExtra.Label="{x:Null}" Width="200" Margin="0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
                             <TextBox Width="200" fluentui:FabricExtra.Label="Standard"/>
                             <TextBox Width="200" Margin="10,0,0,0" fluentui:FabricExtra.Label="Standard" fluentui:FabricExtra.IsRequired="True" />
                             <TextBox Width="200" Margin="10,28,0,0" fluentui:FabricExtra.IsRequired="True" />

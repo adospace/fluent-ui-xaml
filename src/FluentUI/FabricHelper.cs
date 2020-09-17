@@ -44,20 +44,20 @@ namespace FluentUI
         /// </summary>
         private static void OnTextColumnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (!(d is DataGrid grid))
+            if (!(d is DataGrid dataGrid))
                 throw new InvalidOperationException("TextColumnStyle property works only on DataGrid");
 
             if (e.OldValue == null && e.NewValue != DependencyProperty.UnsetValue)
             {
-                foreach (var textColumn in grid.Columns
+                foreach (var textColumn in dataGrid.Columns
                     .OfType<DataGridTextColumn>()
                     //.Where(_ => _.EditingElementStyle == null)
                     )
                 {
-                    textColumn.EditingElementStyle = GetTextColumnStyle(grid);
+                    textColumn.EditingElementStyle = GetTextColumnStyle(dataGrid);
                 }
 
-                grid.Columns.CollectionChanged += (s, eventArgs) =>
+                dataGrid.Columns.CollectionChanged += (s, eventArgs) =>
                 {
                     if (eventArgs.NewItems != null)
                     {
@@ -66,7 +66,7 @@ namespace FluentUI
                             //.Where(_ => _.EditingElementStyle == null)
                             )
                         {
-                            textColumn.EditingElementStyle = GetTextColumnStyle((DataGrid)s);
+                            textColumn.EditingElementStyle = GetTextColumnStyle(dataGrid);
                         }
                     }
                 };
@@ -110,20 +110,20 @@ namespace FluentUI
         /// </summary>
         private static void OnComboBoxColumnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (!(d is DataGrid grid))
+            if (!(d is DataGrid dataGrid))
                 throw new InvalidOperationException("ComboBoxColumnStyle property works only on DataGrid");
 
             if (e.OldValue == null && e.NewValue != DependencyProperty.UnsetValue)
             {
-                foreach (var textColumn in grid.Columns
+                foreach (var textColumn in dataGrid.Columns
                     .OfType<DataGridComboBoxColumn>()
                     //.Where(_ => _.EditingElementStyle == null)
                     )
                 {
-                    textColumn.EditingElementStyle = GetComboBoxColumnStyle(grid);
+                    textColumn.EditingElementStyle = GetComboBoxColumnStyle(dataGrid);
                 }
 
-                grid.Columns.CollectionChanged += (s, eventArgs) =>
+                dataGrid.Columns.CollectionChanged += (s, eventArgs) =>
                 {
                     if (eventArgs.NewItems != null)
                     {
@@ -132,7 +132,7 @@ namespace FluentUI
                             //.Where(_ => _.EditingElementStyle == null)
                             )
                         {
-                            comboBoxColumn.EditingElementStyle = GetComboBoxColumnStyle((DataGrid)s);
+                            comboBoxColumn.EditingElementStyle = GetComboBoxColumnStyle(dataGrid);
                         }
                     }
 
@@ -204,23 +204,23 @@ namespace FluentUI
         /// </summary>
         private static void OnCheckBoxColumnStyleChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            if (!(d is DataGrid grid))
+            if (!(d is DataGrid dataGrid))
                 throw new InvalidOperationException("CheckBoxColumnStyle or CheckBoxColumnEditingStyle property works only on DataGrid");
 
             if (e.OldValue == null && e.NewValue != DependencyProperty.UnsetValue)
             {
-                foreach (var textColumn in grid.Columns
+                foreach (var textColumn in dataGrid.Columns
                     .OfType<DataGridCheckBoxColumn>()
                     //.Where(_ => _.EditingElementStyle == null)
                     )
                 {
                     textColumn.ElementStyle =
-                            GetCheckBoxColumnStyle(grid);
+                            GetCheckBoxColumnStyle(dataGrid);
                     textColumn.EditingElementStyle =
-                            GetCheckBoxColumnEditingStyle(grid);
+                            GetCheckBoxColumnEditingStyle(dataGrid);
                 }
 
-                grid.Columns.CollectionChanged += (s, eventArgs) =>
+                dataGrid.Columns.CollectionChanged += (s, eventArgs) =>
                 {
                     if (eventArgs.NewItems != null)
                     {
@@ -229,7 +229,7 @@ namespace FluentUI
                             //.Where(_ => _.EditingElementStyle == null)
                             )
                         {
-                            CheckBoxColumn.EditingElementStyle = GetCheckBoxColumnStyle((DataGrid)s);
+                            CheckBoxColumn.EditingElementStyle = GetCheckBoxColumnStyle(dataGrid);
                         }
                     }
 
