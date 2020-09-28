@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FluentUI.DemoApp"
         xmlns:fluentui="clr-namespace:FluentUI;assembly=FluentUI.NET"        
         mc:Ignorable="d"
+        FontSize="12"
         Title="MainWindow" Height="450" Width="1400">
     <Window.Resources>
         <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
@@ -20,8 +21,8 @@
                     <StackPanel x:Name="buttonsContainer" Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
                             <Button Content="Standard" HorizontalAlignment="Left" Margin="10"/>
-                            <!--<Button Content="Primary" HorizontalAlignment="Left" Margin="10" Style="{StaticResource FabricPrimaryButtonStyle}"/>
-                            <fluentui:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10">
+                            <Button Content="Primary" HorizontalAlignment="Left" Margin="10" Style="{StaticResource FabricPrimaryButtonStyle}"/>
+                            <!--<fluentui:FabricSplitButton Content="Split Button" HorizontalAlignment="Left" Margin="10">
                                 <fluentui:FabricSplitButton.Menu>
                                     <ContextMenu>
                                         <MenuItem Header="Item1"/>
