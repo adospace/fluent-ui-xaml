@@ -234,6 +234,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.ProgressBar.xaml">
+      <Link>Styles\FabricUI.ProgressBar.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\FluentUI\Styles\FabricUI.ScrollBar.xaml">
       <Link>Styles\FabricUI.ScrollBar.xaml</Link>
       <Generator>MSBuild:Compile</Generator>

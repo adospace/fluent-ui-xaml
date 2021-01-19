@@ -23,6 +23,7 @@
                 <ResourceDictionary Source="/FluentUI;component/Styles/FabricUI.ListBox.xaml"/>
                 <ResourceDictionary Source="/FluentUI;component/Styles/FabricUI.ScrollBar.xaml"/>
                 <ResourceDictionary Source="/FluentUI;component/Styles/FabricUI.ScrollViewer.xaml"/>
+                <ResourceDictionary Source="/FluentUI;component/Styles/FabricUI.ProgressBar.xaml"/>
                 <ResourceDictionary Source="/FluentUI;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

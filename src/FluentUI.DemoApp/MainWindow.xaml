@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentUI.DemoApp"
         xmlns:fluentui="clr-namespace:FluentUI;assembly=FluentUI"
-                       fluentui:FabricExtra.CompactMode="True"
+        fluentui:FabricExtra.CompactMode="True"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1400">
+        Title="FluentUI.NET Styles Gallery" 
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -397,6 +398,25 @@
                 </Border>
             </DockPanel>
         </TabItem>
+
+        <TabItem Header="Progress">
+            <DockPanel >
+                <Border x:Name="progressContainer" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <ProgressBar Orientation="Horizontal" Minimum="0" Maximum="100" Value="40" Width="400" Margin="50"/>
+                            <ProgressBar Orientation="Horizontal" Minimum="0" Maximum="100" Value="40" Width="400" Margin="50" IsIndeterminate="True" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100" Value="40" Height="400" Margin="50"/>
+                            <ProgressBar Orientation="Vertical" Minimum="0" Maximum="100" Value="40" Height="400" Margin="50" IsIndeterminate="True"/>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </Border>
+            </DockPanel>
+        </TabItem>        
 
         <TabItem Header="Icons">
             <ListBox x:Name="lstIcons" 

@@ -27,6 +27,7 @@
     <Style TargetType="ListBox" BasedOn="{StaticResource FabricListBoxStyle}"/>
     <Style TargetType="ScrollBar" BasedOn="{StaticResource FabricScrollBarStyle}"/>
     <Style TargetType="ScrollViewer" BasedOn="{StaticResource FabricScrollViewerStyle}"/>
+    <Style TargetType="ProgressBar" BasedOn="{StaticResource FabricProgressBarStyle}"/>
     <!--<Style TargetType="ListBoxItem" BasedOn="{StaticResource FabricListBoxItemStyle}"/>-->
 
 </ResourceDictionary>
