@@ -3,7 +3,8 @@
                     xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
                     xmlns:fabric.styles="clr-namespace:FluentUI.Styles"
                     xmlns:fabric="clr-namespace:FluentUI">
-    <!-- Resource dictionary entries should be defined here. -->
+    
+    
     <Style x:Key="FabricComboBoxReadonlyToggleButton" TargetType="ToggleButton">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -82,6 +83,11 @@
         <Setter Property="Padding" Value="0"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <ControlTemplate x:Key="FabricComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
@@ -175,7 +181,6 @@
                             <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
                             <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
