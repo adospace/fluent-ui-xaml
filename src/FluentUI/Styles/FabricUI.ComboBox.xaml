@@ -4,7 +4,6 @@
                     xmlns:fabric.styles="clr-namespace:FluentUI.Styles"
                     xmlns:fabric="clr-namespace:FluentUI">
     
-    
     <Style x:Key="FabricComboBoxReadonlyToggleButton" TargetType="ToggleButton">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
@@ -92,18 +91,23 @@
 
     <ControlTemplate x:Key="FabricComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
         <Grid x:Name="MainGrid" SnapsToDevicePixels="true">
+            <Grid.RowDefinitions>
+                <RowDefinition MinHeight="32"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="32"/>
             </Grid.ColumnDefinitions>
             <Popup x:Name="PART_Popup" 
-                               AllowsTransparency="true" 
-                               Focusable="false" 
-                               IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
-                               Placement="Bottom"
-                               Grid.ColumnSpan="2" 
-                               Margin="1" 
-                               >
+                AllowsTransparency="true" 
+                Focusable="false" 
+                IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
+                Placement="Bottom"
+                PlacementTarget="{Binding ElementName=tb}"
+                Grid.ColumnSpan="2" 
+                Margin="1" 
+                >
                 <Border Background="{StaticResource Neutral.White}" 
                                     Margin="10,0,10,10" 
                                     Effect="{StaticResource Depth8}"
@@ -116,7 +120,7 @@
                     </ScrollViewer>
                 </Border>
             </Popup>
-            <ToggleButton x:Name="bd" 
+            <ToggleButton x:Name="tb" 
                 BorderThickness="{TemplateBinding BorderThickness}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 Background="{TemplateBinding Background}" 
@@ -127,11 +131,18 @@
                 Grid.ColumnSpan="1" 
                 BorderThickness="0"
                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-               
                 Margin="{TemplateBinding Padding}" 
                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                 Style="{StaticResource FabricComboBoxEditableTextBox}"/>
+            <TextBlock 
+                Grid.ColumnSpan="2"
+                Grid.Row="1"
+                Text="{TemplateBinding fabric:FabricExtra.ErrorMessage}"
+                Padding="1,5,0,0" 
+                FontSize="12"
+                Foreground="{StaticResource Shared.SharedRed20}"
+                Visibility="{TemplateBinding fabric:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsEnabled" Value="false">
@@ -143,17 +154,23 @@
                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
             </Trigger>
             <Trigger Property="IsKeyboardFocusWithin" Value="true">
-                <Setter Property="BorderThickness" TargetName="bd" Value="2"/>
-                <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
+                <Setter Property="BorderBrush" TargetName="tb" Value="{StaticResource Communication.CommunicationPrimary}"/>
+                <Setter Property="BorderThickness" TargetName="tb" Value="2"/>
             </Trigger>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsMouseOver" Value="true"/>
                     <Condition Property="IsKeyboardFocusWithin" Value="false"/>
                 </MultiTrigger.Conditions>
-                <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Neutral.Gray160}"/>
+                <Setter Property="BorderBrush" TargetName="tb" Value="{StaticResource Neutral.Gray160}"/>
             </MultiTrigger>
-        </ControlTemplate.Triggers>
+            <DataTrigger Value="true">
+                <DataTrigger.Binding>
+                    <Binding Path="(fabric:FabricExtra.ErrorMessage)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource InverseNullToBoolConverter}"/>
+                </DataTrigger.Binding>
+                <Setter Property="BorderBrush" TargetName="tb" Value="{StaticResource Shared.SharedRed20}"/>
+            </DataTrigger>
+        </ControlTemplate.Triggers>        
     </ControlTemplate>
 
     <Style x:Key="FabricComboBoxItemStyle" TargetType="ComboBoxItem">
@@ -190,7 +207,7 @@
     </Style>
 
     <Style x:Key="FabricComboBoxStyle" TargetType="ComboBox">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FabricComboBoxFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Foreground" Value="{StaticResource Neutral.Gray130}"/>
         <Setter Property="Background" Value="{StaticResource Neutral.White}"/>
         <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray130}"/>
@@ -198,11 +215,14 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="Padding" Value="8,0"/>
-        <Setter Property="Height" Value="32"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
                     <Grid x:Name="MainGrid" SnapsToDevicePixels="true">
+                        <Grid.RowDefinitions>
+                            <RowDefinition MinHeight="32"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="32"/>
@@ -212,6 +232,7 @@
                                Focusable="false" 
                                IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                                Placement="Bottom"
+                               PlacementTarget="{Binding ElementName=bd}"
                                Grid.ColumnSpan="2" 
                                Margin="1" 
                                >
@@ -234,6 +255,7 @@
                             IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                             Style="{StaticResource FabricComboBoxReadonlyToggleButton}"/>
                         <ContentPresenter 
+                            x:Name="contentPresenter"
                             ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" 
                             ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" 
                             Content="{TemplateBinding SelectionBoxItem}" 
@@ -243,6 +265,21 @@
                             Margin="{TemplateBinding Padding}" 
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        <Border
+                            x:Name="bd"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Grid.ColumnSpan="2"
+                            IsHitTestVisible="False"
+                            />
+                        <TextBlock 
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Text="{TemplateBinding fabric:FabricExtra.ErrorMessage}"
+                            Padding="1,5,0,0" 
+                            FontSize="12"
+                            Foreground="{StaticResource Shared.SharedRed20}"
+                            Visibility="{TemplateBinding fabric:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
@@ -253,6 +290,16 @@
                         <Trigger Property="IsGrouping" Value="true">
                             <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
                         </Trigger>
+                        <Trigger Property="IsFocused" Value="true">
+                            <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Communication.CommunicationPrimary}"/>
+                            <Setter Property="BorderThickness" TargetName="bd" Value="2"/>
+                        </Trigger>
+                        <DataTrigger Value="true">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fabric:FabricExtra.ErrorMessage)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource InverseNullToBoolConverter}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Shared.SharedRed20}"/>
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
