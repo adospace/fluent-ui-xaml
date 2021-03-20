@@ -61,5 +61,40 @@
     <Style x:Key="FabricListBoxStyle" TargetType="ListBox">
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="ItemContainerStyle" Value="{StaticResource FabricListBoxItemStyle}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <DockPanel>
+                        <TextBlock 
+                            DockPanel.Dock="Bottom"
+                            Text="{TemplateBinding fluentui:FabricExtra.ErrorMessage}"
+                            Padding="1,5,0,0" 
+                            FontSize="12"
+                            Foreground="{StaticResource Shared.SharedRed20}"
+                            Visibility="{TemplateBinding fluentui:FabricExtra.ErrorMessage, Converter={StaticResource NullToVisibilityConverter}}"/>
+                        <Border Name="bd"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}">
+                            <ScrollViewer 
+                                Margin="0"
+                                Focusable="false">
+                                <StackPanel 
+                                    Margin="2"
+                                    IsItemsHost="True" />
+                            </ScrollViewer>
+                        </Border>
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Value="true">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fluentui:FabricExtra.ErrorMessage)" RelativeSource="{RelativeSource Self}" Converter="{StaticResource InverseNullToBoolConverter}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="BorderBrush" TargetName="bd" Value="{StaticResource Shared.SharedRed20}"/>
+                            <Setter Property="BorderThickness" TargetName="bd" Value="1"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>
