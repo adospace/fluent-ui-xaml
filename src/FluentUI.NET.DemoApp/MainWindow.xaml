@@ -196,6 +196,13 @@
                             <Separator/>
                             <ComboBoxItem Content="Item4"/>
                         </ComboBox>
+                        <ComboBox Name="comboboxWithError" IsEditable="{Binding IsEditable, ElementName=combobox}" fluentui:FabricExtra.ErrorMessage="This is an error" Margin="0,10,0,0">
+                            <ComboBoxItem Content="Item1"/>
+                            <ComboBoxItem Content="Item2"/>
+                            <ComboBoxItem Content="Item3"/>
+                            <Separator/>
+                            <ComboBoxItem Content="Item4"/>
+                        </ComboBox>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>
