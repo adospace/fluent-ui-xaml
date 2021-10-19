@@ -446,7 +446,8 @@
         </TabItem>
 
         <TabItem Header="Icons">
-            <ListBox x:Name="lstIcons" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="lstIcons_SelectionChanged">
+            <ListBox x:Name="lstIcons" 
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel IsItemsHost="True"/>
@@ -455,7 +456,9 @@
 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid Background="Transparent" ToolTipService.ToolTip="{Binding}">
+                        <Grid Background="Transparent" 
+                              ToolTipService.ToolTip="{Binding}"
+                              MouseDown="OnIconItemMouseDown">
                             <fluentui:FabricIcon Icon="{Binding}" Size="24" ToolTip="{Binding}" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="5,10"/>
                         </Grid>
                     </DataTemplate>

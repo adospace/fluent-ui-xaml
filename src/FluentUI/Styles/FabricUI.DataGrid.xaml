@@ -269,7 +269,8 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
         <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="RowHeaderWidth" Value="10"/>
+        <Setter Property="RowHeaderWidth" Value="24"/>
+        <Setter Property="MinRowHeight" Value="24"/>
         <Setter Property="fluentui:FabricHelper.TextColumnStyle" Value="{StaticResource FabricDataGridColumnTextBoxStyle}"/>
         <Setter Property="fluentui:FabricHelper.ComboBoxColumnStyle" Value="{StaticResource FabricDataGridColumnComboBoxStyle}"/>
         <Setter Property="fluentui:FabricHelper.CheckBoxColumnStyle" Value="{StaticResource FabricDataGridColumnCheckBoxStyle}"/>
@@ -295,7 +296,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="MinRowHeight" Value="24"/>
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>

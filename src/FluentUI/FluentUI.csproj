@@ -4,24 +4,17 @@
     <PackageId>FluentUI.Core</PackageId>
     <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' == '' ">0.0.1-local</Version>
     <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' != '' ">$(APPVEYOR_BUILD_VERSION)</Version>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>adospace</Authors>
     <Company></Company>
-    <Description>WPF (.NET Core 3.0+ and .NET  4.7.2+) implementation of the Fluent UI design language (https://developer.microsoft.com/en-us/fluent)</Description>
+    <Description>WPF (.NET Core 3.1+ and .NET  4.7.2+) implementation of the Fluent UI design language (https://developer.microsoft.com/en-us/fluent)</Description>
     <PackageTags>fluentui office fluent fabric wpf design UI library</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/adospace/fluent-ui-xaml</PackageProjectUrl>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Images\**" />
-    <EmbeddedResource Remove="Images\**" />
-    <None Remove="Images\**" />
-    <Page Remove="Images\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Fonts\fabric-icons-a13498cf.ttf" />

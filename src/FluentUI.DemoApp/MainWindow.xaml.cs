@@ -49,13 +49,14 @@ namespace FluentUI.DemoApp
             });
         }
 
-        private void lstIcons_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void OnIconItemMouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.AddedItems.Count != 1) return;
-            var icon = e.AddedItems.Cast<FabricIconEnum>().First();
-            Clipboard.SetText($"<fabric:FabricIcon Icon=\"{icon}\" />");
+            if (e.ClickCount >= 2)
+            {
+                var icon = (FabricIconEnum)((Grid)sender).DataContext;
+                Clipboard.SetText($"<fabric:FabricIcon Icon=\"{icon}\" />");
+                MessageBox.Show($"Copied to clipboard: <fabric:FabricIcon Icon=\"{icon}\" />", "FluentUI");
+            }
         }
-
-
     }
 }

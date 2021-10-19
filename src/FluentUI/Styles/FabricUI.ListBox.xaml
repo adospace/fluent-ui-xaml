@@ -78,9 +78,7 @@
                             <ScrollViewer 
                                 Margin="0"
                                 Focusable="false">
-                                <StackPanel 
-                                    Margin="2"
-                                    IsItemsHost="True" />
+                                <ItemsPresenter Margin="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                             </ScrollViewer>
                         </Border>
                     </DockPanel>

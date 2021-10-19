@@ -8,7 +8,7 @@
         fluentui:FabricExtra.CompactMode="True"
         mc:Ignorable="d"
         Title="FluentUI.NET Styles Gallery" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" d:DesignHeight="800" d:DesignWidth="1400">
     <Window.Resources>
         <Style TargetType="ScrollViewer" BasedOn="{StaticResource {x:Type ScrollViewer}}">
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
@@ -439,17 +439,18 @@
 
         <TabItem Header="Icons">
             <ListBox x:Name="lstIcons" 
-                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     SelectionChanged="lstIcons_SelectionChanged">
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel IsItemsHost="True"/>
+                        <WrapPanel/>
                     </ItemsPanelTemplate>
                 </ListBox.ItemsPanel>
 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid Background="Transparent" ToolTipService.ToolTip="{Binding}">
+                        <Grid Background="Transparent" 
+                              ToolTipService.ToolTip="{Binding}"
+                              MouseDown="OnIconItemMouseDown">
                             <fluentui:FabricIcon Icon="{Binding}" Size="24" ToolTip="{Binding}" Foreground="{StaticResource Communication.CommunicationPrimary}" Margin="5,10"/>
                         </Grid>
                     </DataTemplate>
