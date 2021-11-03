@@ -1,5 +1,5 @@
-# Fluent UI for WPF (.NET Core 3.0+ and .NET 4.7.2+) (previously named Fabric UI for WPF)
-Fluent UI (https://developer.microsoft.com/en-us/fluentui#/) WPF theme library
+# Fluent UI Web for WPF (.NET Core 3.0+ and .NET 4.7.2+)
+Fluent UI Web (https://developer.microsoft.com/en-us/fluentui#/controls/web) WPF theme library
 
 [![Build status](https://ci.appveyor.com/api/projects/status/3v82l8tinrom3utm?svg=true)](https://ci.appveyor.com/project/adospace/fluent-ui-xaml) 
 
