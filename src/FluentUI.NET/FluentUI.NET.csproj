@@ -194,6 +194,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="..\FluentUI\Styles\FabricUI.Colors.Light.xaml">
+      <Link>Styles\FabricUI.Colors.Light.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="..\FluentUI\Styles\FabricUI.ComboBox.xaml">
       <Link>Styles\FabricUI.ComboBox.xaml</Link>
       <Generator>MSBuild:Compile</Generator>

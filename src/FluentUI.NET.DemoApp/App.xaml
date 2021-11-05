@@ -6,6 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Colors.Light.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Brushes.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Icons.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Buttons.xaml"/>

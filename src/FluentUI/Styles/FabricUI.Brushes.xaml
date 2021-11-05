@@ -3,76 +3,76 @@
                     xmlns:local="clr-namespace:FluentUI.Styles"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
-    <SolidColorBrush x:Key="Neutral.Black" Color="#000000" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray220" Color="#11100f" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray210" Color="#161514" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray200" Color="#1b1a19" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray190" Color="#201f1e" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray180" Color="#252423" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray170" Color="#292827" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray160" Color="#323130" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray150" Color="#3b3a39" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray140" Color="#484644" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray130" Color="#605e5c" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray120" Color="#797775" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray110" Color="#8a8886" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray100" Color="#979593" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray90" Color="#a19f9d" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray80" Color="#b3b0ad" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray70" Color="#bebbb8" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray60" Color="#c8c6c4" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray50" Color="#d2d0ce" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray40" Color="#e1dfdd" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray30" Color="#edebe9" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray20" Color="#f3f2f1" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.Gray10" Color="#faf9f8" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Neutral.White" Color="#ffffff" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationShade30" Color="#004578" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationShade20" Color="#005a9e" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationShade10" Color="#106ebe" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationPrimary" Color="#0078d4" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.communicationTint10" Color="#2b88d8" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationTint20" Color="#c7e0f4" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationTint30" Color="#deecf9" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Communication.CommunicationTint40" Color="#eff6fc" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedPinkRed10" Color="#750b1c" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedRed20" Color="#a4262c" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedRed10" Color="#d13438" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedRedOrange20" Color="#603d30" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedRedOrange10" Color="#da3b01" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedOrange30" Color="#8e562e" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedOrange20" Color="#ca5010" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedOrange10" Color="#ffaa44" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedYellow10" Color="#fce100" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedOrangeYellow20" Color="#986f0b" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedOrangeYellow10" Color="#c19c00" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedYellowGreen10" Color="#8cbd18" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGreen20" Color="#0b6a0b" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGreen10" Color="#498205" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGreenCyan10" Color="#00ad56" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedCyan40" Color="#005e50" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedCyan30" Color="#005b70" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedCyan20" Color="#038387" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedCyan10" Color="#00b7c3" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedCyanBlue20" Color="#004e8c" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedCyanBlue10" Color="#0078d4" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedBlue10" Color="#4f6bed" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedBlueMagenta40" Color="#373277" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedBlueMagenta30" Color="#5c2e91" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedBlueMagenta20" Color="#8764b8" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedBlueMagenta10" Color="#8378de" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedMagenta20" Color="#881798" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedMagenta10" Color="#c239b3" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedMagentaPink20" Color="#9b0062" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedMagentaPink10" Color="#e3008c" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGray40" Color="#393939" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGray30" Color="#7a7574" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGray20" Color="#69797e" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Shared.SharedGray10" Color="#a0aeb2" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Contrast.ContrastBlackDisabled" Color="#00ff00" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Contrast.ContrastWhiteDisabled" Color="#600000" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Contrast.ContrastBlackSelected" Color="#1aebff" po:Freeze="True"/>
-    <SolidColorBrush x:Key="Contrast.ContrastWhiteSelected" Color="#37006e" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Black" Color="{DynamicResource Colors.Neutral.Black}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray220" Color="{DynamicResource Colors.Neutral.Gray220}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray210" Color="{DynamicResource Colors.Neutral.Gray210}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray200" Color="{DynamicResource Colors.Neutral.Gray200}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray190" Color="{DynamicResource Colors.Neutral.Gray190}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray180" Color="{DynamicResource Colors.Neutral.Gray180}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray170" Color="{DynamicResource Colors.Neutral.Gray170}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray160" Color="{DynamicResource Colors.Neutral.Gray160}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray150" Color="{DynamicResource Colors.Neutral.Gray150}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray140" Color="{DynamicResource Colors.Neutral.Gray140}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray130" Color="{DynamicResource Colors.Neutral.Gray130}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray120" Color="{DynamicResource Colors.Neutral.Gray120}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray110" Color="{DynamicResource Colors.Neutral.Gray110}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray100" Color="{DynamicResource Colors.Neutral.Gray100}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray90" Color="{DynamicResource Colors.Neutral.Gray90}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray80" Color="{DynamicResource Colors.Neutral.Gray80}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray70" Color="{DynamicResource Colors.Neutral.Gray70}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray60" Color="{DynamicResource Colors.Neutral.Gray60}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray50" Color="{DynamicResource Colors.Neutral.Gray50}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray40" Color="{DynamicResource Colors.Neutral.Gray40}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray30" Color="{DynamicResource Colors.Neutral.Gray30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray20" Color="{DynamicResource Colors.Neutral.Gray20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.Gray10" Color="{DynamicResource Colors.Neutral.Gray10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Neutral.White" Color="{DynamicResource Colors.Neutral.White}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationShade30" Color="{DynamicResource Colors.Communication.CommunicationShade30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationShade20" Color="{DynamicResource Colors.Communication.CommunicationShade20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationShade10" Color="{DynamicResource Colors.Communication.CommunicationShade10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationPrimary" Color="{DynamicResource Colors.Communication.CommunicationPrimary}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.communicationTint10" Color="{DynamicResource Colors.Communication.communicationTint10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationTint20" Color="{DynamicResource Colors.Communication.CommunicationTint20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationTint30" Color="{DynamicResource Colors.Communication.CommunicationTint30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Communication.CommunicationTint40" Color="{DynamicResource Colors.Communication.CommunicationTint40}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedPinkRed10" Color="{DynamicResource Colors.Shared.SharedPinkRed10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedRed20" Color="{DynamicResource Colors.Shared.SharedRed20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedRed10" Color="{DynamicResource Colors.Shared.SharedRed10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedRedOrange20" Color="{DynamicResource Colors.Shared.SharedRedOrange20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedRedOrange10" Color="{DynamicResource Colors.Shared.SharedRedOrange10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedOrange30" Color="{DynamicResource Colors.Shared.SharedOrange30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedOrange20" Color="{DynamicResource Colors.Shared.SharedOrange20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedOrange10" Color="{DynamicResource Colors.Shared.SharedOrange10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedYellow10" Color="{DynamicResource Colors.Shared.SharedYellow10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedOrangeYellow20" Color="{DynamicResource Colors.Shared.SharedOrangeYellow20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedOrangeYellow10" Color="{DynamicResource Colors.Shared.SharedOrangeYellow10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedYellowGreen10" Color="{DynamicResource Colors.Shared.SharedYellowGreen10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGreen20" Color="{DynamicResource Colors.Shared.SharedGreen20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGreen10" Color="{DynamicResource Colors.Shared.SharedGreen10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGreenCyan10" Color="{DynamicResource Colors.Shared.SharedGreenCyan10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyan40" Color="{DynamicResource Colors.Shared.SharedCyan40}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyan30" Color="{DynamicResource Colors.Shared.SharedCyan30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyan20" Color="{DynamicResource Colors.Shared.SharedCyan20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyan10" Color="{DynamicResource Colors.Shared.SharedCyan10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyanBlue20" Color="{DynamicResource Colors.Shared.SharedCyanBlue20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyanBlue10" Color="{DynamicResource Colors.Shared.SharedCyanBlue10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedBlue10" Color="{DynamicResource Colors.Shared.SharedBlue10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedBlueMagenta40" Color="{DynamicResource Colors.Shared.SharedBlueMagenta40}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedBlueMagenta30" Color="{DynamicResource Colors.Shared.SharedBlueMagenta30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedBlueMagenta20" Color="{DynamicResource Colors.Shared.SharedBlueMagenta20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedBlueMagenta10" Color="{DynamicResource Colors.Shared.SharedBlueMagenta10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedMagenta20" Color="{DynamicResource Colors.Shared.SharedMagenta20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedMagenta10" Color="{DynamicResource Colors.Shared.SharedMagenta10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedMagentaPink20" Color="{DynamicResource Colors.Shared.SharedMagentaPink20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedMagentaPink10" Color="{DynamicResource Colors.Shared.SharedMagentaPink10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGray40" Color="{DynamicResource Colors.Shared.SharedGray40}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGray30" Color="{DynamicResource Colors.Shared.SharedGray30}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGray20" Color="{DynamicResource Colors.Shared.SharedGray20}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedGray10" Color="{DynamicResource Colors.Shared.SharedGray10}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Contrast.ContrastBlackDisabled" Color="{DynamicResource Colors.Contrast.ContrastBlackDisabled}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Contrast.ContrastWhiteDisabled" Color="{DynamicResource Colors.Contrast.ContrastWhiteDisabled}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Contrast.ContrastBlackSelected" Color="{DynamicResource Colors.Contrast.ContrastBlackSelected}" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Contrast.ContrastWhiteSelected" Color="{DynamicResource Colors.Contrast.ContrastWhiteSelected}" po:Freeze="True"/>
 
 
     <DropShadowEffect x:Key="Depth4" Color="#edebe9" BlurRadius="4" Direction="-90" RenderingBias="Performance" ShadowDepth="1" po:Freeze="True"/>
