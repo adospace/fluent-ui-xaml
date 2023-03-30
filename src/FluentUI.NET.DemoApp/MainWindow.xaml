@@ -49,7 +49,12 @@
                             <ToggleButton Margin="10">
                                 Toggle
                             </ToggleButton>
-                        </StackPanel>                        
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="10">
+                                <Hyperlink>Hyperlink</Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </ScrollViewer>

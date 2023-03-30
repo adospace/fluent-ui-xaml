@@ -54,6 +54,7 @@
     <SolidColorBrush x:Key="Shared.SharedCyan30" Color="#005b70" po:Freeze="True"/>
     <SolidColorBrush x:Key="Shared.SharedCyan20" Color="#038387" po:Freeze="True"/>
     <SolidColorBrush x:Key="Shared.SharedCyan10" Color="#00b7c3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="Shared.SharedCyanBlue30" Color="#004578" po:Freeze="True"/>
     <SolidColorBrush x:Key="Shared.SharedCyanBlue20" Color="#004e8c" po:Freeze="True"/>
     <SolidColorBrush x:Key="Shared.SharedCyanBlue10" Color="#0078d4" po:Freeze="True"/>
     <SolidColorBrush x:Key="Shared.SharedBlue10" Color="#4f6bed" po:Freeze="True"/>
