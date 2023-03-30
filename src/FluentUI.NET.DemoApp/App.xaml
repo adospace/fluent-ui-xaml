@@ -24,6 +24,7 @@
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ScrollBar.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ScrollViewer.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.ProgressBar.xaml"/>
+                <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Hyperlink.xaml"/>
                 <ResourceDictionary Source="/FluentUI.NET;component/Styles/FabricUI.Controls.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

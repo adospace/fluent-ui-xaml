@@ -29,5 +29,6 @@
     <Style TargetType="ScrollViewer" BasedOn="{StaticResource FabricScrollViewerStyle}"/>
     <Style TargetType="ProgressBar" BasedOn="{StaticResource FabricProgressBarStyle}"/>
     <!--<Style TargetType="ListBoxItem" BasedOn="{StaticResource FabricListBoxItemStyle}"/>-->
+    <Style TargetType="Hyperlink" BasedOn="{StaticResource FabricHyperlinkStyle}"/>
 
 </ResourceDictionary>
